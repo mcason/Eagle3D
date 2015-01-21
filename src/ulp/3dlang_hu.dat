@@ -1,0 +1,167 @@
+Eagle3D (v###VERSIONDUMMY###)
+(c)2011 Matthias Weißer
+matthias@matwei.de
+Instructions and License please see COPYING
+This Converter runs only in a Board
+Eagle3D (v###VERSIONDUMMY###) Input Parameters
+Globális
+Renderelés
+Alkatrészek
+Sokszögek
+Vezetékek
+Furatok (valódiak)
+Forrfelületek és SMD forrszemek 
+Furatok (gyors redereléshez)
+OBJ adatok exportálása
+Ismeretlen alkotóelemek
+Felhasználó által hozzárendelt modellek
+Panel
+rövid alkatrészlábak
+Derékszögű panel
+Szitanyomat
+Környezet
+Hibás teszt. Kérem küldje el a hibaleírást
+a matthias@matwei.de címre
+Figyelem!
+A valódi furatok nagy számításigényűek
+így a processzort is jobban terheli, hosszabb ideig tart.
+(Körülbelül 10-szer annyi ideig tart mint a gyors változat)
+Cél fájl
+Böngészés
+Cél fájl
+Panel
+Dimenzió
+Panel vastagsága (mm-ben)
+Rézfólia vastagsága (mm-ben)
+[[[[]]]]
+Kamera
+Pocíció
+Kamera pocíció:
+Kamera célterülete:
+A lencse nyílásszöge:
+Bekapcsolt
+Szpot színe:
+Szpot pozíciója:
+Szpot célterülete::
+Szpot fénye
+Rádiusz:
+Lecsengés:
+Árnyék nélkül
+Színek
+Kézi kiválasztás
+Panel
+Vezetékek
+Forrfelületek és SMD
+Furatok
+Háttér
+Szitanyomat
+Új szín
+Vörös
+Zöld
+Kék
+Felirat
+Szín
+Hozzáadás
+Mégse
+Nincs fájlnév kiválasztva
+POVRay-fájl készítés mint
+Panel
+Forrfelületek és SMD/Alkatrészek
+Forrfelület/Átvezetés
+Jelek
+Sokszögek
+Furatok(valós)/Alkatrészek
+Furatok(valós)/Átvezetések
+Furatok(valós)/Panel
+Furatok(valós)/Alkatrészek
+Furatok(valós)/Átvezetések
+Furatok(valós)/Panel
+Szitanyomat
+Alkatrészek
+Makró nélküli alkatrészek (SMD jumper például)
+Színkiválasztás
+Átlátszó?
+Magasság kiválasztása
+Standard magasság HC49: 3mm
+Standard magasság HC18: 12mm
+Alkatrész hozzárendelése
+Hozzárendelés ismeretlen alkatrészhez
+Fény
+Panel elforgatás szöge
+Foglalat
+Foglalatban
+Foglalat nélkül
+Töbrétegű
+Réteg áthelyezés
+aktuális
+Nincs alkatrész hozzárendelve
+Alkatrészek hozzárendelése a brdname.mpd fájlból
+A sokszög keskenyebb mint 0.1mm!
+nagyon nagy POVRay fájlok. Ez hosszabb renderelési
+időt vesz igénybe.
+A használathoz Eagle v4.08 vagy nagyob verzó szükséges! 
+Valódi furatok (mm-től)
+//translates the camera that <0,0,0> is over the Eagle <0,0>
+Átmenő furatok
+színbeállítás
+színbeállítás kiválasztása
+Felhasználói beállítás
+FR4 forrasztómaszkkal
+Nagyon színezett
+POV-fájl készítése
+A kimeneti könyvtár kiválasztása
+FR4 forrasztómaszkkal (Muecke)
+A fájl 
+Létezik! Felülírjam?
+Igen
+Nem
+mind foglalalatban
+mind foglalat nélkül
+normál PCB
+kör PCB
+Körbevágás
+Forrasztómaszk az átvezetések fölött (mm)
+POV-fájl készítése és kilépés
+A POV-Fájl írása sikertelen
+Megjegyzés
+Tok keresése
+Keresés a POVRay-macrókban
+Keresés a megjegyzésekben
+Intenzitás
+POVRay-fájl írása sikerült
+Félbeszakítás
+A panel munkakönyvtárának beálítása
+A szitanyomathoz használt rétegek
+A tokrajzolathoz vonal
+A panelrajazolathoz vonal
+Szöveg a tokon
+Szöveg a panelen
+Jumper a tüskén
+Jumper nélkül
+Jumper nyitott
+Jumper zárt
+az összes Jumper nélkül
+minden Jumper nyitott
+minden Jumper zárt
+Nincs elérhető kép
+Kép megmutatása
+emelés:
+Egyebek
+Adat animációhoz
+Nincs elegendő animációs adat (min. 3 pont kell)
+Képkockák száma
+Berepülés útvonala
+Nézet útvonala
+Tokok létrehozásának rétegei
+Forrasztómaszk nélkül
+Logó az IC felületén
+Nincs logó
+Nincs panel körvonal. A POVRay fájl hibás lehet.
+Mind logó nélkül
+.svg fájl készítése
+Forrfelületek és SMD alul
+POVRay fájl útvonala
+Rendszerfontok útvonala
+Felbontás
+élsimítás (anti aliasing) használata
+POVRay fájl betöltése, renderelés
