@@ -29,6 +29,7 @@ clean:
 render: all
 	tools/eagle3d.py render
 
+# A kludge to fix my constantly forgetting to set VERSONNAME
 release:
 ifndef VERSIONNAME
 	@echo "The VERSIONNAME variable was not set"
