@@ -1,0 +1,189 @@
+TRJ19201
+// Makro for SMD-Ethernet-LED RJ-45 10-smd-legs (RJ45&LEDS)
+// Designed by Tibor Balázs <covek(replace with at)covek.hu>
+// Proposal: TRJ19201
+####################################################################################################
+TRJ19201:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CON_TRJ19201:RJ45&LEDS:
+####################################################################################################
+CON_TRJ19201_GRND
+()
+####################################################################################################
+CON_TRJ19201()
+()
+####################################################################################################
+####################################################################################################
+#local tex_rj45_metal = texture { T_Chrome_5B } ;
+#local tex_rj45_plastic = texture { pigment{White*0.3} finish {specular 1 roughness 0.001 reflection 0.07 ambient (0.1 * global_ambient_mul)} } ;
+
+#macro body(B,H,T,R)
+union {
+
+    // Shielding
+    box{<-B/2+R,0  , T/2  > <B/2-R,H-R,-T/2  >}
+    box{<-B/2  ,0  ,-T/2+R> <B/2  ,H-R, T/2-R>}
+    box{<-B/2+R,0  ,-T/2+R> <B/2-R,H    , T/2-R>}
+
+    // Chasing of vertical edges
+    // Left rear corner
+    cylinder{<-B/2+R, 0, 0> <-B/2+R, H-R> R
+             translate <0, 0, T/2-R>}
+    // Left front corner
+    cylinder{<-B/2+R, 0, 0> <-B/2+R, H-R> R
+             translate <0, 0,-T/2+R>}
+    // Right rear corner
+    cylinder{< B/2-R, 0, 0> < B/2-R, H-R> R
+             translate <0, 0, T/2-R>}
+    // Right front corner
+    cylinder{< B/2-R, 0, 0> < B/2-R, H-R> R
+             translate <0, 0,-T/2+R>}
+
+    sphere{< B/2-R, H-R, T/2-R> R scale <1,1,1>}
+    sphere{< B/2-R, H-R,-T/2+R> R scale <1,1,1>}
+    sphere{<-B/2+R, H-R, T/2-R> R scale <1,1,1>}
+    sphere{<-B/2+R, H-R,-T/2+R> R scale <1,1,1>}
+
+    cylinder{<-B/2+R,  H-R> < B/2-R, H-R> R
+             translate <0, 0, T/2-R>}
+
+    cylinder{<-B/2+R,  H-R> < B/2-R, H-R> R
+             translate <0, 0,-T/2+R>}
+    cylinder{<-T/2+R,  H-R> < T/2-R, H-R> R rotate<0, 90,0>
+             translate < B/2-R, 0, 0>}
+    cylinder{<-T/2+R,  H-R> < T/2-R, H-R> R rotate<0, 90,0>
+             translate < -B/2+R, 0, 0>}
+  }
+#end 
+
+#local stecker = 
+      difference
+      {
+         box{<2.5,2.5,-1><16.8-2.5,12,14.0>}
+         box{<0, 9.5    ,-2><5.0,13   ,16.0>}
+         box{<16.8-5,9.5,-2><16.8, 13 ,16.0>}
+         box{<0,    11  ,-2><6.0,13   ,16.0>}
+         box{<10.3, 11  ,-2><16,13    ,16.0>}
+      };
+
+#local pin_intern =
+   sphere_sweep {
+      b_spline
+      6,
+      <16.8/2-0.635, 14.0, 6>,   0.2
+      <16.8/2-0.635, 12.7, 6>,   0.2
+      <16.8/2-0.635, 12.0, 6.5>, 0.2
+      <16.8/2-0.635, 11.3, 10>,  0.2
+      <16.8/2-0.635, 11.0, 16>,  0.2
+      <16.8/2-0.635, 11.0, 18>,  0.2
+      texture{col_gold}
+   }
+
+union
+{
+   difference
+   {
+      // Dimensions : 16.8  x  13.0  x  23 mm
+      union
+      {
+         object {body(16.8,13.0,23,0.3) translate<8.4,0,11.5>  }
+         box{<0,12.0,0.2><0.5,13,7.7> }
+         box{<16.5,12.0,0.2><16.8,13,7.7>}
+      }
+      // All the notches
+      box{<0.25 ,-1 , 0.2><16.8-0.25 ,13.0-0.25,23-0.25>}
+      
+      // Specific front crop for plug
+      stecker
+
+      box{<1.5,-0.2,21.5><16.8-1.5,1.5,23.1>}
+
+      // rear up horizontal notch
+      box{<3.5,13-0.35,23-0.35><16.8-3.5,13+0.35,23+0.35> }
+
+      // crops on the side panels
+      // rear mitre (left and right)
+      box{<-0.3,-0.1,-1.64><0.3,0.1,2.0> rotate<-45,0,0> translate<0,10.5+1.15+0.04,9.5-1.15+0.02+13.2>}
+      box{<16.8-0.3,-0.1,-1.64><17,0.1,2.0> rotate<-45,0,0> translate<0,10.5+1.15+0.04,9.5-1.15+0.02+13.2>}
+      // vertical notch
+      box{<-1,-1,20.4><20,10.6,20.6>}
+      // horizontal side notch
+      box{<-1,10.45,10><20,10.65,20.4> }
+      // front mitre
+      box{<-1,-0.1,-1.52><20,0.1,1.64> rotate<45,0,0> translate<0,10.5+1.15+0.04,10-1.15+0.02> }
+      // front upper notch
+      box{<-1,12.6,0.2><20,12.8,7.82>}
+
+      // envelop crops on sides and rear
+      box{<-1,-1,20.4><0.28,1.5,23.1>}
+      box{<-1,-1,22.2><2.28,1.5,23.1>}
+      box{<16.8-0.28,-1,20.4><16.8+1,1.5,23.1>}
+      box{<16.8-2.28,-1,22.2><16.8+1,1.5,23.1>}
+
+      texture{tex_rj45_metal}
+   }
+
+   // Lateral fixing nail, rear
+   box{<-0.4,3,23-1.8    ><0.4,5,23-0.6     > translate<-4.35,0,-0.2> rotate<0, 12.4,0> texture{tex_rj45_metal}}
+   box{<16.8-0.4,3,23-1.8><16.8+0.4,5,23-0.6> translate<3.8,  0,-3.8> rotate<0,-12.1,0> texture{tex_rj45_metal}}
+
+   // LEDS
+   box     {<1.5,      10.5, -0.05><4,      12, 6 > pigment{Yellow}}
+   box     {<16.8-1.5, 10.5, -0.05><16.8-4, 12, 6 > pigment{Green}}
+
+   // Plastic inside
+   difference
+   {
+      box{<0.4 ,0 , 0.3><16.8-0.4 ,13.0-0.4,23-0.4>}
+      stecker
+      box{<1.5,-0.2,21.5><16.8-1.5,1.5,23>}
+
+      texture{tex_rj45_plastic}
+   }
+      
+   object {TOOLS_RECT_BOGEN(0.2,            // i_radius
+                            90 ,            // nook  
+                            0.2,            // thicken
+                            2  ,            // spread
+                            1 ,             // long1
+                            5)              // long2
+                            rotate<90,0,0>
+                            translate <16.8-2.4-0.2,6,0.1>
+                            texture{tex_rj45_metal}}
+   object {TOOLS_RECT_BOGEN(0.2,            // i_radius
+                            90 ,            // nook
+                            0.2,            // thicken
+                            2  ,            // spread
+                            5 ,             // long1
+                            1)              // long2
+                            rotate<90,0,0>
+                            rotate<0,-90,0>
+                            translate <2.4+0.2,6,0.1>
+                            texture{tex_rj45_metal}}
+
+
+   // Pins (10)
+   object {IC_SMD_PIN(1.5,3.5,0.6,0.3) rotate<0,-90,0>  translate<8.4+1.27/2,          0,21> texture{tex_rj45_metal}}
+   object {IC_SMD_PIN(1.5,3.5,0.6,0.3) rotate<0,-90,0>  translate<8.4+1.27/2+1.27,     0,21> texture{tex_rj45_metal}}
+   object {IC_SMD_PIN(1.5,3.5,0.6,0.3) rotate<0,-90,0>  translate<8.4+1.27/2+2.54,     0,21> texture{tex_rj45_metal}}
+   object {IC_SMD_PIN(1.5,3.5,0.6,0.3) rotate<0,-90,0>  translate<8.4+1.27/2+2.54+1.27,0,21> texture{tex_rj45_metal}}
+   object {IC_SMD_PIN(1.5,3.5,0.6,0.3) rotate<0,-90,0>  translate<8.4+1.27/2+5.08,     0,21> texture{tex_rj45_metal}}
+   
+   object {IC_SMD_PIN(1.5,3.5,0.6,0.3) rotate<0,-90,0>  translate<8.4-1.27/2,          0,21> texture{tex_rj45_metal}}
+   object {IC_SMD_PIN(1.5,3.5,0.6,0.3) rotate<0,-90,0>  translate<8.4-1.27/2-1.27,     0,21> texture{tex_rj45_metal}}
+   object {IC_SMD_PIN(1.5,3.5,0.6,0.3) rotate<0,-90,0>  translate<8.4-1.27/2-2.54,     0,21> texture{tex_rj45_metal}}
+   object {IC_SMD_PIN(1.5,3.5,0.6,0.3) rotate<0,-90,0>  translate<8.4-1.27/2-2.54-1.27,0,21> texture{tex_rj45_metal}}
+   object {IC_SMD_PIN(1.5,3.5,0.6,0.3) rotate<0,-90,0>  translate<8.4-1.27/2-5.08,     0,21> texture{tex_rj45_metal}}
+   
+   // Pins internal
+   object { pin_intern rotate<0,0,180> translate<16,15,-1>}
+   object { pin_intern rotate<0,0,180> translate<16+2.54,15,-1>}
+   object { pin_intern rotate<0,0,180> translate<16-2.54,15,-1>}
+   object { pin_intern rotate<0,0,180> translate<16+5.08,15,-1>}
+   object { pin_intern rotate<0,0,180> translate<16+1.27,15,-1>}
+   object { pin_intern rotate<0,0,180> translate<16+1.27+2.54,15,-1>}
+   object { pin_intern rotate<0,0,180> translate<16+1.27-2.54,15,-1>}
+   object { pin_intern rotate<0,0,180> translate<16+1.27-5.08,15,-1>}
+   
+   translate<0,0.5,0>          // Heightening by the height of plastic body
+   translate<-16.8/2,0,-23/2>  // 0 point in the middle of box
+}
+#end

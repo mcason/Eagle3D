@@ -1,0 +1,177 @@
+Tactile Switch
+//*****************************************************************************
+//
+// ***  Tactile Switch Macro  ***  With, and without ESD protection  ***
+// Modified to build SMD Tactile Switches
+//
+// Based off of a C&K Components Tactile switch.
+// By MC Cason  farmerboy1967(replace with at)gmail.com
+// Created from the B3F-10XX switch macro
+// by Tobias Mueller <Tobias_Mueller(replace with at)twam.info>
+//
+//  This macro is modular, so that it can support several different sizes
+//   and manufacturers 
+//
+// L:           Lenght of switch
+// W:           Width of switch
+// H:           Height of switch
+// L_Width:     Lead width
+// Lead_X:      Lead 1 X location - Use Positive Number
+// Lead_Y:      Lead 1 Y location - Use Positive Number
+// Lead_Y_ESD:  ESD Lead Y location - Use Positive Number (0 for no lead)
+//                X is assumed to be 0
+// B_Dia:       Button Diameter
+// B_Height:    Button Height
+// Color:       Button Color
+// SMD:         1 for SMD, 0 for Through Hole
+//*****************************************************************************
+###############################################################################
+TACT_6X6X43:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_6X6X43(:Tact switch 6x6x4.3:
+TACT_6X6X50:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_6X6X50(:Tact switch 6x6x5.0:
+TACT_6X6X70:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_6X6X70(:Tact switch 6x6x7.0:
+TACT_6X6X95:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_6X6X95(:Tact switch 6x6x9.5:
+TACT_6X6X130:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_6X6X130(:Tact switch 6x6x13.0:
+TACT_6X6X43-ESD:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_6X6X43_ESD(:Tact switch 6x6x4.3-ESD:
+TACT_6X6X50-ESD:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_6X6X50_ESD(:Tact switch 6x6x5.0-ESD:
+TACT_6X6X70-ESD:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_6X6X70_ESD(:Tact switch 6x6x7.0-ESD:
+TACT_6X6X95-ESD:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_6X6X95_ESD(:Tact switch 6x6x9.5-ESD:
+TACT_6X6X130-ESD:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_6X6X130_ESD(:Tact switch 6x6x13.0-ESD:
+TACT_12X12X43:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_12X12X43(:Tact switch 12x12x4.3:
+TACT_12X12X73:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_12X12X73(:Tact switch 12x12x4.3:
+TACT_12X12X85:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_12X12X85(:Tact switch 12x12x4.3:
+TACT_12X12X120:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_12X12X120(:Tact switch 12x12x4.3:
+TACT_6X6X43-SMD:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_SMD_6X6X43(:Tact switch 6x6x4.3:
+TACT_6X6X50-SMD:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_SMD_6X6X50(:Tact switch 6x6x5.0:
+TACT_6X6X70-SMD:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_SMD_6X6X70(:Tact switch 6x6x7.0:
+TACT_6X6X95-SMD:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_SMD_6X6X95(:Tact switch 6x6x9.5:
+TACT_6X6X130-SMD:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_SMD_6X6X130(:Tact switch 6x6x13.0:
+TACT_6X6X43-ESD-SMD:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_SMD_6X6X43_ESD(:Tact switch 6x6x4.3-ESD:
+TACT_6X6X50-ESD-SMD:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_SMD_6X6X50_ESD(:Tact switch 6x6x5.0-ESD:
+TACT_6X6X70-ESD-SMD:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_SMD_6X6X70_ESD(:Tact switch 6x6x7.0-ESD:
+TACT_6X6X95-ESD-SMD:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_SMD_6X6X95_ESD(:Tact switch 6x6x9.5-ESD:
+TACT_6X6X130-ESD-SMD:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_SMD_6X6X130_ESD(:Tact switch 6x6x13.0-ESD:
+TACT_12X12X43-SMD:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_SMD_12X12X43(:Tact switch 12x12x4.3:
+TACT_12X12X73-SMD:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_SMD_12X12X73(:Tact switch 12x12x4.3:
+TACT_12X12X85-SMD:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_SMD_12X12X85(:Tact switch 12x12x4.3:
+TACT_12X12X120-SMD:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_TACT_SMD_12X12X120(:Tact switch 12x12x4.3:
+###############################################################################
+SWITCH_TACT_GRND
+(L, W, H, L_Width, Lead_X, Lead_Y, Lead_Y_ESD, B_Dia, B_Height, Color, SMD)
+###############################################################################
+SWITCH_TACT_6X6X43()
+(6, 6, 3.6, 0.7, 3.25, 2.25, 0, 4, 4.3, Black, 0)
+SWITCH_TACT_6X6X50()
+(6, 6, 3.6, 0.7, 3.25, 2.25, 0, 4, 5.0, Black, 0)
+SWITCH_TACT_6X6X70()
+(6, 6, 3.6, 0.7, 3.25, 2.25, 0, 4, 7.0, Black, 0)
+SWITCH_TACT_6X6X95()
+(6, 6, 3.6, 0.7, 3.25, 2.25, 0, 4, 9.5, Black, 0)
+SWITCH_TACT_6X6X130()
+(6, 6, 3.6, 0.7, 3.25, 2.25, 0, 4, 13.0, Black, 0)
+SWITCH_TACT_6X6X43_ESD()
+(6, 6, 3.6, 0.7, 3.25, 2.25, -4.1, 4, 4.3, Black, 0)
+SWITCH_TACT_6X6X50_ESD()
+(6, 6, 3.6, 0.7, 3.25, 2.25, -4.1, 4, 5.0, Black, 0)
+SWITCH_TACT_6X6X70_ESD()
+(6, 6, 3.6, 0.7, 3.25, 2.25, -4.1, 4, 7.0, Black, 0)
+SWITCH_TACT_6X6X95_ESD()
+(6, 6, 3.6, 0.7, 3.25, 2.25, -4.1, 4, 9.5, Black, 0)
+SWITCH_TACT_6X6X130_ESD()
+(6, 6, 3.6, 0.7, 3.25, 2.25, -4.1, 4, 13.0, Black, 0)
+SWITCH_TACT_12X12X43()
+(12, 12, 3.5, 1.0, 6.25, 2.25, 0, 6.9, 4.3, Black, 0)
+SWITCH_TACT_12X12X73()
+(12, 12, 3.5, 1.0, 6.25, 2.25, 0, 6.9, 7.3, Black, 0)
+SWITCH_TACT_12X12X85()
+(12, 12, 3.5, 1.0, 6.25, 2.25, 0, 6.9, 8.5, Black, 0)
+SWITCH_TACT_12X12X120()
+(12, 12, 3.5, 1.0, 6.25, 2.25, 0, 6.9, 12.0, Black, 0)
+
+SWITCH_TACT_SMD_6X6X43()
+(6, 6, 3.6, 0.7, 3.25, 2.25, 0, 4, 4.3, Black, 1)
+SWITCH_TACT_SMD_6X6X50()
+(6, 6, 3.6, 0.7, 3.25, 2.25, 0, 4, 5.0, Black, 1)
+SWITCH_TACT_SMD_6X6X70()
+(6, 6, 3.6, 0.7, 3.25, 2.25, 0, 4, 7.0, Black, 1)
+SWITCH_TACT_SMD_6X6X95()
+(6, 6, 3.6, 0.7, 3.25, 2.25, 0, 4, 9.5, Black, 1)
+SWITCH_TACT_SMD_6X6X130()
+(6, 6, 3.6, 0.7, 3.25, 2.25, 0, 4, 13.0, Black, 1)
+SWITCH_TACT_SMD_6X6X43_ESD()
+(6, 6, 3.6, 0.7, 3.25, 2.25, -4.1, 4, 4.3, Black, 1)
+SWITCH_TACT_SMD_6X6X50_ESD()
+(6, 6, 3.6, 0.7, 3.25, 2.25, -4.1, 4, 5.0, Black, 1)
+SWITCH_TACT_SMD_6X6X70_ESD()
+(6, 6, 3.6, 0.7, 3.25, 2.25, -4.1, 4, 7.0, Black, 1)
+SWITCH_TACT_SMD_6X6X95_ESD()
+(6, 6, 3.6, 0.7, 3.25, 2.25, -4.1, 4, 9.5, Black, 1)
+SWITCH_TACT_SMD_6X6X130_ESD()
+(6, 6, 3.6, 0.7, 3.25, 2.25, -4.1, 4, 13.0, Black, 1)
+SWITCH_TACT_SMD_12X12X43()
+(12, 12, 3.5, 1.0, 6.25, 2.25, 0, 6.9, 4.3, Black, 1)
+SWITCH_TACT_SMD_12X12X73()
+(12, 12, 3.5, 1.0, 6.25, 2.25, 0, 6.9, 7.3, Black, 1)
+SWITCH_TACT_SMD_12X12X85()
+(12, 12, 3.5, 1.0, 6.25, 2.25, 0, 6.9, 8.5, Black, 1)
+SWITCH_TACT_SMD_12X12X120()
+(12, 12, 3.5, 1.0, 6.25, 2.25, 0, 6.9, 12.0, Black, 1)
+###############################################################################
+###############################################################################
+  union{
+    //// Plastic Body
+    box{<-(L/2),0,-(W/2)><(L/2),(H-(L_Width/2)),(W/2)> pigment{Black}}
+
+    //// Metal Frame on top of body
+    difference{
+      box{<-(L/2),(H-(L_Width/2)),-(W/2)><(L/2),H,(W/2)>}  // Metal Plate
+      cylinder { <0,H/2,0> <0,H+1,0> (B_Dia/2)+0.15}       // Relief around Button
+      texture{pigment{Gray70} finish{F_MetalA ambient (0.1 * global_ambient_mul)}}  // Metallic Color and Finish
+    }
+
+    //// Button
+    object{
+      Round_Cylinder_Union(<0,(H-(L_Width/2)),0>,<0,B_Height,0>, B_Dia/2, (B_Dia/2)/10)            // Main Button Component
+      texture {pigment{Color} finish{phong 0.4 reflection{0.2} ambient(0.1 * global_ambient_mul)}} // Button Color, and Finish
+    }
+
+    //// Rivets
+    #local Rivet_Shape=object{cylinder{<0,H,0><0,H+0.3,0>B_Dia/10 pigment{Black}}} // Plastic rivet construction
+    union{Rivet_Shape translate<-((L/2)-(B_Dia/5)),0, ((W/2)-(B_Dia/5))>}	 // Rivet 1 - Upper Left
+    union{Rivet_Shape translate< ((L/2)-(B_Dia/5)),0, ((W/2)-(B_Dia/5))>}  // Rivet 2 - Upper Right
+    union{Rivet_Shape translate<-((L/2)-(B_Dia/5)),0,-((W/2)-(B_Dia/5))>}  // Rivet 3 - Lower Left
+    union{Rivet_Shape translate< ((L/2)-(B_Dia/5)),0,-((W/2)-(B_Dia/5))>}  // Rivet 4 - Lower Right
+
+    //// Leads
+    // Lead construction
+    #local Lead_Shape = union {
+      box { <L/3,(H/3),-L_Width> <0,(H/3)+(L_Width/2),L_Width>}  // Horizontal Lead segment - Upper
+      #if(SMD=1)
+        box { <L/3,(0),-L_Width> <0,(L_Width/2),L_Width> translate<(L-0.3),0,0>}  // Horizontal Lead segment - Lower -SMD
+      #end
+      box { <-L_Width/2,-1,-L_Width> <L_Width/2,H/3,L_Width>}    // Vertical Lead segment
+      cylinder { <-0,H/3,-L_Width>  <0,H/3,L_Width> L_Width/2}   // Radius on top of Lead
+      texture{pigment{Gray70} finish{F_MetalA ambient (0.1 * global_ambient_mul)}} // Metallic Color (Lead Color)
+    }
+    union { Lead_Shape translate                  <-Lead_X,0, Lead_Y>} // Lead 1 - Upper Left
+    union { Lead_Shape rotate <0,180,0> translate < Lead_X,0, Lead_Y>} // Lead 2 - Upper Right
+    union { Lead_Shape translate                  <-Lead_X,0,-Lead_Y>} // Lead 3 - Lower Left
+    union { Lead_Shape rotate <0,180,0> translate < Lead_X,0,-Lead_Y>} // Lead 4 - Lower Right
+
+    //ESD Lead - Bottom Center
+    #if(Lead_Y_ESD != 0)
+      union {
+        box { <-L_Width*2,(H-(L_Width/2)),0><L_Width*2,H-0.001,L/3>}                 // Horizontal Lead segment - Upper
+        #if(SMD=1)
+          box { <L/3,(0),-L_Width> <0,(L_Width/2),L_Width> translate<(L-0.3),0,0>}   // Horizontal Lead segment - Lower -SMD ***FIXME***
+        #end
+        cylinder { <-L_Width*2,(H-(L_Width/2)),0> <L_Width*2,(H-(L_Width/2)),0> L_Width/2} // Radius on top of Lead
+        box { <-L_Width*2,H/2,-L_Width/2> <L_Width*2,(H-(L_Width/2)),L_Width/2>}     // Vertical Lead segment - Upper
+        box { <-L_Width,-1,-L_Width/2><L_Width,H/2,L_Width/2>}                       // Vertical Lead segment - Lower
+        translate <0,0,Lead_Y_ESD>                                                   // Position Lead at 0, and Y location.
+        texture{pigment{Gray70} finish{F_MetalA ambient (0.1 * global_ambient_mul)}} // Metallic Color (Lead Color)
+      }
+    #end
+  }
+#end
+
+

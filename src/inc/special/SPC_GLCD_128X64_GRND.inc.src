@@ -1,0 +1,321 @@
+128 x 64 GLCD
+//
+//  128 x 64 GLCD Macro
+//
+//  By MC Cason <farmerboy1967(replace with at)gmail.com>
+//
+//  The idea for this LCD macro, came from Jeremy Blum's website.
+//    http://www.jeremyblum.com/
+// 
+//  I tried making this as realistic looking as possible.
+//
+//  ***** Almost there, it still needs a little bit more Work *****
+//  Standoffs are working, but the screw heads still need to be created.
+//
+//  col:        Color of LCD
+//  bl:         Turn Backlight on
+//  height:     Height of LCD above board.
+//  height_add: Additional height necessary to clear pcb
+//  stand:      Add standoffs
+//  pinh:       Add pin headers
+//  b_height:   Board thickness
+//  b_cuheight: Board copper thickness
+//  s_dia:      Diameter of solder blob
+//  s_radius:   Radius of solder blob
+//  sol_up:     Board Copper Height + Diameter of solder blob
+//  sol_dn:     -(Board Height + Board Copper Height + Diameter of solder blob
+//
+###############################################################################
+LCD-G12864:0:0:0:0:3:0:0:0:0:0:0:0:0:0:37.5:0:26.35:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_GLCD_128X64(:LCD 128 x 64 - SparkFun:
+GLCD-128X64:0:0:0:0:3:0:0:0:0:0:0:0:0:0:-1.3:0:-1.55:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_GLCD_128X64(:LCD 128 x 64 - Eagle3D:
+###############################################################################
+SPC_GLCD_128X64_GRND
+(col,bl,height,stand,pinh)
+###############################################################################
+SPC_GLCD_128X64(col,bl,height,stand,pinh)
+(col,bl,height,stand,pinh)
+###############################################################################
+###############################################################################
+union{
+  // PCB
+  #local b_height   = 1.6;
+  #local b_cuheight = 0.035;
+
+  // Solder blob
+  #local s_dia = 2;
+  #local s_radius = s_dia*0.5;
+  #local sol_up =            b_cuheight+s_dia ;
+  #local sol_dn = -(b_height+b_cuheight+s_dia);
+
+  // Raise Board above the components that are SUPPOSED to be
+  //  on the back of the board
+  #local height_add = height+pcb_height;
+
+  // Amber on Black
+  #if(col = 0)
+    #local C_Text= pigment{OldGold}; // ??? for Amber ???
+    #if(bl =1) // Backlight on
+      #local C_LCD = pigment{Gray30};
+    #else // Backlight off
+      #local C_LCD = pigment{Black}; 
+    #end
+  #end
+  // Amber on Blue
+  #if(col = 1)
+    #local C_Text= pigment{OldGold}; // ??? for Amber ???
+    #if(bl =1) // Backlight on
+      #local C_LCD = pigment{SlateBlue};
+    #else // Backlight off
+      #local C_LCD = pigment{DarkSlateBlue}; 
+    #end
+  #end
+  // Black on Grey
+  #if(col = 2)
+    #local C_Text= pigment{Black};
+    #if(bl =1) // Backlight on
+      #local C_LCD = pigment{Gray50};
+    #else // Backlight off
+      #local C_LCD = pigment{Gray20}; 
+    #end
+  #end
+  // Black on Yellow/Green
+  #if(col = 3)
+    #local C_Text= pigment{Black};
+    #if(bl =1) // Backlight on
+      #local C_LCD = pigment{YellowGreen};
+    #else // Backlight off
+      #local C_LCD = pigment{DarkGreen}; 
+    #end
+  #end
+  // White on Blue
+  #if(col = 4)
+    #local C_Text= pigment{White};
+    #if(bl =1) // Backlight on
+      #local C_LCD = pigment{SlateBlue};
+    #else // Backlight off
+      #local C_LCD = pigment{DarkSlateBlue}; 
+    #end
+  #end
+
+  // Standoffs
+  #if(stand=1)
+    union{
+      #local Stand = difference{
+        cylinder{<0,0,0> <0,-(height_add-b_height),0>2.50}
+        cylinder{<0,2,0> <0,-(height_add-b_height)-1>1.35}
+      };
+      object{Stand translate< 2.5,-1.6, 2.5>} // Bottom Left
+      object{Stand translate<72.5,-1.6, 2.5>} // Bottom Right
+      object{Stand translate< 2.5,-1.6,52.7>} // Top Left
+      object{Stand translate<72.5,-1.6,52.7>} // Top Right
+      texture{pigment{Silver}}
+    }
+  #end
+
+  // Complete Board
+  union{
+    difference{
+      // Main LCD PC Board
+      union{
+        prism{-1.50,0.00,8
+          < 0.00, 0.00><75.00, 0.00>
+          <75.00, 0.00><75.00,52.70>
+          <75.00,52.70>< 0.00,52.70>
+          < 0.00,52.70>< 0.00, 0.00>
+          texture{pigment{DarkGreen}}
+        }
+      }
+      // Holes through PCB
+      union{
+        // Corner Holes
+        cylinder{< 2.50,1,52.70>< 2.50,-5,52.70>1.40 texture{col_hls}}
+        cylinder{<72.50,1,52.70><72.50,-5,52.70>1.40 texture{col_hls}}
+        cylinder{<72.50,1, 2.50><72.50,-5, 2.50>1.40 texture{col_hls}}
+        cylinder{< 2.50,1, 2.50>< 2.50,-5, 2.50>1.40 texture{col_hls}}
+        // Pad Holes
+        #if(pinh=0)
+          cylinder{<13.40,0.038, 2.50><13.40,-1.538, 2.50>0.50}
+          cylinder{<15.94,0.038, 2.50><15.94,-1.538, 2.50>0.50}
+          cylinder{<18.48,0.038, 2.50><18.48,-1.538, 2.50>0.50}
+          cylinder{<21.02,0.038, 2.50><21.02,-1.538, 2.50>0.50}
+          cylinder{<23.56,0.038, 2.50><23.56,-1.538, 2.50>0.50}
+          cylinder{<26.10,0.038, 2.50><26.10,-1.538, 2.50>0.50}
+          cylinder{<28.64,0.038, 2.50><28.64,-1.538, 2.50>0.50}
+          cylinder{<31.18,0.038, 2.50><31.18,-1.538, 2.50>0.50}
+          cylinder{<33.72,0.038, 2.50><33.72,-1.538, 2.50>0.50}
+          cylinder{<36.26,0.038, 2.50><36.26,-1.538, 2.50>0.50}
+          cylinder{<38.80,0.038, 2.50><38.80,-1.538, 2.50>0.50}
+          cylinder{<41.34,0.038, 2.50><41.34,-1.538, 2.50>0.50}
+          cylinder{<43.88,0.038, 2.50><43.88,-1.538, 2.50>0.50}
+          cylinder{<46.42,0.038, 2.50><46.42,-1.538, 2.50>0.50}
+          cylinder{<48.96,0.038, 2.50><48.96,-1.538, 2.50>0.50}
+          cylinder{<51.50,0.038, 2.50><51.50,-1.538, 2.50>0.50}
+          cylinder{<54.04,0.038, 2.50><54.04,-1.538, 2.50>0.50}
+          cylinder{<56.58,0.038, 2.50><56.58,-1.538, 2.50>0.50}
+          cylinder{<59.12,0.038, 2.50><59.12,-1.538, 2.50>0.50}
+          cylinder{<61.66,0.038, 2.50><61.66,-1.538, 2.50>0.50}
+        #end
+/*        // Hole Cutouts
+        cylinder{< 5.00,0.038, 5.00>< 5.00,-1.538, 5.00>0.50}
+        cylinder{< 9.00,0.038, 5.00>< 9.00,-1.538, 5.00>0.50}
+        cylinder{<35.50,0.038, 5.00><35.50,-1.538, 5.00>0.50}
+        cylinder{<39.50,0.038, 5.00><39.50,-1.538, 5.00>0.50}
+        cylinder{<70.00,0.038, 5.00><70.00,-1.538, 5.00>0.50}
+        cylinder{<66.00,0.038, 5.00><66.00,-1.538, 5.00>0.50}
+        cylinder{< 5.00,0.038,49.70>< 5.00,-1.538,49.70>0.50}
+        cylinder{< 9.00,0.038,49.70>< 9.00,-1.538,49.70>0.50}
+        cylinder{<35.50,0.038,49.70><35.50,-1.538,49.70>0.50}
+        cylinder{<39.50,0.038,49.70><39.50,-1.538,49.70>0.50}
+        cylinder{<70.00,0.038,49.70><70.00,-1.538,49.70>0.50}
+        cylinder{<66.00,0.038,49.70><66.00,-1.538,49.70>0.50} */
+        texture{col_hls}
+      }
+      // Slot Cutouts
+/*      union{
+        #local Cutout = box{<0,0.1,0><4,-1.7,1>}
+        object{Cutout translate< 5.0,0, 4.5>} // Bottom Left
+        object{Cutout translate<35.5,0, 4.5>} // Bottom Center
+        object{Cutout translate<66.0,0, 4.5>} // Bottom Right
+        object{Cutout translate< 5.0,0,49.2>} // Top Left
+        object{Cutout translate<35.5,0,49.2>} // Top Center
+        object{Cutout translate<66.0,0,49.2>} // Top Right
+      }*/
+    }
+
+    // Solder Pads
+    union{
+      #local Pad = object{
+        #if(pinh=1)
+          union{
+            // Pad
+            box{<-1,-(b_height+b_cuheight),-2.25><1,b_cuheight,1>}
+            // Solder blob 
+            difference{
+              cylinder{<0,sol_dn,0>, <0,sol_up,0>s_radius}
+              torus{ s_radius,s_radius scale<1,2,1> translate<0,sol_up,0>}
+              torus{ s_radius,s_radius scale<1,2,1> translate<0,sol_dn,0>}
+            }
+            // Pins from GLCD, to main board 
+            union{
+              box{<-0.25,-(height_add+3),-0.25><0.25,b_height+0.5,0.25>
+                texture{T_Gold_5E}
+              }
+              // Plastic pin holder
+              cylinder{<0,-(b_height-0.1),0><0,-(b_height+1.5),0>,1.75
+                texture{pigment{Black} finish { phong 1  ambient (0.1 * global_ambient_mul)}}
+              }
+            }
+          }
+        #else
+          difference{
+            // Pad
+            box{<-1,-(b_height+b_cuheight),-2.25><1,b_cuheight,1>}
+            cylinder{<0,-(b_height+5),0><0,b_cuheight+2,0>0.5}
+          }
+        #end
+        texture{col_thl} // Color of solder pads
+      };
+      object{Pad translate <13.40,0,2.5>} // Pad 1
+      object{Pad translate <15.94,0,2.5>}
+      object{Pad translate <18.45,0,2.5>}
+      object{Pad translate <21.02,0,2.5>}
+      object{Pad translate <23.56,0,2.5>}
+      object{Pad translate <26.10,0,2.5>}
+      object{Pad translate <28.64,0,2.5>}
+      object{Pad translate <31.18,0,2.5>}
+      object{Pad translate <33.72,0,2.5>}
+      object{Pad translate <36.26,0,2.5>}
+      object{Pad translate <38.80,0,2.5>}
+      object{Pad translate <41.34,0,2.5>}
+      object{Pad translate <43.88,0,2.5>}
+      object{Pad translate <46.42,0,2.5>}
+      object{Pad translate <48.96,0,2.5>}
+      object{Pad translate <51.50,0,2.5>}
+      object{Pad translate <54.04,0,2.5>}
+      object{Pad translate <56.58,0,2.5>}
+      object{Pad translate <59.12,0,2.5>}
+      object{Pad translate <61.66,0,2.5>} // Pad 20
+    }
+  }
+/*  // Backlight behind LCD Panel - Not really needed, used for demonstrations
+  light_source {
+    <0, 0, 0>
+    color White
+    area_light <1, 0, 0>, <0, 1, 0>, 2, 2
+    adaptive 1
+    shadowless
+    looks_like {
+      box{<0,0,0><70.4,5.95,40.7> translate<2.3,0,7.0>
+        pigment {color rgb <1, 1, 1>}
+        finish {ambient .8 diffuse .6}
+      }
+    }
+  }*/
+  // Edge banding
+  union{
+    #local BL_FB = box{<0,0,0><72.4,5.95,1.00> texture{pigment{Gray70}}};
+    object{BL_FB translate< 1.30,0, 6.00>}
+    object{BL_FB translate< 1.30,0,47.70>}
+    #local BL_LR = box{<0,0,0><1.00,5.95,42.7> texture{pigment{Gray70}}};
+    object{BL_LR translate< 1.30,0, 6.00>}
+    object{BL_LR translate<72.70,0, 6.00>}
+  }
+  // Display
+  union{
+    // Screen Color
+    box{<0,0,0><70.4,0.01,40.7> translate<2.30,5.97,7.00>
+      texture{C_LCD}
+    }
+    // Top Message
+    text{
+      ttf "DejaVuLGCSans-Bold.ttf", "GLCD", 0, 0 rotate <90,0,0>
+      scale <18,0.1,18> texture{C_Text}
+      translate<11.25,5.99,28.00>
+    }
+    // Bottom Message
+    text {
+      ttf "DejaVuLGCSans-Bold.ttf", "128 x 64", 1, 0 rotate <90,0,0>
+      scale  < 12,0.1,10> texture {C_Text}
+      translate< 9.75,5.99,15.00>
+    }
+    // Glass Screen - slight green tint, 98% opacity.
+    box{<0,0.01,0><72.4,1.5,42.7> translate<1.30,6.1,6.00>
+      texture{pigment {rgbf <0.99, 1, 0.99, 0.98>}}
+    }
+  }
+  // Cover that surrounds LCD Panel
+  union{
+    difference{
+      // Top Cover
+      box{<0,0,0>   <73.4,1.0,44.7> translate<0.80,7.6, 5.0>}
+      // Cutout
+      box{<0,-0.1,0><60.0,1.1,32.5> translate<7.50,7.6,11.1>}
+      // Clip Corners
+      #local Cor = box{<-0.1,-0.1,-0.1><0.51,1.1,0.51>}
+      object{Cor translate< 0.85,7.6,49.20>} // Top Left
+      object{Cor translate<73.70,7.6,49.20>} // Top Right
+      object{Cor translate< 0.85,7.6, 5.05>} // Bottom Left
+      object{Cor translate<73.70,7.6, 5.05>} // Bottom Rigth
+    }
+    // Front and Back Radius
+    #local FB_Cyl = cylinder{<0.5,0,0><72.9,0,0>0.5};
+    object{FB_Cyl  translate<0.85,8.1, 5.00>} // Front
+    object{FB_Cyl  translate<0.85,8.1,49.20>} // Back
+    // Left and Right Radius
+    #local LR_Cyl = cylinder{<0,0,0.5><0,0,44.2>0.5};
+    object{LR_Cyl  translate< 0.75,8.1,5.00>} // Left
+    object{LR_Cyl  translate<74.20,8.1,5.00>} // Right
+    // Front and Back Panel
+    #local FB_Side = box{<0.5,0,0><72.9,7.6,1>};
+    object{FB_Side translate<0.80,0.5, 5.00>} // Front
+    object{FB_Side translate<0.80,0.5,48.70>} // Back
+    // Left and Right Panel
+    #local LR_Side = box{<0,0,0.5><1,7.6,44.2>};
+    object{LR_Side translate< 0.30,0.5,5.00>} // Left
+    object{LR_Side translate<73.80,0.5,5.00>} // Right
+    texture{pigment{P_Chrome1}}
+  }
+  translate<-37.5,height_add,-26.35>
+}
+#end
+

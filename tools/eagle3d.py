@@ -845,7 +845,6 @@ class env:
 
 		#is the working directory the tools directory?
 		if env.WORKDIR == env.SCRIPTDIR:
-			env.ARCHIVE_OUTPUT_DIR = upDir(env.WORKDIR)
 
 			env.SRCDIR_ROOT = os.path.join(upDir(env.WORKDIR),'src')
 			env.SRCDIR_DATA = os.path.join(env.SRCDIR_ROOT,'data')
@@ -859,6 +858,7 @@ class env:
 			env.OUTDIR_INC = os.path.join(env.OUTDIR_ROOT, "inc")
 			env.OUTDIR_POV = os.path.join(env.OUTDIR_ROOT, "pov")
 			env.OUTDIR_IMG = os.path.join(env.OUTDIR_ROOT, "img")
+			env.ARCHIVE_OUTPUT_DIR = os.path.join(upDir(env.OUTDIR_ROOT),'release')
 
 			env.RELEASEDIR = os.path.join(env.OUTDIR_ROOT,'eagle3d')
 			env.RELEASEDIR_ULP = os.path.join(env.RELEASEDIR,'ulp')
@@ -868,7 +868,6 @@ class env:
 
 		#is the working directory one level up from tools?
 		elif os.path.isdir(os.path.join(env.WORKDIR,'src')) and os.path.isdir(os.path.join(env.WORKDIR,'tools')):
-			env.ARCHIVE_OUTPUT_DIR = env.WORKDIR
 
 			env.SRCDIR_ROOT = os.path.join(env.WORKDIR,'src')
 			env.SRCDIR_DATA = os.path.join(env.SRCDIR_ROOT,'data')
@@ -882,6 +881,7 @@ class env:
 			env.OUTDIR_INC = os.path.join(env.OUTDIR_ROOT, "inc")
 			env.OUTDIR_POV = os.path.join(env.OUTDIR_ROOT, "pov")
 			env.OUTDIR_IMG = os.path.join(env.OUTDIR_ROOT, "img")
+			env.ARCHIVE_OUTPUT_DIR = os.path.join(env.OUTDIR_ROOT,'release')
 
 			env.RELEASEDIR = os.path.join(env.OUTDIR_ROOT,'eagle3d')
 			env.RELEASEDIR_ULP = os.path.join(env.RELEASEDIR,'ulp')
@@ -1209,6 +1209,7 @@ class _Worker:
 		os.makedirs(env.OUTDIR_3DPACK)
 		os.makedirs(env.OUTDIR_INC)
 		os.makedirs(env.OUTDIR_POV)
+		os.makedirs(env.ARCHIVE_OUTPUT_DIR)
 
 		logger.info('creating library files...')
 		f_3dpack = open(os.path.join(env.OUTDIR_3DPACK, "3dpack.dat"), 'w')

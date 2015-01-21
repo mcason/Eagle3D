@@ -1,5 +1,5 @@
 # define name of installer
-outFile "..\..\eagle3d_${VERSION}.exe"
+outFile "..\..\build\release\eagle3d_${VERSION}.exe"
  
 # define installation directory
 InstallDir "$PROGRAMFILES\eagle3d"
