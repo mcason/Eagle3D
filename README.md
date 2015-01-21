@@ -6,3 +6,6 @@ layouts created by Eagle. You can get a free version of Eagle from
 www.cadsoft.de
 
 This package is independent from cadsoft.
+
+  NOTE:  The testing branch will be highly unstable until further notice.
+
