@@ -1,4 +1,0 @@
-Eagle3D 20110101
-
-Eine aktuelle Dokumentation ist auf http://www.matwei.de/doku.php?id=de:eagle3d:dokumentation
-zu finden.
