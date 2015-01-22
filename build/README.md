@@ -1,3 +1,6 @@
+Eagle3D Release repository
+==========================
+
 This folder contains two folders master, and testing.
 
 The master folder holds file archives from the master branch.
