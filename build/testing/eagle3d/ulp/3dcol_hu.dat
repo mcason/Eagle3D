@@ -1,0 +1,2 @@
+Fehér:Piros:Zöld:Kék:Sárga:Szürke10:Szürke30:Szürke50:Szürke70:Szürke90:Fekete:Ezüst:Arany:Réz:Erdőzöld:Sötétzöld:
+pigment{Fehér}:pigment{Piros}:pigment{Zöld}:pigment{Kék}:pigment{Sárga}:pigment{Szürke10}:pigment{Szürke30}:pigment{Szürke50}:pigment{Szürke70}:pigment{Szürke90}:pigment{Fekete}:T_Ezüst_5A:T_Arany_5E:T_Réz_1A:pigment{Erdőzöld}:pigment{Sötétzöld}:
