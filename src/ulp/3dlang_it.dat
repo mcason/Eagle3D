@@ -153,15 +153,17 @@ Numero di Frames
 Percorso per Flight
 Percorso per visione
 Strati per creazione contenitori
-Without soldermask
-Logo on IC
+Senza soldermask
+Logo su IC
 No logo
-No board outline found. Generated POVRay file may contain errors.
-All without logo
-Create .svg file
-Pads \& SMD Bottom
-Path to POVRay
-Path to system fonts
-Resolution
-Use anti aliasing
-Call POVRay and render image
+Nessun bordo scheda trovato. File di POVRay Generato possono contenere errori.
+Il tutto senza logo
+Creare. File in formato SVG
+Pads \ & SMD inferiore
+Percorso POVRay
+Percorso ai font di sistema
+risoluzione
+Usa anti aliasing
+Chiama POVRay e rendere l'immagine
+POVRay Pausa dopo il rendering
+Capovolgere Consiglio Upside Down

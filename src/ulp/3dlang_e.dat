@@ -102,7 +102,7 @@ of rendering time.
 You have to use Eagle v4.08 or higher
 real holes from (mm)
 //translates the camera that <0,0,0> is over the Eagle <0,0>
-Throug holes
+Through holes
 color preset
 select color preset
 User defined
@@ -145,7 +145,7 @@ all Jumper open
 all Jumper closed
 No Image available
 show image
-anheben um:
+Raise above board:
 Miscellaneous
 Animation data
 No/not enough Animation Data available (min. 3 points)
@@ -165,3 +165,5 @@ Path to system fonts
 Resolution
 Use anti aliasing
 Call POVRay and render image
+Pause POVRay after rendering
+Flip PCB Upside Down
