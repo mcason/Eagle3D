@@ -1,6 +1,6 @@
 Tantalkondensator 2,5mm Pitch
 //Tantalkondensator Grundmakro 2,5mm Pitch
-####################################################################################################
+###############################################################################
 TT2D4:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_TT_2MM5_4MM(:Tantal-Ko 2,5mm Pitch, 4,5mm Durchmesser:Tantal-C 2,5mm Pitch, 4,5mm  Diameter
 TT2D5:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_TT_2MM5_5MM(:Tantal-Ko 2,5mm Pitch, 5mm Durchmesser:Tantal-C 2,5mm Pitch, 5mm  Diameter
 TT2D6:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_TT_2MM5_6MM(:Tantal-Ko 2,5mm Pitch, 6mm Durchmesser:Tantal-C 2,5mm Pitch, 6mm  Diameter
@@ -12,10 +12,10 @@ NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_T
 NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_TT_2MM5_8MM5(:Tantal-C:
 NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_TT_2MM5_9MM(:Tantal-C:
 NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_TT_2MM5_10MM(:Tantal-C:
-####################################################################################################
+###############################################################################
 CAP_DIS_TT_2MM5_GRND
 (obj_dia,obj_hgt,sca_txt)
-####################################################################################################
+###############################################################################
 CAP_DIS_TT_2MM5_4MM(value)
 (4,8.5,1)
 CAP_DIS_TT_2MM5_4MM5(value)
@@ -38,36 +38,53 @@ CAP_DIS_TT_2MM5_9MM(value)
 (9,15,2)
 CAP_DIS_TT_2MM5_10MM(value)
 (10,18,2)
-####################################################################################################
-####################################################################################################
-union{
+###############################################################################
+###############################################################################
+  union{
     //Body
     sphere{<0,0,0>obj_dia/2 scale<1,obj_hgt/obj_dia,1> pigment{CoolCopper}}
     
     //Leads
     union{
-        #if(pin_short=off)
-            cylinder{<0,1,0><0,-16,0>0.25 translate<-1.25,-((obj_hgt/obj_dia)*obj_dia)/2+1,0>}
-            cylinder{<0,1,0><0,-14,0>0.25 translate<1.25,-((obj_hgt/obj_dia)*obj_dia)/2+1,0>}
-        #else
-            cylinder{<0,1,0><0,-1*(pcb_height+pin_length)-1.2,0>0.25 translate<-1.25,-((obj_hgt/obj_dia)*obj_dia)/2+1,0>}
-            cylinder{<0,1,0><0,-1*(pcb_height+pin_length)-1.2,0>0.25 translate<1.25,-((obj_hgt/obj_dia)*obj_dia)/2+1,0>}
-        #end
-        texture{e3d_tex_silver}
+      #if(pin_short=off)
+        cylinder{<0,1,0><0,-16,0>0.25
+          translate<-1.25,-((obj_hgt/obj_dia)*obj_dia)/2+1,0>
+        }
+        cylinder{<0,1,0><0,-14,0>0.25
+          translate<1.25,-((obj_hgt/obj_dia)*obj_dia)/2+1,0>
+        }
+      #else
+        cylinder{<0,1,0><0,-1*(pcb_height+pin_length)-1.2,0>0.25
+          translate<-1.25,-((obj_hgt/obj_dia)*obj_dia)/2+1,0>
+        }
+        cylinder{<0,1,0><0,-1*(pcb_height+pin_length)-1.2,0>0.25
+          translate<1.25,-((obj_hgt/obj_dia)*obj_dia)/2+1,0>
+        }
+      #end
+      texture{e3d_tex_silver}
     }
     
     //Marking
     union{
-        intersection{
-            sphere{<0,0,0>obj_dia/2 scale<1,obj_hgt/obj_dia,1.001> translate<0,0,0>}
-            text {ttf besch_font "+" obj_dia+0.4, 0 rotate<0,0,00> translate<-1.25,-((obj_hgt/obj_dia)*obj_dia)/2+1,-(obj_dia+0.4)/2>}
+      intersection{
+        sphere{<0,0,0>obj_dia/2 scale<1,obj_hgt/obj_dia,1.001>
+          translate<0,0,0>
         }
-        intersection{
-            sphere{<0,0,0>obj_dia/2 scale<1,obj_hgt/obj_dia,1.001> translate<0,0,0>}
-            text {ttf besch_font value obj_dia+0.4,0  scale<sca_txt,1,1> rotate<0,0,90> translate<0.25,-((obj_hgt/obj_dia)*obj_dia)/2+1.5,-(obj_dia+0.4)/2>}
+        text {ttf besch_font "+" obj_dia+0.4, 0 rotate<0,0,00>
+          translate<-1.25,-((obj_hgt/obj_dia)*obj_dia)/2+1,-(obj_dia+0.4)/2>
         }
-        texture{e3d_tex_cap_marking_black}
+      }
+      intersection{
+        sphere{<0,0,0>obj_dia/2 scale<1,obj_hgt/obj_dia,1.001>
+          translate<0,0,0>
+        }
+        text {ttf besch_font value obj_dia+0.4,0  scale<sca_txt,1,1>
+          rotate<0,0,90>
+          translate<0.25,-((obj_hgt/obj_dia)*obj_dia)/2+1.5,-(obj_dia+0.4)/2>
+        }
+      }
+      texture{e3d_tex_cap_marking_black}
     }
     translate<0,((obj_hgt/obj_dia)*obj_dia)/2+0.2,0>
-}
+  }
 #end

@@ -19,6 +19,7 @@ TO92-BEC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:TR_TO92_L(:
 TO92-CBE:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:TR_TO92_L(:TO92 gerade stehend:TO92 straight vertical
 TO92-CEB:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:TR_TO92_L(:TO92 gerade stehend:TO92 straight vertical
 TO92-EBC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:-1.27:0:0:0:0:0:0:0:0:0:0:0:0:0:TR_TO92_L(:TO92 gerade stehend:TO92 straight vertical
+TO92-EBC-BENT_LEAD:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:TR_TO92_L(:TO92 gerade stehend:TO92 straight vertical
 TO92:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:TR_TO92_G(:TO92 gewinckelt stehend:TO92 bend vertical
 TO92-1:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:TR_TO92_G(:TO92 gewinckelt stehend:TO92 bend vertical
 TO92-2:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:TR_TO92_G(:TO92 gewinckelt stehend:TO92 bend vertical

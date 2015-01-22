@@ -1,12 +1,12 @@
 //MiniMelf-Widerstand
 //basiert auf Makro von Walter Mücke
 ####################################################################################################
-MINI_MELF-0102R:0:0:1:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:RES_SMD_0102_MLF(:SMD Widerstand MICROMELF:SMD Resistor MICROMELF
-MINI_MELF-0102W:0:0:1:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:RES_SMD_0102_MLF(:SMD Widerstand MICROMELF:SMD Resistor MICROMELF
-MINI_MELF-0204R:0:0:1:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:RES_SMD_0204_MLF(:SMD Widerstand MiniMELF:SMD Resistor MiniMELF
-MINI_MELF-0204W:0:0:1:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:RES_SMD_0204_MLF(:SMD Widerstand MiniMELF:SMD Resistor MiniMELF
-MINI_MELF-0207R:0:0:1:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:RES_SMD_0207_MLF(:SMD Widerstand MELF:SMD Resistor MELF
-MINI_MELF-0207W:0:0:1:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:RES_SMD_0207_MLF(:SMD Widerstand MELF:SMD Resistor MELF
+MINI_MELF-0102R:0:0:1:1:0:0:0:0:0:0:0:0:0:R:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:RES_SMD_0102_MLF(:SMD Widerstand MICROMELF:SMD Resistor MICROMELF
+MINI_MELF-0102W:0:0:1:1:0:0:0:0:0:0:0:0:0:R:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:RES_SMD_0102_MLF(:SMD Widerstand MICROMELF:SMD Resistor MICROMELF
+MINI_MELF-0204R:0:0:1:1:0:0:0:0:0:0:0:0:0:R:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:RES_SMD_0204_MLF(:SMD Widerstand MiniMELF:SMD Resistor MiniMELF
+MINI_MELF-0204W:0:0:1:1:0:0:0:0:0:0:0:0:0:R:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:RES_SMD_0204_MLF(:SMD Widerstand MiniMELF:SMD Resistor MiniMELF
+MINI_MELF-0207R:0:0:1:1:0:0:0:0:0:0:0:0:0:R:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:RES_SMD_0207_MLF(:SMD Widerstand MELF:SMD Resistor MELF
+MINI_MELF-0207W:0:0:1:1:0:0:0:0:0:0:0:0:0:R:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:RES_SMD_0207_MLF(:SMD Widerstand MELF:SMD Resistor MELF
 ####################################################################################################
 RES_SMD_MELF_GRND
 (c1,c2,c3,c4)
