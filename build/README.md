@@ -15,6 +15,6 @@ Inside each folder, are two additional folders:
 **release**  
 
 **eagle3d** contains ready to run code.  
-**release** contains a .zip file and a .exe files for windows, and  
+**release** contains a .zip file and a .exe file for windows, and  
             two tar archives for *nix compatible computers.  
 
