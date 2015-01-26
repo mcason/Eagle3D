@@ -7,5 +7,4 @@ www.cadsoft.de
 
 This package is independent from cadsoft.
 
-  NOTE:  The testing branch will be highly unstable until further notice.
-
+  NOTE:  The testing branch should work quite well.  Test and report any issues.
