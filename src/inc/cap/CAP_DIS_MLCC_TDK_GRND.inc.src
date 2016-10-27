@@ -1,0 +1,134 @@
+MLCC Capacitors
+//*****************************************************************************
+//  Macro for TDK MLCC Capacitors - Through Hole 
+//
+//  By MC Cason
+//  Not EXACTLY like a real one, but close.
+//
+// X:         Lenght          TDK - L
+// Y:         Height          TDK - W
+// Z:         Width           TDK - T
+// L_Pitch:   Lead Pitch      TDK - F
+// D_Lead:    Lead Diameter   TDK - d
+// Color      Color of Button
+//
+//*****************************************************************************
+###############################################################################
+C-2.5P-2.5X4.0X5.5:0:0:0:0:0:0:0:0:2:0:0:0:0:R:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_MLCC_TDK_25_25X40X55(:MLCC TDK - FK18:
+C-2.5P-2.5X4.5X5.5:0:0:0:0:0:0:0:0:2:0:0:0:0:R:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_MLCC_TDK_25_25X45X55(:MLCC TDK - FK14:
+C-2.5P-3.5X5.5X6.0:0:0:0:0:0:0:0:0:2:0:0:0:0:R:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_MLCC_TDK_25_35X55X60(:MLCC TDK - FK16:
+C-2.5P-4.0X5.5X7.0:0:0:0:0:0:0:0:0:2:0:0:0:0:R:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_MLCC_TDK_25_40X55X70(:MLCC TDK - FK11:
+C-5.0P-2.5X4.0X5.5:0:0:0:0:0:0:0:0:2:0:0:0:0:R:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_MLCC_TDK_50_25X40X55(:MLCC TDK - FK28:
+C-5.0P-2.5X4.5X5.5:0:0:0:0:0:0:0:0:2:0:0:0:0:R:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_MLCC_TDK_50_25X45X55(:MLCC TDK - FK24:
+C-5.0P-3.5X5.5X6.0:0:0:0:0:0:0:0:0:2:0:0:0:0:R:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_MLCC_TDK_50_35X55X60(:MLCC TDK - FK26:
+C-5.0P-4.0X5.5X7.0:0:0:0:0:0:0:0:0:2:0:0:0:0:R:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_MLCC_TDK_50_40X55X70(:MLCC TDK - FK20:
+C-5.0P-4.0X7.5X8.0:0:0:0:0:0:0:0:0:2:0:0:0:0:R:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_MLCC_TDK_50_40X75X80(:MLCC TDK - FK22:
+###############################################################################
+CAP_DIS_MLCC_TDK_GRND
+(L_Pitch, X, Y, Z, D_Lead, Color)
+###############################################################################
+CAP_DIS_MLCC_TDK_25_25X40X55(value)
+(2.5, 4.0, 5.5, 2.5, 0.5, Blue)
+CAP_DIS_MLCC_TDK_50_25X40X55(value)
+(5.0, 4.0, 5.5, 2.5, 0.5, Blue)
+CAP_DIS_MLCC_TDK_25_25X45X55(value)
+(2.5, 4.5, 5.5, 2.5, 0.5, Blue)
+CAP_DIS_MLCC_TDK_50_25X45X55(value)
+(5.0, 4.5, 5.5, 2.5, 0.5, Blue)
+CAP_DIS_MLCC_TDK_25_35X55X60(value)
+(2.5, 5.5, 6.0, 3.5, 0.5, Blue)
+CAP_DIS_MLCC_TDK_50_35X55X60(value)
+(5.0, 5.5, 6.0, 3.5, 0.5, Blue)
+CAP_DIS_MLCC_TDK_25_40X55X70(value)
+(2.5, 5.5, 7.0, 3.5, 0.5, Blue)
+CAP_DIS_MLCC_TDK_50_40X55X70(value)
+(5.0, 5.5, 7.0, 3.5, 0.5, Blue)
+CAP_DIS_MLCC_TDK_50_40X75X80(value)
+(5.0, 7.5, 8.0, 4.0, 0.5, Blue)
+###############################################################################
+###############################################################################
+union{
+  #if(pin_short=off)
+    #local Lead_Length = -14.0;
+  #else
+    #local Lead_Length = -1*((pin_length+pcb_height)-0.2);
+  #end
+  //Body of Capacitor
+  difference{
+    // Main Body
+    superellipsoid{<0.2,0.9> scale<X/2,(Y/2)-0.5,Z/2>
+      translate<0,(Y/2)+1,0> pigment{Color}
+    }
+    #if(X = 4.0)
+      cylinder{<-3,6,-4><-3,6,4>1.75 pigment{Color}}  // Left
+      cylinder{<3,6,-4><3,6,4>1.75 pigment{Color}}    // Right
+    #end
+    // Bottom Center Notch
+    cylinder{<0,0,-4><0,0,4>2.2 pigment{Color}}
+    // Value Marking
+    object{ text{ ttf besch_font,value,Z/2,0 scale<X/5,1,1>
+      translate<-X/6,(Y/2)+1,-Z/2> } 
+    }
+  }
+  //Leads
+  #if(L_Pitch = 2.5)
+    // 2.5mm Pitch
+    union{
+      // Lead 1
+      union{
+        // Lead 1 Upper Leg
+        cylinder{<-1.5,2><-L_Pitch/2,0>D_Lead/2}
+        // Lead 1 Upper Taper Juncion
+        sphere{<-L_Pitch/2,0>D_Lead/2}
+        // Lead 1 Lower Leg
+        cylinder{<-L_Pitch/2,Lead_Length-0.5,0><-L_Pitch/2,0,0>D_Lead/2}
+        texture{e3d_tex_silver}
+      }
+      // Lead 2
+      union{
+        // Lead 1 Upper Leg
+        cylinder{<1.5,2><L_Pitch/2,0>D_Lead/2}
+        // Lead 1 Upper Taper Juncion
+        sphere{<L_Pitch/2,0>D_Lead/2}
+        // Lead 1 Lower Leg
+        cylinder{<L_Pitch/2,Lead_Length-0.5,0><L_Pitch/2,0,0>D_Lead/2}
+        texture{e3d_tex_silver}
+      }
+    }
+  #else
+  // 5mm Pitch
+  union{
+    // Lead 1
+    union{
+      // Lead 1 Upper Leg
+      cylinder{<-1.5,2><-L_Pitch/4,1>D_Lead/2}
+      // Lead 1 Upper Taper Juncion
+      sphere{<-L_Pitch/4,1>D_Lead/2}
+      // Lead 1 Taper	
+      cylinder{<-L_Pitch/4,1><-L_Pitch/2,0>D_Lead/2}
+      // Lead 1 Lower Taper Junction
+      sphere{<-L_Pitch/2,0>D_Lead/2}
+      // Lead 1 Lower Leg
+      cylinder{<-L_Pitch/2,Lead_Length-0.5,0><-L_Pitch/2,0,0>D_Lead/2}
+      texture{e3d_tex_silver}
+    }
+    // Lead 2
+    union{
+      // Lead 2 Upper Leg
+      cylinder{<1.5,2><L_Pitch/4,1>D_Lead/2}
+      // Lead 2 Upper Taper Juncion
+      sphere{<L_Pitch/4,1>D_Lead/2}
+      // Lead 2 Taper	
+      cylinder{<L_Pitch/4,1><L_Pitch/2,0>D_Lead/2}
+      // Lead 2 Lower Taper Junction
+      sphere{<L_Pitch/2,0>D_Lead/2}
+      // Lead 2 Lower Leg
+      cylinder{<L_Pitch/2,Lead_Length-0.5,0><L_Pitch/2,0,0>D_Lead/2}
+        texture{e3d_tex_silver}
+      }
+    }
+  #end
+  translate<0,0.5,0>
+}
+#end
+

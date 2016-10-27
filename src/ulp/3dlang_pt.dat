@@ -153,15 +153,17 @@ Numero de quadros
 Caminho de vôo
 Ver caminho
 Camadas de criaçăo de pacotes
-Without soldermask
-Logo on IC
-No logo
-No board outline found. Generated POVRay file may contain errors.
-All without logo
-Create .svg file
-Pads \& SMD Bottom
-Path to POVRay
-Path to system fonts
-Resolution
+sem soldermask
+Logo em IC
+nenhum logotipo
+No contorno da placa encontrada. Arquivo POVRay gerado pode conter erros.
+Todos sem logotipo
+Criar. Arquivo svg
+Almofadas \ & inferior SMD
+Caminho para POVRay
+Caminho para as fontes do sistema
+resolução
 Use anti aliasing
-Call POVRay and render image
+Chame POVRay e tornar imagem
+POVRay pausa após a renderização
+Virar Conselho de cabeça para baixo

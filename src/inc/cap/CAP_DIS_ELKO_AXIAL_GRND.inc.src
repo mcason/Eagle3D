@@ -1,154 +1,199 @@
 Axial-Elko
-//Axial-Elko Grundmakro   
+//*****************************************************************************
+//          Axial-Elko Grundmakro
+//          Axial-Electrolytic Basic Macro
+//
+//  By <UNKNOWN>
+//  Modified by MC Cason <farmerboy1967(replace with at)gmail.com>
+//
+//val_size    Size of the Lettering
+//dis         Pitch of the Pins
+//dia         Diameter of the Electrolytic
+//dia_b       Diameter of the Lead Wires
+//value       Label Text            
+//*****************************************************************************
+// 2012-09-26 Added 12.7x6.35mm cap.
+// 2012-09-27 Changed the lead bond to be less intrusive.
+// 2013-12-11 Modified dis, dia, and dia_b, to be a bit more intuitive.
+// 2015-01-19 Fixed the capacitance values that didn't fit on the cap.
+//
 ####################################################################################################
-E15-5:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_15MM_5MM(:Elko 15,24mm Pitch, 5mm Durchmesser:Elko 15,24mm Pitch, 5mm  Diameter
-E15-6:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_15MM_6MM(:Elko 15,24mm Pitch, 6mm Durchmesser:Elko 15,24mm Pitch, 6mm  Diameter
-E15-9:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_15MM_9MM(:Elko 15,24mm Pitch, 9mm Durchmesser:Elko 15,24mm Pitch, 9mm  Diameter
-E22-6:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_22MM_6MM(:Elko 22,86mm Pitch, 6mm Durchmesser:Elko 22,86mm Pitch, 6mm  Diameter
-E22-9:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_22MM_9MM(:Elko 22,86mm Pitch, 9mm Durchmesser:Elko 22,86mm Pitch, 9mm  Diameter
-E22-10:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_22MM_10MM(:Elko 22,86mm Pitch, 10mm Durchmesser:Elko 22,86mm Pitch, 10mm  Diameter
-E25-9:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_25MM_9MM(:Elko 25,4mm Pitch, 9mm Durchmesser:Elko 25,4mm Pitch, 9mm  Diameter
-E25-10:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_25MM_10MM(:Elko 25,4mm Pitch, 10mm Durchmesser:Elko 25,4mm Pitch, 10mm  Diameter
-E30-10:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_30MM_10MM(:Elko 30,48mm Pitch, 10mm Durchmesser:Elko 30,48mm Pitch, 10mm  Diameter
-E30-12:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_30MM_12MM(:Elko 30,48mm Pitch, 12mm Durchmesser:Elko 30,48mm Pitch, 12mm  Diameter
-E30-16:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_30MM_16MM(:Elko 30,48mm Pitch, 16mm Durchmesser:Elko 30,48mm Pitch, 16mm  Diameter
-E35-12:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_35MM_12MM(:Elko 35,56mm Pitch, 12mm Durchmesser:Elko 35,56mm Pitch, 12mm  Diameter
-E35-14:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_35MM_14MM(:Elko 35,56mm Pitch, 14mm Durchmesser:Elko 35,56mm Pitch, 14mm  Diameter
-E35-16:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_35MM_16MM(:Elko 35,56mm Pitch, 16mm Durchmesser:Elko 35,56mm Pitch, 16mm  Diameter
-E35-18:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_35MM_18MM(:Elko 35,56mm Pitch, 18mm Durchmesser:Elko 35,56mm Pitch, 18mm  Diameter
-E45-16:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_45MM_16MM(:Elko 45,72mm Pitch, 16mm Durchmesser:Elko 45,72mm Pitch, 16mm  Diameter
-E45-18:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_45MM_18MM(:Elko 45,72mm Pitch, 18mm Durchmesser:Elko 45,72mm Pitch, 18mm  Diameter
-E45-21:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_45MM_21MM(:Elko 45,72mm Pitch, 21mm Durchmesser:Elko 45,72mm Pitch, 21mm  Diameter
-E45-22:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_45MM_22MM(:Elko 45,72mm Pitch, 22mm Durchmesser:Elko 45,72mm Pitch, 22mm  Diameter
-E45-25:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_45MM_25MM(:Elko 45,72mm Pitch, 25mm Durchmesser:Elko 45,72mm Pitch, 25mm  Diameter
-E50-25:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_50MM_25MM(:Elko 50mm Pitch, 25mm Durchmesser:Elko 50mm Pitch, 25mm  Diameter
-E50-30:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_50MM_30MM(:Elko 50mm Pitch, 30mm Durchmesser:Elko 50mm Pitch, 30mm  Diameter
-E55-25:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_55MM_25MM(:Elko 55,88mm Pitch, 25mm Durchmesser:Elko 55,88mm Pitch, 25mm  Diameter
-E55-30:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_55MM_30MM(:Elko 55,88mm Pitch, 30mm Durchmesser:Elko 55,88mm Pitch, 30mm  Diameter
+E15-5:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_15MM_5MM(:Elko 15,24mm Pitch, 5mm Durchmesser:Elko 15,24mm Pitch, 5mm Diameter
+E15-6:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_15MM_6MM(:Elko 15,24mm Pitch, 6mm Durchmesser:Elko 15,24mm Pitch, 6mm Diameter
+E15-9:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_15MM_9MM(:Elko 15,24mm Pitch, 9mm Durchmesser:Elko 15,24mm Pitch, 9mm Diameter
+E22-6:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_22MM_6MM(:Elko 22,86mm Pitch, 6mm Durchmesser:Elko 22,86mm Pitch, 6mm Diameter
+E22-9:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_22MM_9MM(:Elko 22,86mm Pitch, 9mm Durchmesser:Elko 22,86mm Pitch, 9mm Diameter
+E22-10:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_22MM_10MM(:Elko 22,86mm Pitch, 10mm Durchmesser:Elko 22,86mm Pitch, 10mm Diameter
+E25-9:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_25MM_9MM(:Elko 25,4mm Pitch, 9mm Durchmesser:Elko 25,4mm Pitch, 9mm Diameter
+E25-10:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_25MM_10MM(:Elko 25,4mm Pitch, 10mm Durchmesser:Elko 25,4mm Pitch, 10mm Diameter
+E30-10:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_30MM_10MM(:Elko 30,48mm Pitch, 10mm Durchmesser:Elko 30,48mm Pitch, 10mm Diameter
+E30-12:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_30MM_12MM(:Elko 30,48mm Pitch, 12mm Durchmesser:Elko 30,48mm Pitch, 12mm Diameter
+E30-16:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_30MM_16MM(:Elko 30,48mm Pitch, 16mm Durchmesser:Elko 30,48mm Pitch, 16mm Diameter
+E35-12:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_35MM_12MM(:Elko 35,56mm Pitch, 12mm Durchmesser:Elko 35,56mm Pitch, 12mm Diameter
+E35-14:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_35MM_14MM(:Elko 35,56mm Pitch, 14mm Durchmesser:Elko 35,56mm Pitch, 14mm Diameter
+E35-16:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_35MM_16MM(:Elko 35,56mm Pitch, 16mm Durchmesser:Elko 35,56mm Pitch, 16mm Diameter
+E35-18:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_35MM_18MM(:Elko 35,56mm Pitch, 18mm Durchmesser:Elko 35,56mm Pitch, 18mm Diameter
+E45-16:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_45MM_16MM(:Elko 45,72mm Pitch, 16mm Durchmesser:Elko 45,72mm Pitch, 16mm Diameter
+E45-18:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_45MM_18MM(:Elko 45,72mm Pitch, 18mm Durchmesser:Elko 45,72mm Pitch, 18mm Diameter
+E45-21:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_45MM_21MM(:Elko 45,72mm Pitch, 21mm Durchmesser:Elko 45,72mm Pitch, 21mm Diameter
+E45-22:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_45MM_22MM(:Elko 45,72mm Pitch, 22mm Durchmesser:Elko 45,72mm Pitch, 22mm Diameter
+E45-25:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_45MM_25MM(:Elko 45,72mm Pitch, 25mm Durchmesser:Elko 45,72mm Pitch, 25mm Diameter
+E50-25:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_50MM_25MM(:Elko 50mm Pitch, 25mm Durchmesser:Elko 50mm Pitch, 25mm Diameter
+E50-30:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_50MM_30MM(:Elko 50mm Pitch, 30mm Durchmesser:Elko 50mm Pitch, 30mm Diameter
+E55-25:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_55MM_25MM(:Elko 55,88mm Pitch, 25mm Durchmesser:Elko 55,88mm Pitch, 25mm Diameter
+E55-30:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_55MM_30MM(:Elko 55,88mm Pitch, 30mm Durchmesser:Elko 55,88mm Pitch, 30mm Diameter
+E12.7-6.35:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_AXIAL_12MM7_6MM35(:Elko 12,7mm Pitch, 6,35mm Durchmesser:Elko 12.7mm Pitch, 6.35mm Diameter
 ####################################################################################################
 CAP_DIS_ELKO_AXIAL_GRND
 (val_size,dis,dia,dia_b,value)
 ####################################################################################################
+CAP_DIS_ELKO_AXIAL_12MM7_6MM35(value)
+(2,12.7,6.35,0.8,value)
 CAP_DIS_ELKO_AXIAL_15MM_5MM(value)
-(2,15.24,5/2,0.8/2,value)
+(2,15.24,5,0.8,value)
 CAP_DIS_ELKO_AXIAL_15MM_6MM(value)
-(2,15.24,6/2,0.8/2,value)
+(2,15.24,6,0.8,value)
 CAP_DIS_ELKO_AXIAL_15MM_9MM(value)
-(2,15.24,9/2,0.8/2,value)
+(2,15.24,9,0.8,value)
 CAP_DIS_ELKO_AXIAL_22MM_6MM(value)
-(2,22.86,6/2,0.8/2,value)
+(2,22.86,6,0.8,value)
 CAP_DIS_ELKO_AXIAL_22MM_9MM(value)
-(2,22.86,9/2,0.8/2,value)
+(2,22.86,9,0.8,value)
 CAP_DIS_ELKO_AXIAL_22MM_10MM(value)
-(2,22.86,10/2,0.8/2,value)
+(2,22.86,10,0.8,value)
 CAP_DIS_ELKO_AXIAL_25MM_9MM(value)
-(3,25.4,9/2,0.8/2,value)
+(3,25.4,9,0.8,value)
 CAP_DIS_ELKO_AXIAL_25MM_10MM(value)
-(3,25.4,10/2,0.8/2,value)
+(3,25.4,10,0.8,value)
 CAP_DIS_ELKO_AXIAL_30MM_10MM(value)
-(3,30.48,10/2,0.8/2,value)
+(3,30.48,10,0.8,value)
 CAP_DIS_ELKO_AXIAL_30MM_12MM(value)
-(3,30.48,12/2,0.8/2,value)
+(3,30.48,12,0.8,value)
 CAP_DIS_ELKO_AXIAL_30MM_16MM(value)
-(3,30.48,16/2,0.8/2,value)
+(3,30.48,16,0.8,value)
 CAP_DIS_ELKO_AXIAL_35MM_12MM(value)
-(4,35.56,12/2,0.8/2,value)
+(4,35.56,12,0.8,value)
 CAP_DIS_ELKO_AXIAL_35MM_14MM(value)
-(4,35.56,14/2,0.8/2,value)
+(4,35.56,14,0.8,value)
 CAP_DIS_ELKO_AXIAL_35MM_16MM(value)
-(4,35.56,16/2,0.8/2,value)
+(4,35.56,16,0.8,value)
 CAP_DIS_ELKO_AXIAL_35MM_18MM(value)
-(4,35.56,18/2,0.8/2,value)
+(4,35.56,18,0.8,value)
 CAP_DIS_ELKO_AXIAL_45MM_16MM(value)
-(5,45.72,16/2,0.8/2,value)
+(5,45.72,16,0.8,value)
 CAP_DIS_ELKO_AXIAL_45MM_18MM(value)
-(5,45.72,18/2,0.8/2,value)
+(5,45.72,18,0.8,value)
 CAP_DIS_ELKO_AXIAL_45MM_21MM(value)
-(5,45.72,21/2,0.8/2,value)
+(5,45.72,21,0.8,value)
 CAP_DIS_ELKO_AXIAL_45MM_22MM(value)
-(5,45.72,22/2,0.8/2,value)
+(5,45.72,22,0.8,value)
 CAP_DIS_ELKO_AXIAL_45MM_25MM(value)
-(5,45.72,25/2,1/2,value)
+(5,45.72,25,1,value)
 CAP_DIS_ELKO_AXIAL_50MM_25MM(value)
-(5,50,25/2,1/2,value)
+(5,50,25,1,value)
 CAP_DIS_ELKO_AXIAL_50MM_30MM(value)
-(5,50,30/2,1/2,value)
+(5,50,30,1,value)
 CAP_DIS_ELKO_AXIAL_55MM_25MM(value)
-(5,55.88,25/2,1/2,value)
+(5,55.88,25,1,value)
 CAP_DIS_ELKO_AXIAL_55MM_30MM(value)
-(5,55.88,30/2,1/2,value)
-####################################################################################################
-####################################################################################################
-union{
+(5,55.88,30,1,value)
+###############################################################################
+###############################################################################
+  union{
+  #local dis_2 = dis/2;      // dis needs to be pitch/2 not ACTUAL pitch.  - Fixed
+  #local dia_2 = dia/2;      // dia needs to be in radius, NOT diameter.   - Fixed
+  #local dia_b_2 = dia_b/2;  // dia_b needs to be in radius, NOT diameter. - Fixed
     union{
-        
-        //Elko Koerper
-        difference{
-            union{
-                cylinder{<0,dis/2-3.5,0><0,-(dis/2-3.5),0>dia}                            
-                //Elko Rundung oben
-                torus{dia-0.5,0.5 translate<0,-(dis/2-3.5),0>}                            
-                difference{
-                    cylinder{<0,-(dis/2-3.5),0><0,-(dis/2-3.0),0>dia-0.5}
-                    cylinder{<0,-(dis/2-3.5),0><0,-(dis/2-2.9),0>dia*0.8*pow(dia/16,0.11)}
-                }
-                //Elko Rundung unten
-                torus{dia-0.5,0.5 translate<0,dis/2-3.5,0>}
-                difference{
-                    cylinder{<0,dis/2-3.5,0><0,dis/2-3.0,0>dia-0.5}
-                    cylinder{<0,dis/2-3.5,0><0,dis/2-2.9,0>dia*0.8*pow(dia/16,0.11)}
-                }
-            }
-            
-            //Aussparung unten
-            torus{dia+0.85,1 translate<0,dis/2-5,0>}                                    
-            
-            //Textur fuer Minusmarkierung
-            pigment{                                                                    
-                    image_map{png "tex_elko_axial.png" map_type 2 interpolate 4}
-                    scale <dia*2*pi*1.35,dia*2*pi,dia*2*pi*1.35>                
-            }
-            finish{reflection { 0.03, 0.1}  phong 0.4 crand 0.05 ambient (0.1 * global_ambient_mul) }        
+      //Elko Koerper
+      //Body of Capacitor
+      difference{
+        union{
+          // Main Body
+          cylinder{<0,dis_2-3.5,0><0,-(dis_2-3.5),0>dia_2}
+          //Elko Rundung oben
+          //Electrolytics Rounding Up (Round off top of cylinder)
+          torus{dia_2-0.5,0.5 translate<0,-(dis_2-3.5),0>}
+          difference{
+            cylinder{<0,-(dis_2-3.5),0><0,-(dis_2-3.0),0>dia_2-0.5}
+            cylinder{<0,-(dis_2-3.5),0><0,-(dis_2-2.9),0>dia_2*0.8*pow(dia_2/16,0.11)}
+          }
+          //Elko Rundung unten
+          //Electrolytics Rounding Down (Round off bottom of cylinder)
+          torus{dia_2-0.5,0.5 translate<0,dis_2-3.5,0>}
+          difference{
+            cylinder{<0,dis_2-3.5,0><0,dis_2-3.0,0>dia_2-0.5}
+            cylinder{<0,dis_2-3.5,0><0,dis_2-2.9,0>dia_2*0.8*pow(dia_2/16,0.11)}
+          }
         }
-        
-        //Abdeckung oben
-        cylinder{<0,-(dis/2-3.6),0><0,-(dis/2-3.1),0>dia*0.8*pow(dia/16,0.11)           
-            texture{e3d_tex_silver}
-        }
+        //Aussparung unten
+        //Cut Down (Crimp towards the end of the case)
+        torus{dia_2+0.85,1 translate<0,dis_2-5,0>}
 
-        //Abdeckung unten
-        cylinder{<0,dis/2-3.2,0><0,dis/2-3.5,0>dia-0.5 pigment{Black}}                  
-        
-        //Kontakt
-        cylinder{<0,-(dis/2-3.2),0><0,-(dis/2-2),0> 1.5 texture{e3d_tex_silver}}            
-        intersection{
-            cylinder{<0,dis/2,0><0,-dis/2 + val_size + 3.5,0>dia}
-            text {ttf besch_font value 0.2, 0 scale val_size rotate<0,0,-90> translate<0, dis/4,-dia>}
-            rotate<0,10,0>
-            translate<0,-val_size,-0.001>
-            pigment {rgb<0.4,0.6,1>}
+        //Textur fuer Minusmarkierung
+        //Texture for Negative Marking (Graphic that wraps around capacitor)
+        pigment{
+          image_map{png "tex_elko_axial.png" map_type 2 interpolate 4}
+          scale <dia_2*2*pi*1.35,dia_2*2*pi,dia_2*2*pi*1.35>
         }
-        intersection{
-            cylinder{<0,dis/2,0><0,-dis/2 + val_size + 3.5,0>dia}
-            text {ttf besch_font value 0.2, 0 scale val_size rotate<0,0,-90> translate<0, dis/4,-dia>}
-            rotate<0,100,0>
-            translate<-0.001,-val_size,0>
-            pigment {rgb<0.4,0.6,1>}
+        finish{reflection { 0.03, 0.1}
+          phong 0.4 crand 0.05 ambient (0.1 * global_ambient_mul)
         }
-        intersection{
-            cylinder{<0,dis/2,0><0,-dis/2 + val_size + 3.5,0>dia}
-            text {ttf besch_font value 0.2, 0 scale val_size rotate<0,0,-90> translate<0, dis/4,-dia>}
-            rotate<0,190,0>
-            translate<0,-val_size,0.001>
-            pigment {rgb<0.4,0.6,1>}
-        }
-        rotate<0,180,>
-        rotate<0,0,90>
+      }
+
+      //Abdeckung oben
+      //Top Cover  (Negative end)
+      cylinder{<0,-(dis_2-3.6),0><0,-(dis_2-3.1),0>dia_2*0.8*pow(dia_2/16,0.11)
+        texture{e3d_tex_silver}
+      }
+
+      //Abdeckung unten
+      //Bottom Cover  (Positive end)
+      cylinder{<0,dis_2-3.2,0><0,dis_2-3.5,0>dia_2-0.5 pigment{Black}}
+
+      //Kontakt
+      //Contact
+      // A fix for that oversized tit sticking off the negative end of the cap.
+      // This one looks more like what I'm used to.
+      cylinder{<0,-(dis_2-3.2),0><0,-(dis_2-2.85),0> (dia_2/3.5)
+        texture{e3d_tex_silver}
+      }
+
+      // Capacitance Value 1
+      intersection{
+        cylinder{<0,dis_2,0><0,-dis_2 + val_size + 3.5,0>dia_2}
+        text {ttf besch_font value 0.2, 0 scale val_size rotate<0,0,-90> translate<0, (dis_2/2),-dia_2>}
+        rotate<0,100,0>
+        translate<-0.001,-val_size,0>
+        pigment {rgb<0.4,0.6,1>}
+      }
+
+      // Capacitance Value 2
+      intersection{
+        cylinder{<0,dis_2,0><0,-dis_2 + val_size + 3.5,0>dia_2}
+        text {ttf besch_font value 0.2, 0 scale val_size rotate<0,0,-90> translate<0, (dis_2/2),-dia_2>}
+        rotate<0,190,0>
+        translate<0,-val_size,0.001>
+        pigment {rgb<0.4,0.6,1>}
+      }
+
+      // Capacitance Value 3
+      intersection{
+        cylinder{<0,dis_2,0><0,-dis_2 + val_size + 3.5,0>dia_2}
+        text {ttf besch_font value 0.2, 0 scale val_size rotate<0,0,-90> translate<0, (dis_2/2),-dia_2>}
+        rotate<0,10,0>
+        translate<0,-val_size,-0.001>
+        pigment {rgb<0.4,0.6,1>}
+      }
+
+      // Rotate the capacitor into position
+      rotate<0,180,>
+      rotate<0,0,90>
     }
-    object{TOOLS_WIRE_LEADS (dis-7, dia, 35, dia_b,  dis,  global_res_bend_radius, 0, "H")}
 
+    // Pins
+    object{TOOLS_WIRE_LEADS(dis-7,dia_2,35,dia_b_2,dis,global_res_bend_radius,0,"H")}
     pigment{Red}
-    finish{F_MetalE ambient (0.1 * global_ambient_mul)}
-    translate<0,dia,0>
-}
+    finish{F_MetalE ambient(0.1 * global_ambient_mul)}
+    translate<0,dia_2,0>
+  }
 #end

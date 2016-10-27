@@ -15,7 +15,7 @@
 //KORW  = Korrekturwinkel
 //kp1ab = Wenn nicht 0 wird keine Abschrägung an Pin1 erzeugt
 //logo  = Name of the logo
-####################################################################################################
+###############################################################################
 LQFP-64:0:1:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:1:0:0:0:0:0:0:0:0:0:0:QFP_LQFP_64_050MM(:LQFP-64:
 TQFP32:0:1:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:1:0:0:0:0:0:0:0:0:0:0:QFP_TQFP_32_080MM(:TQFP-32:
 TQFP32-08:0:1:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:1:0:0:0:0:0:0:0:0:0:0:QFP_TQFP_32_080MM(:TQFP-32:
@@ -36,10 +36,10 @@ NOEAGLEPAC:0:1:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:1:0:0:0:0:0:0:0:0:0:0:QFP_SQFP_
 NOEAGLEPAC:0:1:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:1:0:0:0:0:0:0:0:0:0:0:QFP_PQFP_128_050MM(:QFP_PQFP_128_050MM:
 TQFP112:0:1:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:1:0:0:0:0:0:0:0:0:0:0:QFP_TQFP_112_065MM(:TQFP-112:
 SQFP-S-10X10-44:0:1:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:1:0:0:0:0:0:0:0:0:0:0:QFP_TQFP_44_080MM(:TQFP-44:
-####################################################################################################
+###############################################################################
 QFP_GRND
 (L,B,H,pin_l,pin_r,pin_o,pin_u,pitch,pin_br,pin_h,LK,BK,HKoP,KORW,kp1ab,logo)
-####################################################################################################
+###############################################################################
 //LQFP-64 aus DS80C390 Datasheet
 QFP_LQFP_64_050MM(value,logo)
 (12,12,1.4,16,16,16,16,0.5,0.22,0.15,10,10,0.1,0,0,logo)
@@ -90,154 +90,259 @@ QFP_PQFP_128_050MM(value,logo)
 //TQFP-112
 QFP_TQFP_112_065MM(value,logo)
 (22,22,1.6,28,28,28,28,0.65,0.37,0.15,20,20,0.15,90,0,logo)
-####################################################################################################
-####################################################################################################
-union{
-	difference{
-		box{<-LK/2,HKoP,-BK/2><LK/2,HKoP+H,BK/2>}
-		box{<-LK/2-0.01,0,0><LK/2+0.01,-2,-1> rotate<-10,0,0> translate<0,HKoP+H/2-pin_h/2,-BK/2>}
-		box{<-LK/2-0.01,0,0><LK/2+0.01,-2,1> rotate<10,0,0> translate<0,HKoP+H/2-pin_h/2,BK/2>}
-		box{<-LK/2-0.01,0,0><LK/2+0.01,2,1> rotate<-10,0,0> translate<0,HKoP+H/2+pin_h/2,BK/2>}
-		box{<-LK/2-0.01,0,0><LK/2+0.01,2,-1> rotate<10,0,0> translate<0,HKoP+H/2+pin_h/2,-BK/2>}
-		box{<0,0,-BK/2-0.01><1,2,BK/2+0.01> rotate<0,0,10> translate<LK/2,HKoP+H/2+pin_h/2,0>}
-		box{<0,0,-BK/2-0.01><-1,2,BK/2+0.01> rotate<0,0,-10> translate<-LK/2,HKoP+H/2+pin_h/2,0>}
-		box{<0,0,-BK/2-0.01><1,-2,BK/2+0.01> rotate<0,0,-10> translate<LK/2,HKoP+H/2-pin_h/2,0>}
-		box{<0,0,-BK/2-0.01><-1,-2,BK/2+0.01> rotate<0,0,10> translate<-LK/2,HKoP+H/2-pin_h/2,0>}
-		#if(kp1ab=0)
-			box{<0,0,-3><-2,5,3> rotate<0,-45,0> translate<-LK/2+LK/40,0,-BK/2+BK/40>}
-		#end
-		cylinder{<0,H+HKoP-0.1,0><0,H+HKoP+1,0>0.4 translate<-LK/2+LK/10,0,-BK/2+BK/10>}
-		pigment{Gray20}
-        finish {ambient (0.1 * global_ambient_mul)}
-	}
-	
-	#local i=0;
-	#while(i<(pin_l/2))
-		#if((pin_l/2)=div(pin_l,2))
-			object{QFP_PIN((H+HKoP)/2+pin_h/2,(L-LK)/2,pin_br,pin_h) rotate<0,0,0> translate<LK/2,0,pitch*i+pitch/2>}
-			object{QFP_PIN((H+HKoP)/2+pin_h/2,(L-LK)/2,pin_br,pin_h) rotate<0,0,0> translate<LK/2,0,-pitch*i-pitch/2>}
-		#else
-			object{QFP_PIN((H+HKoP)/2+pin_h/2,(L-LK)/2,pin_br,pin_h) rotate<0,0,0> translate<LK/2,0,pitch*i>}
-			object{QFP_PIN((H+HKoP)/2+pin_h/2,(L-LK)/2,pin_br,pin_h) rotate<0,0,0> translate<LK/2,0,-pitch*i>}
-		#end
-		#local i=i+1;
-	#end
-	
-	#local i=0;
-	#while(i<(pin_r/2))
-		#if((pin_l/2)=div(pin_l,2))
-			object{QFP_PIN((H+HKoP)/2+pin_h/2,(L-LK)/2,pin_br,pin_h) rotate<0,180,0> translate<-LK/2,0,pitch*i+pitch/2>}
-			object{QFP_PIN((H+HKoP)/2+pin_h/2,(L-LK)/2,pin_br,pin_h) rotate<0,180,0> translate<-LK/2,0,-pitch*i-pitch/2>}
-		#else
-			object{QFP_PIN((H+HKoP)/2+pin_h/2,(L-LK)/2,pin_br,pin_h) rotate<0,180,0> translate<-LK/2,0,pitch*i>}
-			object{QFP_PIN((H+HKoP)/2+pin_h/2,(L-LK)/2,pin_br,pin_h) rotate<0,180,0> translate<-LK/2,0,-pitch*i>}
-		#end
-		#local i=i+1;
-	#end
+###############################################################################
+###############################################################################
+  union{
+    difference{
+      box{<-LK/2,HKoP,-BK/2><LK/2,HKoP+H,BK/2>}
+      box{<-LK/2-0.01,0,0><LK/2+0.01,-2,-1> rotate<-10,0,0>
+        translate<0,HKoP+H/2-pin_h/2,-BK/2>
+      }
+      box{<-LK/2-0.01,0,0><LK/2+0.01,-2, 1> rotate< 10,0,0>
+        translate<0,HKoP+H/2-pin_h/2,BK/2>
+      }
+      box{<-LK/2-0.01,0,0><LK/2+0.01, 2, 1> rotate<-10,0,0>
+        translate<0,HKoP+H/2+pin_h/2,BK/2>
+      }
+      box{<-LK/2-0.01,0,0><LK/2+0.01, 2,-1> rotate< 10,0,0>
+        translate<0,HKoP+H/2+pin_h/2,-BK/2>
+      }
+      box{<0,0,-BK/2-0.01>< 1, 2,BK/2+0.01> rotate<0,0, 10>
+        translate<LK/2,HKoP+H/2+pin_h/2,0>
+      }
+      box{<0,0,-BK/2-0.01><-1, 2,BK/2+0.01> rotate<0,0,-10>
+        translate<-LK/2,HKoP+H/2+pin_h/2,0>
+      }
+      box{<0,0,-BK/2-0.01>< 1,-2,BK/2+0.01> rotate<0,0,-10>
+        translate<LK/2,HKoP+H/2-pin_h/2,0>
+      }
+      box{<0,0,-BK/2-0.01><-1,-2,BK/2+0.01> rotate<0,0, 10>
+        translate<-LK/2,HKoP+H/2-pin_h/2,0>
+      }
+      #if(kp1ab=0)
+        box{<0,0,-3><-2,5,3> rotate<0,-45,0>
+          translate<-LK/2+LK/40,0,-BK/2+BK/40>
+        }
+      #end
+      cylinder{<0,H+HKoP-0.1,0><0,H+HKoP+1,0>0.4
+        translate<-LK/2+LK/10,0,-BK/2+BK/10>
+      }
+      pigment{Gray20}
+      finish {ambient (0.1 * global_ambient_mul)}
+    }
 
-	#local i=0;
-	#while(i<(pin_u/2))
-		#if((pin_l/2)=div(pin_l,2))
-			object{QFP_PIN((H+HKoP)/2+pin_h/2,(B-BK)/2,pin_br,pin_h) rotate<0,90,0> translate<pitch*i+pitch/2,0,-BK/2>}
-			object{QFP_PIN((H+HKoP)/2+pin_h/2,(B-BK)/2,pin_br,pin_h) rotate<0,90,0> translate<-pitch*i-pitch/2,0,-BK/2>}
-		#else
-			object{QFP_PIN((H+HKoP)/2+pin_h/2,(B-BK)/2,pin_br,pin_h) rotate<0,90,0> translate<pitch*i,0,-BK/2>}
-			object{QFP_PIN((H+HKoP)/2+pin_h/2,(B-BK)/2,pin_br,pin_h) rotate<0,90,0> translate<-pitch*i,0,-BK/2>}
-		#end
-		#local i=i+1;
-	#end
+    #local i=0;
+    #while(i<(pin_l/2))
+      #if((pin_l/2)=div(pin_l,2))
+        object{QFP_PIN((H+HKoP)/2+pin_h/2,(L-LK)/2,pin_br,pin_h) rotate<0,0,0>
+          translate<LK/2,0,pitch*i+pitch/2>
+        }
+        object{QFP_PIN((H+HKoP)/2+pin_h/2,(L-LK)/2,pin_br,pin_h) rotate<0,0,0>
+          translate<LK/2,0,-pitch*i-pitch/2>
+        }
+      #else
+        object{QFP_PIN((H+HKoP)/2+pin_h/2,(L-LK)/2,pin_br,pin_h) rotate<0,0,0>
+          translate<LK/2,0,pitch*i>
+        }
+        object{QFP_PIN((H+HKoP)/2+pin_h/2,(L-LK)/2,pin_br,pin_h) rotate<0,0,0>
+          translate<LK/2,0,-pitch*i>
+        }
+      #end
+      #local i=i+1;
+    #end
 
-	#local i=0;
-	#while(i<(pin_o/2))
-		#if((pin_l/2)=div(pin_l,2))
-			object{QFP_PIN((H+HKoP)/2+pin_h/2,(B-BK)/2,pin_br,pin_h) rotate<0,-90,0> translate<pitch*i+pitch/2,0,BK/2>}
-			object{QFP_PIN((H+HKoP)/2+pin_h/2,(B-BK)/2,pin_br,pin_h) rotate<0,-90,0> translate<-pitch*i-pitch/2,0,BK/2>}
-		#else
-			object{QFP_PIN((H+HKoP)/2+pin_h/2,(B-BK)/2,pin_br,pin_h) rotate<0,-90,0> translate<pitch*i,0,BK/2>}
-			object{QFP_PIN((H+HKoP)/2+pin_h/2,(B-BK)/2,pin_br,pin_h) rotate<0,-90,0> translate<-pitch*i,0,BK/2>}
-		#end
-		#local i=i+1;
-	#end
-	
-	#local scl_fa = BK/10;
-	#local value_arial_size_min = 0.0;
-	#local value_arial_size_max = 0.0;
-	#local value_arial_size = 0.0;
-	#local value_courier_size_min = 0.0;
-	#local value_courier_size_max = 0.0;
-	#local value_courier_size = 0.0;
-	#local value_arial_bold =  text{ttf global_fontfile_arial_bold value 0.2,0 rotate<90,-90,0> pigment{White}}
-	#local value_courier_bold = text{ttf global_fontfile_courier_bold value 0.2,0 rotate<90,-90,0> pigment{White}}
-	Extents(value_arial_bold, value_arial_size_min, value_arial_size_max)
-	Extents(value_courier_bold, value_courier_size_min, value_courier_size_max)
-	#local value_arial_size = value_arial_size_max - value_arial_size_min; 
-	#local value_courier_size = value_courier_size_max - value_courier_size_min;	
-	#local value_scale_factor_arial = BK/value_arial_size.z * 0.7;
-	#local value_scale_factor_courier = BK/value_courier_size.z * 0.7;	
-	
-	#if(value_arial_size.x*value_scale_factor_arial > LK/6.0) 
-                #local value_scale_factor_arial = LK/6.0 / value_arial_size.x;	
-	#end
-	#if(value_courier_size.x*value_scale_factor_courier > LK/6.0) 
-                #local value_scale_factor_courier = LK/6.0 / value_courier_size.x;	
-	#end
-		
-	#local value_arial_size = value_arial_size * value_scale_factor_arial; 
-	#local value_courier_size = value_courier_size * value_scale_factor_courier;
-	//a random datecode string
-	#local value_datecode_arial_size_min = 0.0;
-	#local value_datecode_arial_size_max = 0.0;
-	#local value_datecode_arial_size = 0.0;
-	#local value_datecode_courier_size_min = 0.0;
-	#local value_datecode_courier_size_max = 0.0;
-	#local value_datecode_courier_size = 0.0;
-	#local value_datecode_string = concat(str(rand(global_seed)*52.9, -2, 0),str(rand(global_seed)*3.9+2, -2, 0));	
-	#local value_datecode_arial_bold = text{ttf global_fontfile_arial_bold value_datecode_string 0.2,0 rotate<90,-90,0> pigment{White}}
-	#local value_datecode_courier_bold = text{ttf global_fontfile_arial_bold value_datecode_string 0.2,0 rotate<90,-90,0> pigment{White}}
-	Extents(value_datecode_arial_bold, value_datecode_arial_size_min, value_datecode_arial_size_max)
-	Extents(value_datecode_courier_bold, value_courier_size_min, value_courier_size_max)
-	#local value_datecode_arial_size = value_datecode_arial_size_max - value_datecode_arial_size_min; 
-	#local value_datecode_courier_size = value_courier_size_max - value_courier_size_min;	
-	#local value_datecode_scale_factor_arial = value_scale_factor_arial;
-	#local value_datecode_scale_factor_courier = value_scale_factor_courier;
-	#local value_datecode_arial_size = value_datecode_arial_size * value_scale_factor_arial; 
-	#local value_datecode_courier_size = value_datecode_courier_size * value_scale_factor_courier;
+    #local i=0;
+    #while(i<(pin_r/2))
+      #if((pin_l/2)=div(pin_l,2))
+        object{QFP_PIN((H+HKoP)/2+pin_h/2,(L-LK)/2,pin_br,pin_h)
+          rotate<0,180,0> translate<-LK/2,0,pitch*i+pitch/2>
+        }
+        object{QFP_PIN((H+HKoP)/2+pin_h/2,(L-LK)/2,pin_br,pin_h)
+          rotate<0,180,0> translate<-LK/2,0,-pitch*i-pitch/2>
+        }
+      #else
+        object{QFP_PIN((H+HKoP)/2+pin_h/2,(L-LK)/2,pin_br,pin_h)
+          rotate<0,180,0> translate<-LK/2,0,pitch*i>
+        }
+        object{QFP_PIN((H+HKoP)/2+pin_h/2,(L-LK)/2,pin_br,pin_h)
+          rotate<0,180,0> translate<-LK/2,0,-pitch*i>
+        }
+      #end
+      #local i=i+1;
+    #end
+
+    #local i=0;
+    #while(i<(pin_u/2))
+      #if((pin_l/2)=div(pin_l,2))
+        object{QFP_PIN((H+HKoP)/2+pin_h/2,(B-BK)/2,pin_br,pin_h)
+          rotate<0,90,0> translate<pitch*i+pitch/2,0,-BK/2>
+        }
+        object{QFP_PIN((H+HKoP)/2+pin_h/2,(B-BK)/2,pin_br,pin_h)
+          rotate<0,90,0> translate<-pitch*i-pitch/2,0,-BK/2>
+        }
+      #else
+        object{QFP_PIN((H+HKoP)/2+pin_h/2,(B-BK)/2,pin_br,pin_h)
+          rotate<0,90,0> translate<pitch*i,0,-BK/2>
+        }
+        object{QFP_PIN((H+HKoP)/2+pin_h/2,(B-BK)/2,pin_br,pin_h)
+          rotate<0,90,0> translate<-pitch*i,0,-BK/2>
+        }
+      #end
+      #local i=i+1;
+    #end
+
+    #local i=0;
+    #while(i<(pin_o/2))
+      #if((pin_l/2)=div(pin_l,2))
+        object{QFP_PIN((H+HKoP)/2+pin_h/2,(B-BK)/2,pin_br,pin_h)
+          rotate<0,-90,0> translate<pitch*i+pitch/2,0,BK/2>
+        }
+        object{QFP_PIN((H+HKoP)/2+pin_h/2,(B-BK)/2,pin_br,pin_h)
+          rotate<0,-90,0> translate<-pitch*i-pitch/2,0,BK/2>
+        }
+      #else
+        object{QFP_PIN((H+HKoP)/2+pin_h/2,(B-BK)/2,pin_br,pin_h)
+          rotate<0,-90,0> translate<pitch*i,0,BK/2>
+        }
+        object{QFP_PIN((H+HKoP)/2+pin_h/2,(B-BK)/2,pin_br,pin_h)
+          rotate<0,-90,0> translate<-pitch*i,0,BK/2>
+        }
+      #end
+      #local i=i+1;
+    #end
+
+    #local scl_fa = BK/10;
+    #local value_arial_size_min = 0.0;
+    #local value_arial_size_max = 0.0;
+    #local value_arial_size = 0.0;
+    #local value_courier_size_min = 0.0;
+    #local value_courier_size_max = 0.0;
+    #local value_courier_size = 0.0;
+    #local value_arial_bold =  text{
+      ttf global_fontfile_arial_bold value 0.2,0 rotate<90,-90,0>
+      pigment{White}
+    }
+    #local value_courier_bold = text{
+      ttf global_fontfile_courier_bold value 0.2,0
+      rotate<90,-90,0> pigment{White}
+    }
+    Extents(value_arial_bold, value_arial_size_min, value_arial_size_max)
+    Extents(value_courier_bold, value_courier_size_min, value_courier_size_max)
+    #local value_arial_size = value_arial_size_max - value_arial_size_min; 
+    #local value_courier_size= value_courier_size_max - value_courier_size_min;	
+    #local value_scale_factor_arial = BK/value_arial_size.z * 0.7;
+    #local value_scale_factor_courier = BK/value_courier_size.z * 0.7;
+    #if(value_arial_size.x*value_scale_factor_arial > LK/6.0)
+      #local value_scale_factor_arial = LK/6.0 / value_arial_size.x;
+    #end
+    #if(value_courier_size.x*value_scale_factor_courier > LK/6.0)
+      #local value_scale_factor_courier = LK/6.0 / value_courier_size.x;
+    #end
+
+    #local value_arial_size = value_arial_size * value_scale_factor_arial; 
+    #local value_courier_size= value_courier_size * value_scale_factor_courier;
+    //a random datecode string
+    #local value_datecode_arial_size_min = 0.0;
+    #local value_datecode_arial_size_max = 0.0;
+    #local value_datecode_arial_size = 0.0;
+    #local value_datecode_courier_size_min = 0.0;
+    #local value_datecode_courier_size_max = 0.0;
+    #local value_datecode_courier_size = 0.0;
+    #local value_datecode_string = concat(
+      str(rand(global_seed)*52.9, -2, 0),str(rand(global_seed)*3.9+2, -2, 0)
+    );	
+    #local value_datecode_arial_bold = text{
+      ttf global_fontfile_arial_bold value_datecode_string 0.2,0
+      rotate<90,-90,0> pigment{White}
+    }
+    #local value_datecode_courier_bold = text{
+      ttf global_fontfile_arial_bold value_datecode_string 0.2,0
+      rotate<90,-90,0> pigment{White}
+    }
+    Extents(value_datecode_arial_bold, value_datecode_arial_size_min, value_datecode_arial_size_max)
+    Extents(value_datecode_courier_bold, value_courier_size_min, value_courier_size_max)
+    #local value_datecode_arial_size = value_datecode_arial_size_max - value_datecode_arial_size_min; 
+    #local value_datecode_courier_size = value_courier_size_max - value_courier_size_min;	
+    #local value_datecode_scale_factor_arial = value_scale_factor_arial;
+    #local value_datecode_scale_factor_courier = value_scale_factor_courier;
+    #local value_datecode_arial_size = value_datecode_arial_size * value_scale_factor_arial; 
+    #local value_datecode_courier_size = value_datecode_courier_size * value_scale_factor_courier;
 	
     // added logos Freescale and Microchip
     // by xocas
-
-	#local logo_assigned = 0;
+    #local logo_assigned = 0;
 		
-	#if(strcmp(logo,"FTDI")=0.0)
-	        #local logo_assigned = 1;
-		text{ttf global_fontfile_eagle3d "f" 0.2,0 scale<scl_fa*2,scl_fa*2,1> rotate<90,-90,0> translate<-LK/2+LK/3,H+HKoP+0.001,-BK/2+BK/6> pigment{Gray60} }		
-		object{value_arial_bold scale<value_scale_factor_arial,1,value_scale_factor_arial> translate<value_arial_size.x/2,H+HKoP+0.001,-value_arial_size.z/2>}
-		object{value_datecode_arial_bold scale<value_datecode_scale_factor_arial,1,value_datecode_scale_factor_arial> translate<value_datecode_arial_size.x/2,H+HKoP+0.001,-value_datecode_arial_size.z/2> translate<LK/2-LK/4,0,0>}
-	#end
-	
-	#if(strcmp(logo,"ATMEL")=0.0)
-	        #local logo_assigned = 1;
-		text{ttf global_fontfile_eagle3d "a" 0.2,0 scale<scl_fa*2,scl_fa*2,1> rotate<90,-90,0> translate<-LK/2+LK/3,H+HKoP+0.001,-BK/7> pigment{Gray60} }		
-		object{value_arial_bold pigment{Gray60} scale<value_scale_factor_arial,1,value_scale_factor_arial> translate<value_arial_size.x/2,H+HKoP+0.001,-value_arial_size.z/2>}
-		object{value_datecode_arial_bold pigment{Gray60} scale<value_datecode_scale_factor_arial,1,value_datecode_scale_factor_arial> translate<value_datecode_arial_size.x/2,H+HKoP+0.001,-value_datecode_arial_size.z/2> translate<LK/2-LK/4,0,0>}
-	#end
-	#if(strcmp(logo,"MICROCHIP")=0.0)
-	        #local logo_assigned = 1;
-		text{ttf global_fontfile_eagle3d "m" 0.2,0 scale<scl_fa*2,scl_fa*2,1> rotate<90,-90,0> translate<-LK/2+LK/3,H+HKoP+0.001,-BK/10> pigment{Gray60} }		
-		object{value_arial_bold pigment{Gray60} scale<value_scale_factor_arial,1,value_scale_factor_arial> translate<value_arial_size.x/2,H+HKoP+0.001,-value_arial_size.z/2>}
-		object{value_datecode_arial_bold pigment{Gray60} scale<value_datecode_scale_factor_arial,1,value_datecode_scale_factor_arial> translate<value_datecode_arial_size.x/2,H+HKoP+0.001,-value_datecode_arial_size.z/2> translate<LK/2-LK/4,0,0>}
-	#end
-	#if(strcmp(logo,"FREESCALE")=0.0)
-	        #local logo_assigned = 1;
-		text{ttf global_fontfile_eagle3d "/" 0.2,0 scale<scl_fa*2,scl_fa*2,1> rotate<90,-90,0> translate<-LK/2+LK/2.8,H+HKoP+0.001,-BK/9> pigment{Gray60} }		
-		object{value_arial_bold pigment{Gray60} scale<value_scale_factor_arial,1,value_scale_factor_arial> translate<value_arial_size.x/1.6,H+HKoP+0.001,-value_arial_size.z/2>}
-		object{value_datecode_arial_bold pigment{Gray60} scale<value_datecode_scale_factor_arial,1,value_datecode_scale_factor_arial> translate<value_datecode_arial_size.x/2,H+HKoP+0.001,-value_datecode_arial_size.z/2> translate<LK/2-LK/4,0,0>}
-	#end
-	
-	#if(logo_assigned < 0.5)
-		text{ttf besch_font value 0.2,0 scale<scl_fa,scl_fa,1> rotate<90,-90,0> translate<-LK/2+LK/4,H+HKoP+0.001,-BK/2+BK/6> pigment{White} }
-	#end
-	
-	rotate<0,KORW,0>
-}
+    #if(strcmp(logo,"FTDI")=0.0)
+      #local logo_assigned = 1;
+      text{ttf global_fontfile_eagle3d "f" 0.2,0
+        scale<scl_fa*2,scl_fa*2,1> rotate<90,-90,0>
+        translate<-LK/2+LK/3,H+HKoP+0.001,-BK/2+BK/6> pigment{Gray60}
+      }		
+      object{value_arial_bold
+        scale<value_scale_factor_arial,1,value_scale_factor_arial>
+        translate<value_arial_size.x/2,H+HKoP+0.001,-value_arial_size.z/2>
+      }
+      object{value_datecode_arial_bold
+        scale<value_datecode_scale_factor_arial,1,value_datecode_scale_factor_arial>
+        translate<value_datecode_arial_size.x/2,H+HKoP+0.001,-value_datecode_arial_size.z/2>
+        translate<LK/2-LK/4,0,0>
+      }
+    #end
+
+    #if(strcmp(logo,"ATMEL")=0.0)
+      #local logo_assigned = 1;
+      text{ttf global_fontfile_eagle3d "a" 0.2,0 scale<scl_fa*2,scl_fa*2,1>
+        rotate<90,-90,0> translate<-LK/2+LK/3,H+HKoP+0.001,-BK/7>
+        pigment{Gray60}
+      }		
+      object{value_arial_bold pigment{Gray60}
+        scale<value_scale_factor_arial,1,value_scale_factor_arial>
+        translate<value_arial_size.x/2,H+HKoP+0.001,-value_arial_size.z/2>
+      }
+      object{value_datecode_arial_bold pigment{Gray60}
+        scale<value_datecode_scale_factor_arial,1,value_datecode_scale_factor_arial>
+        translate<value_datecode_arial_size.x/2,H+HKoP+0.001,-value_datecode_arial_size.z/2>
+        translate<LK/2-LK/4,0,0>
+      }
+    #end
+    #if(strcmp(logo,"MICROCHIP")=0.0)
+      #local logo_assigned = 1;
+      text{ttf global_fontfile_eagle3d "m" 0.2,0 scale<scl_fa*2,scl_fa*2,1>
+        rotate<90,-90,0> translate<-LK/2+LK/3,H+HKoP+0.001,-BK/10>
+        pigment{Gray60}
+      }		
+      object{value_arial_bold pigment{Gray60}
+        scale<value_scale_factor_arial,1,value_scale_factor_arial>
+        translate<value_arial_size.x/2,H+HKoP+0.001,-value_arial_size.z/2>
+      }
+      object{value_datecode_arial_bold pigment{Gray60}
+        scale<value_datecode_scale_factor_arial,1,value_datecode_scale_factor_arial>
+        translate<value_datecode_arial_size.x/2,H+HKoP+0.001,-value_datecode_arial_size.z/2>
+        translate<LK/2-LK/4,0,0>
+      }
+    #end
+    #if(strcmp(logo,"FREESCALE")=0.0)
+      #local logo_assigned = 1;
+      text{ttf global_fontfile_eagle3d "/" 0.2,0 scale<scl_fa*2,scl_fa*2,1>
+        rotate<90,-90,0> translate<-LK/2+LK/2.8,H+HKoP+0.001,-BK/9>
+        pigment{Gray60}
+      }		
+      object{value_arial_bold pigment{Gray60}
+        scale<value_scale_factor_arial,1,value_scale_factor_arial>
+        translate<value_arial_size.x/1.6,H+HKoP+0.001,-value_arial_size.z/2>
+      }
+      object{value_datecode_arial_bold pigment{Gray60}
+        scale<value_datecode_scale_factor_arial,1,value_datecode_scale_factor_arial>
+        translate<value_datecode_arial_size.x/2,H+HKoP+0.001,-value_datecode_arial_size.z/2>
+        translate<LK/2-LK/4,0,0>
+      }
+    #end
+
+    #if(logo_assigned < 0.5)
+      text{ttf besch_font value 0.2,0 scale<scl_fa,scl_fa,1> rotate<90,-90,0>
+        translate<-LK/2+LK/4,H+HKoP+0.001,-BK/2+BK/6> pigment{White}
+      }
+    #end
+    rotate<0,KORW,0>
+  }
 #end

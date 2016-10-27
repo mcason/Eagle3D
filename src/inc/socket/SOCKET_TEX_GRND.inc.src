@@ -31,6 +31,15 @@ TEXTOOL24:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SOCKET_TEX
 TEXTOOL20:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SOCKET_TEX20(:IC-Sockel 20Pin 300mil:IC-Socket 20Pin 300mil
 TEXTOOL18:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SOCKET_TEX18(:IC-Sockel 18Pin 300mil:IC-Socket 18Pin 300mil
 TEXTOOL16:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SOCKET_TEX16(:IC-Sockel 16Pin 300mil:IC-Socket 16Pin 300mil
+TEXTOOL14:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SOCKET_TEX14(:IC-Sockel 14Pin 300mil:IC-Socket 14Pin 300mil
+DIL40-ZIF_SOCKET:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SOCKET_TEX40W(:IC-Sockel 40Pin 600mil:IC-Socket 40Pin 600mil
+DIL32-ZIF_SOCKET:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SOCKET_TEX32W(:IC-Sockel 32Pin 600mil:IC-Socket 32Pin 600mil   
+DIL28-ZIF_SOCKET:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SOCKET_TEX28W(:IC-Sockel 28Pin 600mil:IC-Socket 28Pin 600mil   
+DIL24-ZIF_SOCKET:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SOCKET_TEX24(:IC-Sockel 24Pin 300mil:IC-Socket 24Pin 300mil   
+DIL20-ZIF_SOCKET:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SOCKET_TEX20(:IC-Sockel 20Pin 300mil:IC-Socket 20Pin 300mil
+DIL18-ZIF_SOCKET:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SOCKET_TEX18(:IC-Sockel 18Pin 300mil:IC-Socket 18Pin 300mil
+DIL16-ZIF_SOCKET:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SOCKET_TEX16(:IC-Sockel 16Pin 300mil:IC-Socket 16Pin 300mil
+DIL14-ZIF_SOCKET:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SOCKET_TEX14(:IC-Sockel 14Pin 300mil:IC-Socket 14Pin 300mil
 ####################################################################################################
 SOCKET_TEX_GRND
 (pin,breite)

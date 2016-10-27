@@ -1,0 +1,157 @@
+Right Angle Switch
+//*****************************************************************************
+//
+// ***  Right Angle Switch Macro  ***  With, and without ESD protection  ***
+//
+// Based off of a C&K Components PN series right angle switch.
+// By MC Cason  farmerboy1967(replace with at)gmail.com
+//
+//  This macro is modular, so that it can support several different sizes
+//
+// L:           Lenght of switch
+// W:           Width of switch
+// H:           Height of switch
+// L_Width:     Lead width
+// Lead_X:      Lead 1 X location - Use Positive Number
+// Lead_Y:      Lead 1 Y location - Use Positive Number
+// Lead_Y_ESD:  ESD Lead Y location - Use Positive Number (0 for no lead)
+//                X is assumed to be 0
+// B_Dia:       Button Diameter
+// B_Height:    Button Height
+// Color:       Button Color
+//*****************************************************************************
+####################################################################################################
+CK-PN2XS:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_RIGHTANGLE_2XS(:Right angle switch DPDT 21 and 22 Series S:
+CK-PN2XL:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SWITCH_RIGHTANGLE_2XL(:Right angle switch DPDT 21 and 22 Series L:
+####################################################################################################
+SWITCH_RIGHTANGLE_GRND
+(L, W, H, L_Width, ESD_Width, Lead_X, Lead_Y, Lead_Y_ESD, L_Depth, SH_Length, SH_Dia, SP_Length, SP_Dia)
+####################################################################################################
+SWITCH_RIGHTANGLE_2XS()
+(11.4, 6.8, 8.5, 0.4, 1.3, 2.5, 1.25, 2.1, 3.5, 10.0, 2.8, 5.7, 5.3)
+SWITCH_RIGHTANGLE_2XL()
+(11.4, 7.2, 9.5, 0.4, 1.0, 3.2, 1.5, 3.0, 3.5, 13.0, 2.8, 7.5, 6.5)
+####################################################################################################
+####################################################################################################
+union{
+  // Switch Housing
+  union{
+    // Front and Rear Sides
+    #local FR_Sides = box{<0,0,0><L-ESD_Width/2,H,ESD_Width/2>};
+    object{FR_Sides translate<-((L/2)-(ESD_Width/4)),0,-((W/2)+(ESD_Width/4))>} // Front
+    object{FR_Sides translate<-((L/2)-(ESD_Width/4)),0, ((W/2)-(ESD_Width/4))>} // Rear
+
+    // Left and Right Sides
+    #local LR_Sides = box{<0,0,0><ESD_Width/2,H,W-ESD_Width/2>};
+    object{LR_Sides translate<-((L/2)+(ESD_Width/4)),0,-((W/2)-(ESD_Width/4))>} // Left
+    object{LR_Sides translate< ((L/2)-(ESD_Width/4)),0,-((W/2)-(ESD_Width/4))>} // Right
+
+
+    // Radius on sides of switch
+    #local R_Side = cylinder{<0,0,0><0,H,0>ESD_Width/2};
+    object{R_Side translate<-((L/2)-(ESD_Width/4)),0,-((W/2)-(ESD_Width/4))>} // Left Front
+    object{R_Side translate<-((L/2)-(ESD_Width/4)),0, ((W/2)-(ESD_Width/4))>} // Left Rear
+    object{R_Side translate< ((L/2)-(ESD_Width/4)),0,-((W/2)-(ESD_Width/4))>} // Right Front
+    object{R_Side translate< ((L/2)-(ESD_Width/4)),0, ((W/2)-(ESD_Width/4))>} // Right Rear
+
+    // Spheres on top corners of switch
+    #local R_Cor = sphere{<0,0,0>ESD_Width/2};
+    object{R_Cor translate<-((L/2)-(ESD_Width/4)),H,-((W/2)-(ESD_Width/4))>} // Left Front
+    object{R_Cor translate<-((L/2)-(ESD_Width/4)),H, ((W/2)-(ESD_Width/4))>} // Left Rear
+    object{R_Cor translate< ((L/2)-(ESD_Width/4)),H,-((W/2)-(ESD_Width/4))>} // Right Front
+    object{R_Cor translate< ((L/2)-(ESD_Width/4)),H, ((W/2)-(ESD_Width/4))>} // Right Rear
+
+    // Radius on front and rear of top of switch
+    #local FR_Cyl =cylinder{<ESD_Width/4,0,0><L-ESD_Width/4,0,0>ESD_Width/2};
+    object{FR_Cyl translate<-L/2, H,-(W/2-(ESD_Width/4))>} // Front Top
+    object{FR_Cyl translate<-L/2, H, (W/2-(ESD_Width/4))>} // Rear Top
+
+    // Radius on left and right of top of switch
+    #local LR_Cyl = cylinder{<0,0,ESD_Width/4><0,0,W-ESD_Width/4>ESD_Width/2};
+    object{LR_Cyl translate<-(L/2-(ESD_Width/4)),H,-W/2>} // Left Top
+    object{LR_Cyl translate< (L/2-(ESD_Width/4)),H,-W/2>} // Right Top
+
+    // Switch Top
+    box{<0,0,0><L-ESD_Width/2,ESD_Width/2,W-ESD_Width/2>
+      translate<-((L/2)-(ESD_Width/4)),H,-((W/2)-(ESD_Width/4))>
+    }
+
+    // Housing grounding pins
+    #local B_Pin = box{<-ESD_Width/4,1,-ESD_Width/2><ESD_Width/4,-L_Depth,ESD_Width/2>}
+    object{B_Pin translate<-L/2,0,-Lead_Y_ESD>} // Bottom Left
+    object{B_Pin translate< L/2,0, Lead_Y_ESD>} // Top Right
+
+    // Color
+    texture{pigment{Gray60}
+      finish{F_MetalA ambient (0.1 * global_ambient_mul)}
+    }
+  }
+
+  //Shaft and Spring
+  union{
+    // Shaft
+    difference{
+      cylinder{<0,0,0><SH_Length,0,0>SH_Dia/2}
+      difference{
+        cylinder{<SH_Dia/2+0.1,0,0><SH_Dia/3,0,0>SH_Dia/2+0.1}
+        cylinder{<SH_Dia/2,0,0><SH_Dia/3+0.1,0,0>SH_Dia/3}
+      }
+      texture{pigment{color rgbf<1,1,1,0.1>}
+        finish {phong 1 phong_size 300 reflection 0.13}
+        //finish {specular 2 roughness 0.001}
+        //finish{F_MetalC ambient (0.1 * global_ambient_mul)}
+      }
+    }
+    union{
+      // Spring
+      union{
+        object {
+          // U, V, length, radius, coils, rez   
+          Spring (0.25, 0.25, SP_Length, SP_Dia/2, 4, 5000) 
+        }                                                                            
+        #local S_End = difference{
+          cylinder{<   0,0,0><0.25,0,0> SP_Dia/2}
+          cylinder{<-0.1,0,0><0.30,0,0>(SP_Dia/2)-0.25}
+        };
+        object{S_End translate<            0,0,0>}
+        object{S_End translate<SP_Length-0.5,0,0>}
+        texture {T_Chrome_2A}   
+      }
+      // Washer at end of spring
+      difference{
+        cylinder{<-0.1,0,0><0.0,0,0>SP_Dia/2}
+        cylinder{<-0.2,0,0><0.1,0,0>SH_Dia/2}
+      }
+      // Color of Spring, and washer
+      texture{pigment{Gray90}
+        finish{F_MetalC ambient (0.1 * global_ambient_mul)}
+      }
+      // Move Spring, and washer to correct location
+      translate <SH_Length-SP_Length,0,0>
+    }
+    // Move Shaft to correct location
+    translate<-(SH_Length+(L/2)),H/2,0>
+  }
+  
+  union{
+    // Tiny bit of phenolic (Brown)
+    box{<0,0,0><L-(ESD_Width/2),1.5,W-(ESD_Width/2)>
+      translate<-((L/2)-(ESD_Width/4)),0,-((W/2)-(ESD_Width/4))>
+      texture{pigment{color rgb<0.65,0.55,0.35>}}
+    }
+    // Pins on bottom of phenolic
+    #local pins = box{<-L_Width/2,3,-L_Width/4><L_Width/2,-L_Depth,L_Width/4>}
+    object{pins translate<-Lead_X,0,-Lead_Y>} // Bottom Left
+    object{pins translate< Lead_X,0,-Lead_Y>} // Bottom Right
+    object{pins translate<      0,0,-Lead_Y>} // Bottom Center
+    object{pins translate<-Lead_X,0, Lead_Y>} // Top Left
+    object{pins translate< Lead_X,0, Lead_Y>} // Top Right
+    object{pins translate<      0,0, Lead_Y>} // Top Center
+    texture{pigment{Gray80}
+      finish{F_MetalC ambient (0.1 * global_ambient_mul)}
+    }
+  }
+}
+#end
+
+

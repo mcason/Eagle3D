@@ -1,0 +1,89 @@
+Relay-DIP
+//                        IC Reed Relay macro
+// By:
+//    MC Cason farmerboy1967(replace with at)gmail.com - 2012-12-28
+//
+// Based off of the IC_DIS_DIP_GRND.inc.src macro
+// By:
+//    Joseph Zeglinski - Aug. 20, 2003
+//
+// This macro creates a COTO IC Reed Relay, which is a standard reed relay,
+//  with 8 pins, in a 14 pin DIP footprint.
+//
+// Basic Macro for DIP's
+// pc  = Pin Count of a full DIL
+// pca = Pin Count of available pins, ( less than or equal to "pc" )
+// w = Width
+// h = Height
+// label = Relay Value
+
+###############################################################################
+8L01:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_REED_RELAY_IC_14A8(:DIP14 body with 8 pins:
+8L01-ESD:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_REED_RELAY_IC_14A8(:DIP14 body with 8 pins:
+8L02:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_REED_RELAY_IC_14A8(:DIP14 body with 8 pins:
+8L02-ESD:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_REED_RELAY_IC_14A8(:DIP14 body with 8 pins:
+8L41:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_REED_RELAY_IC_14A8(:DIP14 body with 8 pins:
+8L41-ESD:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_REED_RELAY_IC_14A8(:DIP14 body with 8 pins:
+8L61:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_REED_RELAY_IC_14A8(:DIP14 body with 8 pins:
+8L61-ESD:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_REED_RELAY_IC_14A8(:DIP14 body with 8 pins:
+###############################################################################
+SPC_REED_RELAY_IC_GRND
+(pc,pca,w,h,label)
+###############################################################################
+//DIP14 with 8 corner pins
+SPC_REED_RELAY_IC_14A8(label)
+(14,8,3,6.858,label)
+###############################################################################
+###############################################################################
+  union{
+    //Body
+    difference{
+      box{<0,0,0><(pc/2)*2.75,h,w*2.54-1>}
+      box{<-0.1,0,0><(pc/2)*2.54+2,-2,-2> rotate<-15,0,0> translate<0,1.25,0>} //Bottom Front
+      box{<-0.1,0,0><(pc/2)*2.54+2, h,-2> rotate<  5,0,0> translate<0,2.25,0>}  //Top Front
+      box{<-0.1,0,0><(pc/2)*2.54+2,-2, 2> rotate< 15,0,0> translate<0,1.25,w*2.54-1>} // Bottom Back
+      box{<-0.1,0,0><(pc/2)*2.54+2, 2, 2> rotate< -5,0,0> translate<0,2.25,w*2.54-1>}  // Top Back
+      box{<0,0,w*2.54><-2,-2,-w*2> rotate<0,0, 15> translate<0,1.25,0>} // Bottom Left
+      box{<0,0,w*2.54><-2, h,-w*2> rotate<0,0, -5> translate<0,2.25,0>}  // Top Left
+      box{<0,0,w*2.54>< 2,-2,-w*2> rotate<0,0,-15> translate<pc/2*2.75,1.25,0>} // Bottom Right
+      box{<0,0,w*2.54>< 2, h,-w*2> rotate<0,0,  5> translate<pc/2*2.75,2.25,0>}  // Top Right
+      cylinder{<2.54,h-0.1,(w/2)><2.54,h+0.1,(w/2)>0.5}
+      translate<-(pc/2*2.75)/2,0,-(w*2.54-1)/2>
+    }
+
+    //Pins
+    union{
+      #local i=0;
+      #while(i<(pc/2))
+        // Check for special  "Partial Pin Population" DIL condition
+        #if( (pc>pca) & (i=pca/4) )
+          #local i=i+(pc-pca)/2;
+        #end
+
+        object{IC_DIS_PIN() rotate<0,180,0> translate<i*2.54,-3.75,w*2.54/2>}
+        object{IC_DIS_PIN() translate<i*2.54,-3.75,-w*2.54/2>}
+        #local i=i+1;
+      #end
+      translate<-pc/2*1.27+1.27,0,0>
+      texture{e3d_tex_silver}
+    }
+
+    //Marking
+    union{
+      text{ttf global_fontfile_arial_bold label 0.2, 0
+        rotate <90,0,0>
+        scale<w/2,1,w/2>
+        translate<-w*2,h+0.01,1.0>
+      }
+      text{ttf global_fontfile_arial_bold "COTO-2214-1" 0.2, 0
+        rotate <90,0,0>
+        scale<w/2,1,w/2>
+        translate<-w*2,h+0.01,-1.75>
+      }
+      texture{e3d_tex_ic_marking_bright}
+    }
+    translate<0,0.25,0>
+    texture{e3d_tex_ic_body_1}
+  }
+#end
+

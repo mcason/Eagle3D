@@ -1,4 +1,5 @@
 Elko
+//*****************************************************************************
 //Elko Grundmakro   
 //bearbeitet von Walter Mücke
 //tex_scale     vector um die Textur zu strecken/stauchen
@@ -8,125 +9,203 @@ Elko
 //hig           Höhe des Kondensator 
 //dia_b         Radius des Anschlußdrahtes
 //value         Beschriftungstext            
-####################################################################################################
-E2-5:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_2MM_5MM(:Elko 2mm Pitch, 5mm Durchmesser, 11mm Hoehe:Elko 2mm Pitch, 5mm  Diameter, 11mm High
-E2,5-5:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_2MM5_5MM(:Elko 2,5mm Pitch, 5mm Durchmesser, 11,2mm Hoehe:Elko 2,5mm Pitch, 5mm  Diameter, 11,2mm High
-E2,5-6,3:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_2MM5_6MM3(:Elko 2,5mm Pitch, 6,3mm Durchmesser, 11,2mm Hoehe:Elko 2,5mm Pitch, 6,3mm  Diameter, 11,2mm High
-E2,5-6:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_2MM5_6MM3(:Elko 2,5mm Pitch, 6mm Durchmesser, 11,2mm Hoehe:Elko 2,5mm Pitch, 6mm  Diameter, 11,2mm High
-E3,5-8:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_3MM5_8MM(:Elko 3,5mm Pitch, 8mm Durchmesser, 11,5mm Hoehe:Elko 3,5mm Pitch, 8mm  Diameter, 11,5mm High
-E5-10,5:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_5MM_10MM(:Elko 5mm Pitch, 10mm Durchmesser, 16mm Hoehe:Elko 5mm Pitch, 10mm  Diameter, 16mm High
-E5-13:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_5MM_12MM5(:Elko 5mm Pitch, 12,5mm Durchmesser, 22,5mm Hoehe:Elko 5mm Pitch, 12,5mm  Diameter, 22,5mm High
-E7,5-16:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_7MM5_16MM(:Elko 7,5mm Pitch, 16mm Durchmesser, 28mm Hoehe:Elko 7,5mm Pitch, 16mm  Diameter, 28mm High
-E7,5-18:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_7MM5_18MM(:Elko 7,5mm Pitch, 18mm Durchmesser, 35,5mm Hoehe:Elko 7,5mm Pitch, 18mm  Diameter, 35,5mm High
-NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_5MM_10MM_2(:Elko:
-NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_5MM_12MM5_2(:Elko:
-NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_5MM_12MM5_3(:Elko:
-NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_7MM5_16MM_2(:Elko:
-NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_7MM5_16MM_3(:Elko:
-####################################################################################################
+//
+// Radial Electrolytic Macro
+// Edited by Walter Mücke
+// Modified by MC Cason <farmerboy1967(replace with at)gmail.com>
+//
+// tex_scale:  Compress vector to stretch the texture
+// val_size:   Size of the Lettering
+// dis:        Lead Pitch
+// dia:        Capacitor Diameter
+// hig:        Capacitor Height
+// dia_b:      Lead Diameter
+// value:      Label Text
+//*****************************************************************************
+// 2013-12-11 Heavily modified to look more realistic.
+//            Corner rounding made to look more natural.
+//
+###############################################################################
+E2-5:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_2MM_5MM_11MM(:Elko 2mm Pitch, 5mm Durchmesser, 11mm Hoehe:Elko 2mm Pitch, 5mm Dia, 11mm High
+E2,5-5:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_2MM5_5MM_11MM2(:Elko 2,5mm Pitch, 5mm Durchmesser, 11,2mm Hoehe:Elko 2.5mm Pitch, 5mm Dia, 11.2mm High
+E2,5-6:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_2MM5_6MM3_11MM2(:Elko 2,5mm Pitch, 6mm Durchmesser, 11,2mm Hoehe:Elko 2.5mm Pitch, 6mm Dia, 11.2mm High
+E2,5-6,3:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_2MM5_6MM3_11MM2(:Elko 2,5mm Pitch, 6,3mm Durchmesser, 11,2mm Hoehe:Elko 2.5mm Pitch, 6.3mm  Diameter, 11.2mm High
+E3,5-8:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_3MM5_8MM_11MM5(:Elko 3,5mm Pitch, 8mm Durchmesser, 11,5mm Hoehe:Elko 3.5mm Pitch, 8mm Dia, 11.5mm High
+E5-10,5:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_5MM_10MM_16MM(:Elko 5mm Pitch, 10mm Durchmesser, 16mm Hoehe:Elko 5mm Pitch, 10mm Dia, 16mm High
+E5-13:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_5MM_12MM5_22MM5(:Elko 5mm Pitch, 12,5mm Durchmesser, 22,5mm Hoehe:Elko 5mm Pitch, 12.5mm Dia, 22.5mm High
+E7,5-16:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_7MM5_16MM_28MM(:Elko 7,5mm Pitch, 16mm Durchmesser, 28mm Hoehe:Elko 7.5mm Pitch, 16mm Dia, 28mm High
+E7,5-18:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_7MM5_18MM_35MM5(:Elko 7,5mm Pitch, 18mm Durchmesser, 35,5mm Hoehe:Elko 7.5mm Pitch, 18mm Dia, 35.5mm High
+E1,0-3-5:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_1MM_3MM_5MM(:Elko 1mm Pitch, 3mm Durchmesser, 5mm Hoehe:Elko 1mm Pitch, 3mm Dia, 5mm High
+E1,5-4-5:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_1MM5_4MM_5MM(:Elko 1,5mm Pitch, 4mm Durchmesser, 5mm Hoehe:Elko 1.5mm Pitch, 4mm Dia, 5mm High
+E1,8-4-7:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_1MM8_4MM_7MM(:Elko 1,8mm Pitch, 4mm Durchmesser, 7mm Hoehe:Elko 1.8mm Pitch, 4mm Dia, 7mm High
+E1,8-4-11:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_1MM8_4MM_11MM(:Elko 1,8mm Pitch, 4mm Durchmesser, 11mm Hoehe:Elko 1.8mm Pitch, 4mm Dia, 11mm High
+E2.5-6.3-5:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_2MM5_6MM3_5MM(:Elko 2,5mm Pitch, 6,3mm Durchmesser, 5mm Hoehe:Elko 2.5mm Pitch, 6.3mm Dia, 5mm High
+E2.5-6.3-7:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_2MM5_6MM3_7MM(:Elko 2,5mm Pitch, 6,3mm Durchmesser, 7mm Hoehe:Elko 2.5mm Pitch, 6.3mm Dia, 7mm High
+E3,5-8-7:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_3MM5_8MM_7MM(:Elko 3,5mm Pitch, 8mm Durchmesser, 7mm Hoehe:Elko 3.5mm Pitch, 8mm Dia, 7mm High
+E3,5-8-11:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_3MM5_8MM_11MM(:Elko 3,5mm Pitch, 8mm Durchmesser, 11mm Hoehe:Elko 3.5mm Pitch, 8mm Dia, 11mm High
+E5,0-10-13:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_5MM_10MM_13MM(:Elko 5mm Pitch, 10mm Durchmesser, 13mm Hoehe:Elko 5mm Pitch, 10mm Dia, 13mm High
+E5,0-10-25,5:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_5MM_10MM_25MM5(:Elko 5mm Pitch, 10mm Durchmesser, 25,5mm Hoehe:Elko 5mm Pitch, 10mm Dia, 25.5mm High
+E5,0-12,5-16,5:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_5MM_12MM5_16MM5(:Elko 5mm Pitch, 12,5mm Durchmesser, 16,5mm Hoehe:Elko 5mm Pitch, 12.5mm Dia, 16.5mm High
+E5,0-12,5-25,5:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_5MM_12MM5_25MM5(:Elko 5mm Pitch, 12,5mm Durchmesser, 25,5mm Hoehe:Elko 5mm Pitch, 12.5mm Dia, 25.5mm High
+E7,5-16-16,5:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_7MM5_16MM_16MM5(:Elko 7,5mm Pitch, 16mm Durchmesser, 16,5mm Hoehe:Elko 7.5mm Pitch, 16mm Dia, 16.5mm High
+E7,5-16-25,5:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_DIS_ELKO_7MM5_16MM_25MM5(:Elko 7,5mm Pitch, 16mm Durchmesser, 25,5mm Hoehe:Elko 7.5mm Pitch, 16mm Dia, 25.5mm High
+###############################################################################
 CAP_DIS_ELKO_GRND
 (tex_scale,val_size,dis,dia,hig,dia_b,value)
-####################################################################################################
-CAP_DIS_ELKO_2MM_5MM(value)
-(<6.39,20,6.39>,1,2,5/2,11,0.5/2,value)
-CAP_DIS_ELKO_2MM5_5MM(value)
-(<6.39,20,6.39>,1,2.5,5/2,11.2,0.5/2,value)
-CAP_DIS_ELKO_2MM5_6MM3(value)
-(<8.04,22,8.04>,1,2.5,6.3/2,11.2,0.5/2,value)
-CAP_DIS_ELKO_3MM5_8MM(value)
-(<10.225,22,10.225>,1.1,3.5,8/2,11.5,0.6/2,value)
-CAP_DIS_ELKO_5MM_10MM(value)
-(<12.77,25,12.77>,1.8,5,10/2,13,0.6/2,value)
-CAP_DIS_ELKO_5MM_10MM(value)
-(<12.77,25,12.77>,1.8,5,10/2,16,0.6/2,value)
-CAP_DIS_ELKO_5MM_10MM_2(value)
-(<12.77,25,12.77>,1.8,5,10/2,25.5,0.6/2,value)
-CAP_DIS_ELKO_5MM_12MM5_2(value)
-(<15.95,30,15.95>,2.8,5,12.5/2,16.5,0.6/2,value)
-CAP_DIS_ELKO_5MM_12MM5(value)
-(<15.95,30,15.95>,2.8,5,12.5/2,22.5,0.6/2,value)
-CAP_DIS_ELKO_5MM_12MM5_3(value)
-(<15.95,30,15.95>,2.8,5,12.5/2,25.5,0.6/2,value)
-CAP_DIS_ELKO_7MM5_16MM_2(value)
-(<20.45,38,20.45>,3,7.5,16/2,16.5,0.8/2,value)
-CAP_DIS_ELKO_7MM5_16MM_3(value)
-(<20.45,38,20.45>,3,7.5,16/2,25.5,0.8/2,value)
-CAP_DIS_ELKO_7MM5_16MM(value)
-(<20.45,38,20.45>,3,7.5,16/2,28,0.8/2,value)
-CAP_DIS_ELKO_7MM5_18MM(value)
-(<23,40,23>,4,7.5,18/2,35.5,0.8/2,value)
-####################################################################################################
-####################################################################################################
+###############################################################################
+CAP_DIS_ELKO_1MM_3MM_5MM(value)
+(<3.83,20,3.83>,1.0,1.0,3.0,5.0,0.4,value) // 3mm Dia
+CAP_DIS_ELKO_1MM5_4MM_5MM(value)
+(<5.11,20,5.11>,1.0,1.5,4.0,5.0,0.45,value) // 4mm Dia
+CAP_DIS_ELKO_1MM8_4MM_7MM(value)
+(<5.11,20,5.11>,1.0,1.8,4.0,7.0,0.5,value)
+CAP_DIS_ELKO_1MM8_4MM_11MM(value)
+(<5.11,20,5.11>,1.0,1.8,4.0,11.0,0.5,value)
+CAP_DIS_ELKO_2MM_5MM_11MM(value)
+(<6.39,20,6.39>,1.0,2.0,5.0,11.0,0.5,value) // 5mm Dia
+CAP_DIS_ELKO_2MM5_5MM_11MM2(value)
+(<6.39,20,6.39>,1.0,2.5,5.0,11.2,0.5,value)
+CAP_DIS_ELKO_2MM5_6MM_11MM2(value)
+(<8.04,22,8.04>,1.0,2.5,6.0,11.2,0.5,value) // 6mm Dia
+CAP_DIS_ELKO_2MM5_6MM3_5MM(value)
+(<8.05,20,8.05>,1.0,2.5,6.3,5.0,0.5,value) // 6.3mm Dia
+CAP_DIS_ELKO_2MM5_6MM3_7MM(value)
+(<8.05,20,8.05>,1.0,2.5,6.3,7.0,0.5,value)
+CAP_DIS_ELKO_2MM5_6MM3_11MM2(value)
+(<8.05,22,8.05>,1.0,2.5,6.3,11.2,0.5,value)
+CAP_DIS_ELKO_3MM5_8MM_7MM(value)
+(<10.23,20,10.23>,1.0,3.5,8.0,7.0,0.5,value) // 8mm Dia
+CAP_DIS_ELKO_3MM5_8MM_11MM(value)
+(<10.23,20,10.23>,1.0,3.5,8.0,11.0,0.5,value)
+CAP_DIS_ELKO_3MM5_8MM_11MM5(value)
+(<10.23,22,10.23>,1.1,3.5,8.0,11.5,0.6,value)
+CAP_DIS_ELKO_5MM_10MM_13MM(value)
+(<12.78,25,12.78>,1.8,5.0,10.0,13.0,0.6,value) // 10mm Dia
+CAP_DIS_ELKO_5MM_10MM_16MM(value)
+(<12.78,25,12.78>,1.8,5.0,10.0,16.0,0.6,value)
+CAP_DIS_ELKO_5MM_10MM_25MM5(value)
+(<12.78,25,12.78>,1.8,5.0,10.0,25.5,0.6,value)
+CAP_DIS_ELKO_5MM_12MM5_16MM5(value)
+(<15.98,30,15.98>,2.8,5.0,12.5,16.5,0.6,value) // 12.5mm Dia
+CAP_DIS_ELKO_5MM_12MM5_22MM5(value)
+(<15.98,30,15.98>,2.8,5.0,12.5,22.5,0.6,value)
+CAP_DIS_ELKO_5MM_12MM5_25MM5(value)
+(<15.98,30,15.98>,2.8,5.0,12.5,25.5,0.6,value)
+CAP_DIS_ELKO_7MM5_16MM_16MM5(value)
+(<20.46,38,20.46>,3.0,7.5,16.0,16.5,0.8,value) // 16mm Dia
+CAP_DIS_ELKO_7MM5_16MM_25MM5(value)
+(<20.46,38,20.46>,3.0,7.5,16.0,25.5,0.8,value)
+CAP_DIS_ELKO_7MM5_16MM_28MM(value)
+(<20.46,38,20.46>,3.0,7.5,16.0,28.0,0.8,value)
+CAP_DIS_ELKO_7MM5_18MM_35MM5(value)
+(<23.00,40,23.00>,4.0,7.5,18.0,35.5,0.8,value) // 18mm Dia
+###############################################################################
+###############################################################################
+// 2012-09-27 Minor formatting change - changed dis, and dia.
+//   Created library file for missing caps.
 union{
-    //Elko Körper
-    difference{
-        union{            
-            cylinder{<0,0.5,0><0,hig-0.5,0>dia}                                  
-            //Elko Rundung oben
-            torus{dia-0.5,0.5 translate<0,hig-0.5,0>}                            
-            difference{
-                cylinder{<0,hig-0.5,0><0,hig,0>dia-0.5}
-                cylinder{<0,hig-0.5,0><0,hig+0.1,0>dia*0.8*pow(dia/16,0.11)}
-            }
-            //Elko Rundung unten
-            torus{dia-0.5,0.5 translate<0,0.5,0>}                                
-        }
-        //Aussparung unten
-        torus{dia+0.85,1 translate<0,2.5,0>}                                     
+  // Basic variables
+  #if(pin_short=off)
+    // Long leads
+    #local Lead_Length = -30.4;
+  #else
+    // Short leads
+    #local Lead_Length = -1*((pin_length+pcb_height)-0.2);
+  #end
+  // dis needs to be pitch/2 not ACTUAL pitch - Fixed
+  #local dis_2 = dis/2;
+  // dia needs to be in radius, NOT diameter.  Fixed
+  #local dia_2 = dia/2;
 
-        //Textur für Minusmarkierung
-        pigment{image_map{png "tex_elko.png"}scale tex_scale}                    
-        finish{reflection { 0.03, 0.1}  phong 0.4 crand 0.05 ambient (0.1 * global_ambient_mul)}
-    }
-
-    //Abdeckung oben
-    difference{
-        cylinder{<0,hig-0.5,0><0,hig-0.1,0>dia*0.8*pow(dia/16,0.11)}            
-        box{<0,hig-0.35,-0.1><dia,hig,0.1>} 
-        box{<0,hig-0.35,-0.1><dia,hig,0.1> rotate<0,120,0>}
-        box{<0,hig-0.35,-0.1><dia,hig,0.1> rotate<0,240,0>} 
-        texture{col_silver}
-    }
-    
-    //Abdeckung unten
-    cylinder{<0,0.2,0><0,0.5,0>dia-0.5 pigment{Black}}                            
+  //Elko Körper
+  // Body of capacitor
+  difference{
     union{
-        #if(pin_short=off)
-            cylinder{<0,0,0><0,-14.5,0>dia_b translate<dis/2,0,0>}    //Beinchen rechts
-            cylinder{<0,0,0><0,-17.5,0>dia_b translate<-dis/2,0,0>}   //Beinchen links
-        #else
-            cylinder{<0,0,0><0,-1*(pcb_height+pin_length)-0.2,0>dia_b translate<dis/2,0,0>}    //Beinchen rechts
-            cylinder{<0,0,0><0,-1*(pcb_height+pin_length)-0.2,0>dia_b translate<-dis/2,0,0>}   //Beinchen links
-        #end
-        texture{e3d_tex_silver}
+      cylinder{<0,0.5,0><0,hig-0.15,0>dia_2}
+      //Elko Rundung oben
+      // Electrolytic - Upper edge rounding
+      torus{dia_2-0.15,0.15 translate<0,hig-0.15,0>}
+      // Inner overlap
+      difference{
+        cylinder{<0,hig-0.5,0><0,hig,0>dia_2-0.15}
+        cylinder{<0,hig-0.5,0><0,hig+0.1,0>dia_2*0.8*pow(dia_2/16,0.11)}
+      }
+      //Elko Rundung unten
+      // Electrolytic - Lower edge rounding
+      torus{dia_2-0.15,0.15 translate<0,0.5,0>}
+      //torus{dia_2-0.5,0.5 translate<0,0.5,0> pigment{Yellow}}
     }
-    
-    //Beschriftung
-    intersection{
-        cylinder{<0,0,0><0,hig,0>dia}
-        text {ttf besch_font value 0.2, 0 scale val_size rotate<0,0,90> translate<0,0,-dia>}
-        rotate<0,0,180>
-        rotate<0,10,0>
-        translate<0,hig-val_size,-0.001>
-        pigment {rgb<0.4,0.6,1>}
+    cylinder{<0,hig-0.75,0><0,hig-0.1,0>dia_2*0.99*pow(dia_2/16,0.11)}
+    //Aussparung unten
+    // Compression ring holding in rubber plug
+    torus{dia_2+0.95,1 translate<0,2,0>}
+
+    //Textur für Minusmarkierung
+    // Texture for negative marking (graphic that wraps around capacitor)
+    pigment{image_map{png "tex_elko.png"}scale tex_scale}
+
+    // Make finish look a bit more matte
+    finish{reflection { 0.03, 0.1}
+      phong 0.4 crand 0.05 ambient (0.1 * global_ambient_mul)
     }
-    intersection{
-        cylinder{<0,0,0><0,hig,0>dia }
-        text {ttf besch_font value 0.2, 0 scale val_size rotate<0,0,90> translate<0,0,-dia>}
-        rotate<0,0,180>
-        rotate<0,100,0>
-        translate<-0.001,hig-val_size,0>
-        pigment {rgb<0.4,0.6,1>}
+  }
+
+  //Abdeckung oben
+  // Pressure relief vent cutouts
+  difference{
+    cylinder{<0,hig-0.5,0><0,hig-0.05,0>dia_2*0.9*pow(dia_2/16,0.11)}
+    box{<0,hig-0.35,-0.1><dia_2*0.89*pow(dia_2/16,0.11),hig,0.1>}
+    box{<0,hig-0.35,-0.1><dia_2*0.89*pow(dia_2/16,0.11),hig,0.1> rotate<0,120,0>}
+    box{<0,hig-0.35,-0.1><dia_2*0.89*pow(dia_2/16,0.11),hig,0.1> rotate<0,240,0>}
+    texture{col_silver}
+  }
+
+  //Abdeckung unten
+  // Rubber plug
+  cylinder{<0,0.2,0><0,0.5,0>dia_2-0.25 pigment{Black}}
+
+  union{
+    #if(pin_short=off)
+      //Beinchen rechts  // Right Leg
+      cylinder{<0,0,0><0,-14.5,0>dia_b/2 translate<dis_2,0,0>}
+      //Beinchen links  // Left Leg
+      cylinder{<0,0,0><0,-17.5,0>dia_b/2 translate<-dis_2,0,0>}
+    #else
+      //Beinchen rechts // Right Leg
+      cylinder{<0,0,0><0,Lead_Length,0>dia_b/2 translate<dis_2,0,0>}
+      //Beinchen links  // Left Leg
+      cylinder{<0,0,0><0,Lead_Length,0>dia_b/2 translate<-dis_2,0,0>}
+    #end
+    texture{e3d_tex_silver}
+  }
+
+  //Beschriftung
+  // Label
+  intersection{
+    cylinder{<0,0,0><0,hig,0>dia_2}
+    text {ttf besch_font value 0.2, 0 scale val_size rotate<0,0,90>
+      translate<0,0,-dia_2>
     }
-    intersection{
-        cylinder{<0,0,0><0,hig,0>dia }
-        text {ttf besch_font value 0.2, 0 scale val_size rotate<0,0,90> translate<0,0,-dia>}
-        rotate<0,0,180>
-        rotate<0,190,0>
-        translate<0,hig-val_size,0.001>
-        pigment {rgb<0.4,0.6,1>}
+    rotate<0,0,180> rotate<0,10,0> translate<0,hig-val_size,-0.001>
+    pigment {rgb<0.4,0.6,1>}
+  }
+  intersection{
+    cylinder{<0,0,0><0,hig,0>dia_2}
+    text {ttf besch_font value 0.2, 0 scale val_size rotate<0,0,90>
+      translate<0,0,-dia_2>
     }
-    finish{F_MetalE ambient (0.1 * global_ambient_mul)}
-    translate<0,0.2,0>
+    rotate<0,0,180> rotate<0,100,0> translate<-0.001,hig-val_size,0>
+    pigment {rgb<0.4,0.6,1>}
+  }
+  intersection{
+    cylinder{<0,0,0><0,hig,0>dia_2}
+    text {ttf besch_font value 0.2, 0 scale val_size rotate<0,0,90>
+      translate<0,0,-dia_2>
+    }
+    rotate<0,0,180> rotate<0,190,0> translate<0,hig-val_size,0.001>
+    pigment {rgb<0.4,0.6,1>}
+  }
+  finish{F_MetalE ambient (0.1 * global_ambient_mul)}
+  translate<0,0.2,0>
 }
 #end

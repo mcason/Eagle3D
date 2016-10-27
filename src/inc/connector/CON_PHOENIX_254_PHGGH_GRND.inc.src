@@ -1,0 +1,63 @@
+Phoenix 2.54mm connector
+//Phoenix Mini-Combicon 3.81mm Klemmen MCV 1,5/xx-G-381 (vertical)
+//Macros fuer Phoenix Mini-Combicon 3.81mm Klemmen und Gegenstecker
+//Designed by Friedrich Bleikamp, Lenord, Bauer & Co. Gmbh <fbleikamp@lenord.de>
+//Privat: <fbleikamp@web.de>
+//Grundmacro fuer Phoenix Mini-Combicon 3.81mm Klemmen MCV 1,5/xx-G-381 (vertical)
+//
+//Modified from CON_PHOENIX_381_PHGGH_GRND.inc.src
+//Modified by Mark Cason <farmerboy1967(at)yahoo.com>
+//  2016-10-26
+//
+####################################################################################################v
+MCV2:0:0:0:0:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CON_PHOENIX_254_MCV_2(:Phoenix MCV 1,5/2-G-254 vertikal 2pol. (con-phoenix-254.lib):Screw Terminal conn. 2Pin (con-phoenix-254.lib)
+MCV3:0:0:0:0:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CON_PHOENIX_254_MCV_3(:Phoenix MCV 1,5/3-G-254 vertikal 3pol. (con-phoenix-254.lib):Screw Terminal conn. 3Pin (con-phoenix-254.lib)
+MCV4:0:0:0:0:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CON_PHOENIX_254_MCV_4(:Phoenix MCV 1,5/4-G-254 vertikal 4pol. (con-phoenix-254.lib):Screw Terminal conn. 4Pin (con-phoenix-254.lib)
+MCV5:0:0:0:0:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CON_PHOENIX_254_MCV_5(:Phoenix MCV 1,5/5-G-254 vertikal 5pol. (con-phoenix-254.lib):Screw Terminal conn. 5Pin (con-phoenix-254.lib)
+MCV6:0:0:0:0:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CON_PHOENIX_254_MCV_6(:Phoenix MCV 1,5/6-G-254 vertikal 6pol. (con-phoenix-254.lib):Screw Terminal conn. 6Pin (con-phoenix-254.lib)
+MCV7:0:0:0:0:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CON_PHOENIX_254_MCV_7(:Phoenix MCV 1,5/7-G-254 vertikal 7pol. (con-phoenix-254.lib):Screw Terminal conn. 7Pin (con-phoenix-254.lib)
+MCV8:0:0:0:0:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CON_PHOENIX_254_MCV_8(:Phoenix MCV 1,5/8-G-254 vertikal 8pol. (con-phoenix-254.lib):Screw Terminal conn. 8Pin (con-phoenix-254.lib)
+MCV9:0:0:0:0:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CON_PHOENIX_254_MCV_9(:Phoenix MCV 1,5/9-G-254 vertikal 9pol. (con-phoenix-254.lib):Screw Terminal conn. 9Pin (con-phoenix-254.lib)
+MCV10:0:0:0:0:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CON_PHOENIX_254_MCV_10(:Phoenix MCV 1,5/10-G-254 vertikal 10pol. (con-phoenix-254.lib):Screw Terminal conn. 10Pin (con-phoenix-254.lib)
+MCV11:0:0:0:0:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CON_PHOENIX_254_MCV_11(:Phoenix MCV 1,5/11-G-254 vertikal 11pol. (con-phoenix-254.lib):Screw Terminal conn. 11Pin (con-phoenix-254.lib)
+####################################################################################################
+CON_PHOENIX_254_PHGGH_GRND
+(j)
+####################################################################################################
+CON_PHOENIX_254_MCV_2()
+(2)
+CON_PHOENIX_254_MCV_3()
+(3)
+CON_PHOENIX_254_MCV_4()
+(4)
+CON_PHOENIX_254_MCV_5()
+(5)
+CON_PHOENIX_254_MCV_6()
+(6)
+CON_PHOENIX_254_MCV_7()
+(7)
+CON_PHOENIX_254_MCV_8()
+(8)
+CON_PHOENIX_254_MCV_9()
+(9)
+CON_PHOENIX_254_MCV_10()
+(10)
+CON_PHOENIX_254_MCV_11()
+(11)
+CON_PHOENIX_254_MCV_12()
+(12)
+CON_PHOENIX_254_MCV_13()
+(13)
+####################################################################################################
+####################################################################################################
+union{
+	#local i = 0;
+	#while(i<j)
+		object {CON_PHOENIX_254_PHPIN() translate<0,0,i*2.54>}
+		object {CON_PHOENIX_254_PHGH()rotate<0,0,90> translate<3,0,i*2.54>}
+		#local i=i+1;
+	#end
+	translate<0,1,-j*1.905+1.905>
+	rotate<0,90,0>
+}
+#end

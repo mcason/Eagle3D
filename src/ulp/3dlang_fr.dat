@@ -153,15 +153,16 @@ Nombre de Trames
 Flight path
 Montrer l'arborescence
 Layers permettant d'afficher des formes en 3D selon les dimensions spécifiés
-Without soldermask
-Logo on IC
-No logo
-No board outline found. Generated POVRay file may contain errors.
-All without logo
-Create .svg file
-Pads \& SMD Bottom
-Path to POVRay
-Path to system fonts
-Resolution
-Use anti aliasing
-Call POVRay and render image
+sans masque de soudure
+Logo sur la CI
+Aucun logo
+Pas trouvé contour de la carte. POVRay fichier généré peut contenir des erreurs.
+Le tout sans logo
+Créer. Svg
+Tapis \ & CMS Bas
+Chemin d'accès au POVRay
+Chemin aux polices du système
+résolution
+Utilisez l'anti-aliasing
+Appelez POVRay et de rendre l'imagePOVRay Pause après le rendu
+Retournez Conseil Upside Down

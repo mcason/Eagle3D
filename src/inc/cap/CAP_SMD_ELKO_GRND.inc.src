@@ -7,7 +7,25 @@ SMD-Elko radial
 //B = Breite Anschlußpin
 //S = Abstand Anschlußpins unten
 //C = Länge Anschlußpins
-####################################################################################################
+//
+//Basic Macro SMD Electrolytic Capacitor
+//L = Length
+//W = Width
+//H = Height
+//D = Diameter Electrolytic Body
+//B = Width of Connector Pin
+//S = Distance connection pins down
+//C = Length of Terminal Pins
+//
+//Nichicon Dimensions
+//L = B
+//W = C
+//H = Body Height
+//D = Body Diameter
+//B = Pin Width
+//S = E
+//C = A
+###############################################################################
 140CLH-0810:0:1:0:1:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_SMD_ELKO_0810(:SMD Elko Case-Code BCComponents (rcl.lib):
 140CLH-1010:0:1:0:1:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_SMD_ELKO_1010(:SMD Elko Case-Code BCComponents (rcl.lib):
 140CLH-1014:0:1:0:1:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_SMD_ELKO_1014(:SMD Elko Case-Code BCComponents (rcl.lib):
@@ -32,10 +50,18 @@ PANASONIC_D:0:1:0:1:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_SM
 PANASONIC_E:0:1:0:1:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_SMD_ELKO_PANASONIC_E(:SMD Elko Panasonic E (rcl.lib):
 PANASONIC_F:0:1:0:1:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_SMD_ELKO_PANASONIC_F(:SMD Elko Panasonic F (rcl.lib):
 PANASONIC_G:0:1:0:1:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_SMD_ELKO_PANASONIC_G(:SMD Elko Panasonic G (rcl.lib):
-####################################################################################################
+NICHICON-3X5.5:0:1:0:1:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_SMD_NICHICON_3X55(:SMD Nichicon 3mm dia x 5.5mm ht (Eagle3D-Passives.lib):
+NICHICON-4X5.5:0:1:0:1:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_SMD_NICHICON_4X55(:SMD Nichicon 4mm dia x 5.5mm ht (Eagle3D-Passives.lib):
+NICHICON-5X5.5:0:1:0:1:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_SMD_NICHICON_5X55(:SMD Nichicon 5mm dia x 5.5mm ht (Eagle3D-Passives.lib):
+NICHICON-6.3X5.5:0:1:0:1:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_SMD_NICHICON_63X55(:SMD Nichicon 6.3mm dia x 5.5 mm ht (Eagle3D-Passives.lib):
+NICHICON-6.3X7.7:0:1:0:1:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_SMD_NICHICON_63X77(:SMD Nichicon 6.3mm dia x 7.7 mm ht (Eagle3D-Passives.lib):
+NICHICON-8X5.5:0:1:0:1:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_SMD_NICHICON_8X55(:SMD Nichicon 8mm dia x 5.5 mm ht (Eagle3D_Passives.lib):
+NICHICON-8X6.2:0:1:0:1:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_SMD_NICHICON_8X62(:SMD Nichicon 8mm dia x 6.2mm ht (Eagle3D-Passives.lib):
+NICHICON-8X10:0:1:0:1:0:0:0:0:0:0:0:0:0:180:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:CAP_SMD_NICHICON_8X10(:SMD Nichicon 8mm dia x 10mm ht (Eagle3D-Passives.lib):
+###############################################################################
 CAP_SMD_ELKO_GRND
 (L,W,H,D,B,S,C)
-####################################################################################################
+###############################################################################
 CAP_SMD_ELKO_0405(value)
 (4.5,4.5,5.5,4.0,0.8,1.0,2.0)
 CAP_SMD_ELKO_0505(value)
@@ -70,37 +96,56 @@ CAP_SMD_ELKO_PANASONIC_F(value)
 (8.3,8.3,10.2,8.0,0.9,3.1,3.4)
 CAP_SMD_ELKO_PANASONIC_G(value)
 (10.3,10.3,10.2,10.0,0.9,4.6,3.5)
-####################################################################################################
-####################################################################################################
-union{
+// Nichicon
+CAP_SMD_NICHICON_3X55(value)
+(3.3,3.3,5.5,3.0,0.8,1.0,1.8)
+CAP_SMD_NICHICON_4X55(value)
+(4.3,4.3,5.5,4.0,0.8,1.0,1.8)
+CAP_SMD_NICHICON_5X55(value)
+(5.3,5.3,5.5,5.0,0.8,1.3,2.1)
+CAP_SMD_NICHICON_63X55(value)
+(6.6,6.6,5.5,6.3,0.8,2.2,2.4)
+CAP_SMD_NICHICON_63X77(value)
+(6.6,6.6,7.7,6.3,0.8,2.2,2.4)
+CAP_SMD_NICHICON_8X55(value)
+(8.5,8.5,5.5,8.0,0.8,2.5,2.5)
+CAP_SMD_NICHICON_8X62(value)
+(8.5,8.5,6.2,8.0,0.8,2.5,2.5)
+CAP_SMD_NICHICON_8X10(value)
+(8.5,8.5,10.0,8.0,0.8,2.5,2.5)
+###############################################################################
+###############################################################################
+  union{
     //Contacts
     box{<-S/2,0,-B/2><-S/2-C,0.3,B/2>}
     box{<S/2,0,-B/2><S/2+C,0.3,B/2>}
     //The base plastic
     difference{
-        box{<-L/2,0.3,-W/2><L/2,2,W/2>}
-        box{<0,0,0><6,3,-5> rotate<0,-45,0> translate<L/2-L/4,0,-W/2>}
-        box{<0,0,0><6,3,5> rotate<0,45,0> translate<L/2-L/4,0,W/2>}
-        texture{e3d_tex_cap_smd_electrolytic_base}
+      box{<-L/2,0.3,-W/2><L/2,2,W/2>}
+      box{<0,0,0><6,3,-5> rotate<0,-45,0> translate<L/2-L/4,0,-W/2>}
+      box{<0,0,0><6,3,5> rotate<0,45,0> translate<L/2-L/4,0,W/2>}
+      texture{e3d_tex_cap_smd_electrolytic_base}
     }
     //Body
     difference{
-        cylinder{<0,2,0><0,H-0.4,0>D/2}
-        torus{D/2+0.2,0.4 translate<0,3,0>}
+      cylinder{<0,2,0><0,H-0.4,0>D/2}
+      torus{D/2+0.2,0.4 translate<0,3,0>}
     }
     torus{D/2-0.4,0.4 translate<0,H-0.4,0>}
     cylinder{<0,H-0.4,0><0,H,0>D/2-0.4}
 
     //Top marking
     union{        
-        difference{
-            cylinder{<0,H-0.4,0><0,H+0.01,0>D/2-0.4}
-            box{<-D/6,H-0.5,-D/2><D/2,H+0.1,D/2>}            
-        }
-        text {ttf besch_font value 0.5,0 scale D/7 rotate<90,-90,0> translate<D/16,H+0.01,-D/2+D/8>}
-        texture{e3d_tex_cap_marking_black}
+      difference{
+        cylinder{<0,H-0.4,0><0,H+0.01,0>D/2-0.4}
+        box{<-D/6,H-0.5,-D/2><D/2,H+0.1,D/2>}            
+      }
+      text {ttf besch_font value 0.5,0 scale D/7 rotate<90,-90,0>
+        translate<D/16,H+0.01,-D/2+D/8>
+      }
+      texture{e3d_tex_cap_marking_black}
     }
     rotate<0,180,0>
     texture{e3d_tex_silver}
-}
+  }
 #end
