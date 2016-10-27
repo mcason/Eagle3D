@@ -2,97 +2,136 @@ Wire jumper
 //Macros for jumper such simple wire
 //Designed by Philippe Boucheny <philippe.boucheny(at)numericable.fr>
 //Modified by Adriano Gandolfo <adrirobot(at)yahoo.it>
+//Modified by Mark Cason <farmerboy1967(at)yahoo.com>
 //Rev. 1.1  30/10/08
+//Rev. 1.2  2016-10-26
+//
 //If value is set in Eagle (1 to 9), colors can be passed to POV, by Emil Crisbaseanu
 //<emilcrisba(at)gmail.com>
 ####################################################################################################
-NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_5MM(:Drahtbrücke:Wire jumper
-NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_7MM(:Drahtbrücke:Wire jumper
-NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_10MM(:Drahtbrücke:Wire jumper
-NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_12MM(:Drahtbrücke:Wire jumper
-NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_15MM(:Drahtbrücke:Wire jumper
-NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_17MM(:Drahtbrücke:Wire jumper
-NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_20MM(:Drahtbrücke:Wire jumper
-NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_22MM(:Drahtbrücke:Wire jumper
-NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_25MM(:Drahtbrücke:Wire jumper
-NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_27MM(:Drahtbrücke:Wire jumper
-NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_30MM(:Drahtbrücke:Wire jumper
+0.100:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_0100(:Drahtbrücke:Wire jumper
+0.200:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_0200(:Drahtbrücke:Wire jumper
+0.300:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_0300(:Drahtbrücke:Wire jumper
+0.400:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_0400(:Drahtbrücke:Wire jumper
+0.500:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_0500(:Drahtbrücke:Wire jumper
+0.600:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_0600(:Drahtbrücke:Wire jumper
+0.700:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_0700(:Drahtbrücke:Wire jumper
+0.800:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_0800(:Drahtbrücke:Wire jumper
+0.900:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_0900(:Drahtbrücke:Wire jumper
+1.000:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_1000(:Drahtbrücke:Wire jumper
+1.100:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_1100(:Drahtbrücke:Wire jumper
+1.200:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_1200(:Drahtbrücke:Wire jumper
+NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_0254MM(:Drahtbrücke:Wire jumper
+NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_0508MM(:Drahtbrücke:Wire jumper
+NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_0762MM(:Drahtbrücke:Wire jumper
+NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_1016MM(:Drahtbrücke:Wire jumper
+NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_1270MM(:Drahtbrücke:Wire jumper
+NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_1397MM(:Drahtbrücke:Wire jumper
+NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_1524MM(:Drahtbrücke:Wire jumper
+NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_1778MM(:Drahtbrücke:Wire jumper
+NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_2032MM(:Drahtbrücke:Wire jumper
+NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_2286MM(:Drahtbrücke:Wire jumper
+NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_2540MM(:Drahtbrücke:Wire jumper
+NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_2794MM(:Drahtbrücke:Wire jumper
+NOEAGLEPAC:0:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:SPC_JUMPER_WIRE_3048MM(:Drahtbrücke:Wire jumper
 ####################################################################################################
 SPC_JUMPER_WIRE_GRND
 (Lg,value)
 ####################################################################################################
-SPC_JUMPER_WIRE_5MM(value)
+SPC_JUMPER_WIRE_0100(value)
+(2.54,value)
+SPC_JUMPER_WIRE_0200(value)
 (5.08,value)
-SPC_JUMPER_WIRE_7MM(value)
+SPC_JUMPER_WIRE_0300(value)
 (7.62,value)
-SPC_JUMPER_WIRE_10MM(value)
+SPC_JUMPER_WIRE_0400(value)
 (10.16,value)
-SPC_JUMPER_WIRE_12MM(value)
-(12.7,value)
-SPC_JUMPER_WIRE_15MM(value)
+SPC_JUMPER_WIRE_0500(value)
+(12.70,value)
+SPC_JUMPER_WIRE_0600(value)
 (15.24,value)
-SPC_JUMPER_WIRE_17MM(value)
+SPC_JUMPER_WIRE_0700(value)
 (17.78,value)
-SPC_JUMPER_WIRE_20MM(value)
+SPC_JUMPER_WIRE_0800(value)
 (20.32,value)
-SPC_JUMPER_WIRE_22MM(value)
+SPC_JUMPER_WIRE_0900(value)
 (22.86,value)
-SPC_JUMPER_WIRE_25MM(value)
+SPC_JUMPER_WIRE_1000(value)
 (25.40,value)
-SPC_JUMPER_WIRE_27MM(value)
+SPC_JUMPER_WIRE_1100(value)
 (27.94,value)
-SPC_JUMPER_WIRE_30MM(value)
+SPC_JUMPER_WIRE_1200(value)
+(30.48,value)
+SPC_JUMPER_WIRE_0254MM(value)
+(2.54,value)
+SPC_JUMPER_WIRE_0508MM(value)
+(5.08,value)
+SPC_JUMPER_WIRE_0762MM(value)
+(7.62,value)
+SPC_JUMPER_WIRE_1016MM(value)
+(10.16,value)
+SPC_JUMPER_WIRE_1270MM(value)
+(12.70,value)
+SPC_JUMPER_WIRE_1524MM(value)
+(15.24,value)
+SPC_JUMPER_WIRE_1778MM(value)
+(17.78,value)
+SPC_JUMPER_WIRE_2032MM(value)
+(20.32,value)
+SPC_JUMPER_WIRE_2286MM(value)
+(22.86,value)
+SPC_JUMPER_WIRE_2540MM(value)
+(25.40,value)
+SPC_JUMPER_WIRE_2794MM(value)
+(27.94,value)
+SPC_JUMPER_WIRE_3048MM(value)
 (30.48,value)
 ####################################################################################################
 ####################################################################################################
-              
 
 #local h=0.9;
-
 
 #if (strcmp (value,"1")=0)
 #local gain=cylinder{<-(Lg-1)/2,h,0>,<(Lg-1)/2,h,0>,0.6 pigment { Brown } finish { Shiny }}
 #else
-        #if (strcmp (value,"2")=0)
-        #local gain=cylinder{<-(Lg-1)/2,h,0>,<(Lg-1)/2,h,0>,0.6 pigment { Red } finish { Shiny }}
+  #if (strcmp (value,"2")=0)
+  #local gain=cylinder{<-(Lg-1)/2,h,0>,<(Lg-1)/2,h,0>,0.6 pigment { Red } finish { Shiny }}
+  #else
+    #if (strcmp (value,"3")=0)
+    #local gain=cylinder{<-(Lg-1)/2,h,0>,<(Lg-1)/2,h,0>,0.6 pigment { Orange } finish { Shiny }}
+    #else
+      #if (strcmp (value,"4")=0)
+      #local gain=cylinder{<-(Lg-1)/2,h,0>,<(Lg-1)/2,h,0>,0.6 pigment { Yellow } finish { Shiny }}
+      #else
+        #if (strcmp (value,"5")=0)
+        #local gain=cylinder{<-(Lg-1)/2,h,0>,<(Lg-1)/2,h,0>,0.6 pigment { Blue } finish { Shiny }}
         #else
-                #if (strcmp (value,"3")=0)
-                #local gain=cylinder{<-(Lg-1)/2,h,0>,<(Lg-1)/2,h,0>,0.6 pigment { Orange } finish { Shiny }}
+          #if (strcmp (value,"6")=0)
+          #local gain=cylinder{<-(Lg-1)/2,h,0>,<(Lg-1)/2,h,0>,0.6 pigment { Green } finish { Shiny }}
+          #else
+            #if (strcmp (value,"7")=0)
+            #local gain=cylinder{<-(Lg-1)/2,h,0>,<(Lg-1)/2,h,0>,0.6 pigment { Pink } finish { Shiny }}
+            #else
+              #if (strcmp (value,"8")=0)
+              #local gain=cylinder{<-(Lg-1)/2,h,0>,<(Lg-1)/2,h,0>,0.6 pigment { Gray60 } finish { Shiny }}
+              #else
+                #if (strcmp (value,"9")=0)
+                #local gain=cylinder{<-(Lg-1)/2,h,0>,<(Lg-1)/2,h,0>,0.6 pigment { White } finish { Shiny }}
                 #else
-                        #if (strcmp (value,"4")=0)
-                        #local gain=cylinder{<-(Lg-1)/2,h,0>,<(Lg-1)/2,h,0>,0.6 pigment { Yellow } finish { Shiny }}
-                        #else
-                                #if (strcmp (value,"5")=0)
-                                #local gain=cylinder{<-(Lg-1)/2,h,0>,<(Lg-1)/2,h,0>,0.6 pigment { Blue } finish { Shiny }}
-                                #else
-                                        #if (strcmp (value,"6")=0)
-                                        #local gain=cylinder{<-(Lg-1)/2,h,0>,<(Lg-1)/2,h,0>,0.6 pigment { Green } finish { Shiny }}
-                                        #else
-                                                #if (strcmp (value,"7")=0)
-                                                #local gain=cylinder{<-(Lg-1)/2,h,0>,<(Lg-1)/2,h,0>,0.6 pigment { Pink } finish { Shiny }}
-                                                #else
-                                                        #if (strcmp (value,"8")=0)
-                                                        #local gain=cylinder{<-(Lg-1)/2,h,0>,<(Lg-1)/2,h,0>,0.6 pigment { Gray60 } finish { Shiny }}
-                                                        #else
-                                                                #if (strcmp (value,"9")=0)
-                                                                #local gain=cylinder{<-(Lg-1)/2,h,0>,<(Lg-1)/2,h,0>,0.6 pigment { White } finish { Shiny }}
-                                                                #else
-                                                                        #local gain=cylinder{<-(Lg-1)/2,h,0>,<(Lg-1)/2,h,0>,0.1 pigment { Brown } finish { Shiny }}
-                                                                #end
-                                                        #end
-                                                #end
-                                        #end
-                                #end
-                        #end
-                  
+                  #local gain=cylinder{<-(Lg-1)/2,h,0>,<(Lg-1)/2,h,0>,0.1 pigment { Brown } finish { Shiny }}
                 #end
-         #end
+              #end
+            #end
+          #end
+        #end
+      #end
+    #end
+  #end
 #end     
 
 union {        
-      object{ TOOLS_WIRE_LEADS(0, 1, 1, 0.4,  Lg,  0.5, 0, "H") translate<0,h,0> }
-      object{gain}
+  object{ TOOLS_WIRE_LEADS(0, 1, 1, 0.4,  Lg,  0.5, 0, "H") translate<0,h,0> }
+  object{gain}
 }
 #end
-
 
