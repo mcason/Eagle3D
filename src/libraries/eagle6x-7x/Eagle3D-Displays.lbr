@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle version="7.4.0">
+<drawing>
+<settings>
+<setting alwaysvectorfont="yes"/>
+<setting verticaltext="up"/>
+</settings>
+<grid distance="0.25" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<layers>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
+<layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
+<layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
+<layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
+<layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
+<layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+</layers>
+<library>
+<packages>
+<package name="LCD-16X2">
+<description>16 x 2 Display module</description>
+<wire x1="-41.02" y1="17.74" x2="38.98" y2="17.74" width="0.2032" layer="21"/>
+<wire x1="38.98" y1="17.74" x2="38.98" y2="-18.26" width="0.2032" layer="21"/>
+<wire x1="38.98" y1="-18.26" x2="-41.02" y2="-18.26" width="0.2032" layer="21"/>
+<wire x1="-41.02" y1="-18.26" x2="-41.02" y2="17.74" width="0.2032" layer="21"/>
+<wire x1="-36.67" y1="12.89" x2="34.63" y2="12.89" width="0.2032" layer="21"/>
+<wire x1="34.63" y1="12.89" x2="34.63" y2="-13.41" width="0.2032" layer="21"/>
+<wire x1="34.63" y1="-13.41" x2="-36.67" y2="-13.41" width="0.2032" layer="21"/>
+<wire x1="-36.67" y1="-13.41" x2="-36.67" y2="12.89" width="0.2032" layer="21"/>
+<pad name="VCC" x="-30.48" y="15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="GND" x="-33.02" y="15.24" drill="1.016" diameter="1.8796" shape="square"/>
+<pad name="CON+" x="-27.94" y="15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="RS" x="-25.4" y="15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="R/W" x="-22.86" y="15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="EN" x="-20.32" y="15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="D0" x="-17.78" y="15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="D1" x="-15.24" y="15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="D2" x="-12.7" y="15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="D3" x="-10.16" y="15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="D4" x="-7.62" y="15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="D5" x="-5.08" y="15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="D6" x="-2.54" y="15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="D7" x="0" y="15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="LED+" x="2.54" y="15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="LED-" x="5.08" y="15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
+<text x="-35.56" y="14.605" size="1.016" layer="51" ratio="15">1</text>
+<text x="6.985" y="14.605" size="1.016" layer="51" ratio="15">16</text>
+<circle x="-38.52" y="-15.76" radius="1.3" width="0.127" layer="21"/>
+<circle x="-38.52" y="15.24" radius="1.3" width="0.127" layer="21"/>
+<circle x="36.48" y="15.24" radius="1.3" width="0.127" layer="21"/>
+<circle x="36.48" y="-15.76" radius="1.3" width="0.127" layer="21"/>
+<text x="-34.29" y="0" size="1.27" layer="27">&gt;VALUE</text>
+<text x="-40.64" y="-20.955" size="1.27" layer="25">&gt;NAME</text>
+<pad name="P$1" x="-38.5" y="15.25" drill="2.4384" diameter="4.5974"/>
+<circle x="-38.5" y="15.25" radius="2.413" width="0.127" layer="42"/>
+<circle x="-38.5" y="15.25" radius="2.413" width="0.127" layer="41"/>
+<pad name="P$2" x="-38.5" y="-15.75" drill="2.4384" diameter="4.5974"/>
+<circle x="-38.5" y="-15.75" radius="2.413" width="0.127" layer="42"/>
+<circle x="-38.5" y="-15.75" radius="2.413" width="0.127" layer="41"/>
+<pad name="P$3" x="36.5" y="-15.75" drill="2.4384" diameter="4.5974"/>
+<circle x="36.5" y="-15.75" radius="2.413" width="0.127" layer="42"/>
+<circle x="36.5" y="-15.75" radius="2.413" width="0.127" layer="41"/>
+<pad name="P$4" x="36.5" y="15.25" drill="2.4384" diameter="4.5974"/>
+<circle x="36.5" y="15.25" radius="2.413" width="0.127" layer="42"/>
+<circle x="36.5" y="15.25" radius="2.413" width="0.127" layer="41"/>
+</package>
+<package name="128X64-GLCD-A">
+<wire x1="-38.8" y1="-27.9" x2="-38.8" y2="24.8" width="0.2032" layer="21"/>
+<wire x1="-38.8" y1="24.8" x2="36.2" y2="24.8" width="0.2032" layer="21"/>
+<wire x1="36.2" y1="24.8" x2="36.2" y2="-27.9" width="0.2032" layer="21"/>
+<wire x1="36.2" y1="-27.9" x2="-38.8" y2="-27.9" width="0.2032" layer="21"/>
+<wire x1="-31.3" y1="-17.8" x2="-31.3" y2="14.7" width="0.2032" layer="21"/>
+<wire x1="-31.3" y1="14.7" x2="28.7" y2="14.7" width="0.2032" layer="21"/>
+<wire x1="28.7" y1="14.7" x2="28.7" y2="-17.8" width="0.2032" layer="21"/>
+<wire x1="28.7" y1="-17.8" x2="-31.3" y2="-17.8" width="0.2032" layer="21"/>
+<pad name="VCC" x="-25.4" y="-25.4" drill="1.016" shape="square" rot="R90"/>
+<pad name="GND" x="-22.86" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CON+" x="-20.32" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D0" x="-17.78" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D1" x="-15.24" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D2" x="-12.7" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D3" x="-10.16" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D4" x="-7.62" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D5" x="-5.08" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D6" x="-2.54" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D7" x="0" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CS2" x="5.08" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CS1" x="2.54" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="!RESET" x="7.62" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="R/W" x="10.16" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D/I" x="12.7" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="EN" x="15.24" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CON-" x="17.78" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="LED+" x="20.32" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="LED-" x="22.86" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<text x="-27.94" y="-26.67" size="1.778" layer="21">1</text>
+<text x="25.4" y="-26.67" size="1.778" layer="21">20</text>
+<hole x="-36.3" y="-25.4" drill="2.5"/>
+<hole x="-36.3" y="24.3" drill="2.5"/>
+<hole x="33.7" y="24.3" drill="2.5"/>
+<hole x="33.7" y="-25.4" drill="2.5"/>
+<circle x="-36.3" y="-25.4" radius="1.3" width="0.127" layer="21"/>
+<circle x="33.7" y="-25.4" radius="1.3" width="0.127" layer="21"/>
+<circle x="33.7" y="24.3" radius="1.3" width="0.127" layer="21"/>
+<circle x="-36.3" y="24.3" radius="1.3" width="0.127" layer="21"/>
+<text x="-28.575" y="0" size="1.27" layer="27">&gt;VALUE</text>
+<text x="-38.1" y="-29.845" size="1.27" layer="25">&gt;NAME</text>
+</package>
+<package name="LCD-20X4-I2C">
+<wire x1="-49" y1="30" x2="49" y2="30" width="0.2032" layer="21"/>
+<wire x1="49" y1="30" x2="49" y2="-30" width="0.2032" layer="21"/>
+<wire x1="49" y1="-30" x2="-49" y2="-30" width="0.2032" layer="21"/>
+<wire x1="-49" y1="-30" x2="-49" y2="30" width="0.2032" layer="21"/>
+<wire x1="-48.5" y1="19.85" x2="48.5" y2="19.85" width="0.2032" layer="21"/>
+<wire x1="48.5" y1="19.85" x2="48.5" y2="-19.85" width="0.2032" layer="21"/>
+<wire x1="48.5" y1="-19.85" x2="-48.5" y2="-19.85" width="0.2032" layer="21"/>
+<wire x1="-48.5" y1="-19.85" x2="-48.5" y2="19.85" width="0.2032" layer="21"/>
+<pad name="GND" x="-50.8" y="22.86" drill="1.016" diameter="1.8796" shape="square"/>
+<pad name="VCC" x="-50.8" y="20.32" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="SDA" x="-50.8" y="17.78" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="SCL" x="-50.8" y="15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
+<hole x="-46.5" y="-27.5" drill="2.5"/>
+<hole x="46.5" y="-27.5" drill="2.5"/>
+<hole x="46.5" y="27.5" drill="2.5"/>
+<hole x="-46.5" y="27.5" drill="2.5"/>
+<circle x="-46.5" y="-27.5" radius="1.3" width="0.127" layer="21"/>
+<circle x="-46.5" y="27.5" radius="1.3" width="0.127" layer="21"/>
+<circle x="46.5" y="27.5" radius="1.3" width="0.127" layer="21"/>
+<circle x="46.5" y="-27.5" radius="1.3" width="0.127" layer="21"/>
+<text x="-48.26" y="-33.02" size="1.27" layer="25">&gt;NAME</text>
+<text x="-46.355" y="0.635" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+<package name="LCD-I2C_PINS">
+<pad name="GND" x="-3.81" y="0" drill="1.016" diameter="1.8796" shape="square" rot="R90"/>
+<pad name="VCC" x="-1.27" y="0" drill="1.016" diameter="1.8796" shape="octagon" rot="R90"/>
+<pad name="SDA" x="1.27" y="0" drill="1.016" diameter="1.8796" shape="octagon" rot="R90"/>
+<pad name="SCL" x="3.81" y="0" drill="1.016" diameter="1.8796" shape="octagon" rot="R90"/>
+<wire x1="-5.3975" y1="1.5875" x2="5.3975" y2="1.5875" width="0.127" layer="21"/>
+<wire x1="5.3975" y1="1.5875" x2="5.3975" y2="-1.5875" width="0.127" layer="21"/>
+<wire x1="5.3975" y1="-1.5875" x2="-5.3975" y2="-1.5875" width="0.127" layer="21"/>
+<wire x1="-5.3975" y1="-1.5875" x2="-5.3975" y2="1.5875" width="0.127" layer="21"/>
+<text x="-3.81" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3.81" y="-3.81" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+<package name="LCD-20X4">
+<pad name="VCC" x="-36.46" y="27.46" drill="0.9" diameter="1.8796" shape="octagon"/>
+<pad name="GND" x="-39" y="27.46" drill="0.9" diameter="1.8796" shape="square"/>
+<pad name="CON+" x="-33.92" y="27.46" drill="0.9" diameter="1.8796" shape="octagon"/>
+<pad name="RS" x="-31.38" y="27.46" drill="0.9" diameter="1.8796" shape="octagon"/>
+<pad name="R/W" x="-28.84" y="27.46" drill="0.9" diameter="1.8796" shape="octagon"/>
+<pad name="EN" x="-26.3" y="27.46" drill="0.9" diameter="1.8796" shape="octagon"/>
+<pad name="D0" x="-23.76" y="27.46" drill="0.9" diameter="1.8796" shape="octagon"/>
+<pad name="D1" x="-21.22" y="27.46" drill="0.9" diameter="1.8796" shape="octagon"/>
+<pad name="D2" x="-18.68" y="27.46" drill="0.9" diameter="1.8796" shape="octagon"/>
+<pad name="D3" x="-16.14" y="27.46" drill="0.9" diameter="1.8796" shape="octagon"/>
+<pad name="D4" x="-13.6" y="27.46" drill="0.9" diameter="1.8796" shape="octagon"/>
+<pad name="D5" x="-11.06" y="27.46" drill="0.9" diameter="1.8796" shape="octagon"/>
+<pad name="D6" x="-8.52" y="27.46" drill="0.9" diameter="1.8796" shape="octagon"/>
+<pad name="D7" x="-5.98" y="27.46" drill="0.9" diameter="1.8796" shape="octagon"/>
+<pad name="LED+" x="-3.44" y="27.46" drill="0.9" diameter="1.8796" shape="octagon"/>
+<pad name="LED-" x="-0.9" y="27.46" drill="0.9" diameter="1.8796" shape="octagon"/>
+<text x="-41.275" y="26.67" size="1.016" layer="51" ratio="15">1</text>
+<text x="0.635" y="26.67" size="1.016" layer="51" ratio="15">16</text>
+<wire x1="-49" y1="30" x2="49" y2="30" width="0.2032" layer="21"/>
+<wire x1="49" y1="30" x2="49" y2="-30" width="0.2032" layer="21"/>
+<wire x1="49" y1="-30" x2="-49" y2="-30" width="0.2032" layer="21"/>
+<wire x1="-49" y1="-30" x2="-49" y2="30" width="0.2032" layer="21"/>
+<wire x1="-48.5" y1="19.85" x2="48.5" y2="19.85" width="0.2032" layer="21"/>
+<wire x1="48.5" y1="19.85" x2="48.5" y2="-19.85" width="0.2032" layer="21"/>
+<wire x1="48.5" y1="-19.85" x2="-48.5" y2="-19.85" width="0.2032" layer="21"/>
+<wire x1="-48.5" y1="-19.85" x2="-48.5" y2="19.85" width="0.2032" layer="21"/>
+<circle x="-46.5" y="-27.5" radius="1.3" width="0.127" layer="21"/>
+<circle x="-46.5" y="27.5" radius="1.3" width="0.127" layer="21"/>
+<circle x="46.5" y="27.5" radius="1.3" width="0.127" layer="21"/>
+<circle x="46.5" y="-27.5" radius="1.3" width="0.127" layer="21"/>
+<text x="-26.67" y="-1.27" size="1.27" layer="25">&gt;NAME</text>
+<text x="-48.26" y="-32.385" size="1.27" layer="27">&gt;VALUE</text>
+<pad name="P$1" x="-46.5" y="27.5" drill="2.4384" diameter="4.5974"/>
+<circle x="-46.5" y="27.5" radius="2.413" width="0.127" layer="42"/>
+<circle x="-46.5" y="27.5" radius="2.413" width="0.127" layer="41"/>
+<pad name="P$2" x="-46.5" y="-27.5" drill="2.4384" diameter="4.5974"/>
+<circle x="-46.5" y="-27.5" radius="2.413" width="0.127" layer="42"/>
+<circle x="-46.5" y="-27.5" radius="2.413" width="0.127" layer="41"/>
+<pad name="P$3" x="46.5" y="-27.5" drill="2.4384" diameter="4.5974"/>
+<circle x="46.5" y="-27.5" radius="2.413" width="0.127" layer="42"/>
+<circle x="46.5" y="-27.5" radius="2.413" width="0.127" layer="41"/>
+<pad name="P$4" x="46.5" y="27.5" drill="2.4384" diameter="4.5974"/>
+<circle x="46.5" y="27.5" radius="2.413" width="0.127" layer="42"/>
+<circle x="46.5" y="27.5" radius="2.413" width="0.127" layer="41"/>
+</package>
+<package name="LCD-PINS">
+<pad name="VCC" x="-16.51" y="0" drill="1.016" diameter="1.8796" shape="octagon" rot="R180"/>
+<pad name="GND" x="-19.05" y="0" drill="1.016" diameter="1.8796" shape="square" rot="R180"/>
+<pad name="CON+" x="-13.97" y="0" drill="1.016" diameter="1.8796" shape="octagon" rot="R180"/>
+<pad name="RS" x="-11.43" y="0" drill="1.016" diameter="1.8796" shape="octagon" rot="R180"/>
+<pad name="R/W" x="-8.89" y="0" drill="1.016" diameter="1.8796" shape="octagon" rot="R180"/>
+<pad name="EN" x="-6.35" y="0" drill="1.016" diameter="1.8796" shape="octagon" rot="R180"/>
+<pad name="D0" x="-3.81" y="0" drill="1.016" diameter="1.8796" shape="octagon" rot="R180"/>
+<pad name="D1" x="-1.27" y="0" drill="1.016" diameter="1.8796" shape="octagon" rot="R180"/>
+<pad name="D2" x="1.27" y="0" drill="1.016" diameter="1.8796" shape="octagon" rot="R180"/>
+<pad name="D3" x="3.81" y="0" drill="1.016" diameter="1.8796" shape="octagon" rot="R180"/>
+<pad name="D4" x="6.35" y="0" drill="1.016" diameter="1.8796" shape="octagon" rot="R180"/>
+<pad name="D5" x="8.89" y="0" drill="1.016" diameter="1.8796" shape="octagon" rot="R180"/>
+<pad name="D6" x="11.43" y="0" drill="1.016" diameter="1.8796" shape="octagon" rot="R180"/>
+<pad name="D7" x="13.97" y="0" drill="1.016" diameter="1.8796" shape="octagon" rot="R180"/>
+<pad name="LED+" x="16.51" y="0" drill="1.016" diameter="1.8796" shape="octagon" rot="R180"/>
+<pad name="LED-" x="19.05" y="0" drill="1.016" diameter="1.8796" shape="octagon" rot="R180"/>
+<text x="-19.05" y="-1.27" size="1.016" layer="51" ratio="15" rot="SR0" align="top-center">1</text>
+<text x="19.05" y="-1.27" size="1.016" layer="51" ratio="15" rot="SR0" align="top-center">16</text>
+<wire x1="20.32" y1="2.54" x2="20.32" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="20.32" y1="-2.54" x2="-20.32" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="-20.32" y1="-2.54" x2="-20.32" y2="2.54" width="0.127" layer="21"/>
+<wire x1="-20.32" y1="2.54" x2="20.32" y2="2.54" width="0.127" layer="21"/>
+<text x="-19.05" y="-5.08" size="1.27" layer="25">&gt;NAME</text>
+<text x="-19.05" y="3.81" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+<package name="128X64-GLCD-A-PINS">
+<pad name="VCC" x="-24.13" y="0" drill="1.016" shape="square" rot="R90"/>
+<pad name="GND" x="-21.59" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CON+" x="-19.05" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D0" x="-16.51" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D1" x="-13.97" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D2" x="-11.43" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D3" x="-8.89" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D4" x="-6.35" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D5" x="-3.81" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D6" x="-1.27" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D7" x="1.27" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CS2" x="6.35" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CS1" x="3.81" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="!RESET" x="8.89" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="R/W" x="11.43" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D/I" x="13.97" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="EN" x="16.51" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CON-" x="19.05" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="LED+" x="21.59" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="LED-" x="24.13" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<text x="-24.13" y="-1.27" size="1.016" layer="21" ratio="15" rot="SR0" align="top-center">1</text>
+<text x="24.13" y="-1.27" size="1.016" layer="21" ratio="15" rot="SR0" align="top-center">20</text>
+<wire x1="-25.4" y1="-2.54" x2="-25.4" y2="2.54" width="0.127" layer="21"/>
+<wire x1="-25.4" y1="2.54" x2="25.4" y2="2.54" width="0.127" layer="21"/>
+<wire x1="25.4" y1="2.54" x2="25.4" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="25.4" y1="-2.54" x2="-25.4" y2="-2.54" width="0.127" layer="21"/>
+<text x="-24.13" y="3.81" size="1.27" layer="25">&gt;NAME</text>
+<text x="-24.13" y="-5.08" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+<package name="128X64-GLCD-B">
+<wire x1="-38.8" y1="-27.9" x2="-38.8" y2="24.8" width="0.2032" layer="21"/>
+<wire x1="-38.8" y1="24.8" x2="36.2" y2="24.8" width="0.2032" layer="21"/>
+<wire x1="36.2" y1="24.8" x2="36.2" y2="-27.9" width="0.2032" layer="21"/>
+<wire x1="36.2" y1="-27.9" x2="-38.8" y2="-27.9" width="0.2032" layer="21"/>
+<wire x1="-31.3" y1="-17.8" x2="-31.3" y2="14.7" width="0.2032" layer="21"/>
+<wire x1="-31.3" y1="14.7" x2="28.7" y2="14.7" width="0.2032" layer="21"/>
+<wire x1="28.7" y1="14.7" x2="28.7" y2="-17.8" width="0.2032" layer="21"/>
+<wire x1="28.7" y1="-17.8" x2="-31.3" y2="-17.8" width="0.2032" layer="21"/>
+<pad name="GND" x="-25.4" y="-25.4" drill="1.016" shape="square" rot="R90"/>
+<pad name="VCC" x="-22.86" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CON+" x="-20.32" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D0" x="-10.16" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D1" x="-7.62" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D2" x="-5.08" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D3" x="-2.54" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D4" x="0" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D5" x="2.54" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D6" x="5.08" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D7" x="7.62" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CS2" x="12.7" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CS1" x="10.16" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="!RESET" x="15.24" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="R/W" x="-15.24" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D/I" x="-17.78" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="EN" x="-12.7" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CON-" x="17.78" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="LED+" x="20.32" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="LED-" x="22.86" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<text x="-27.94" y="-26.67" size="1.778" layer="21">1</text>
+<text x="25.4" y="-26.67" size="1.778" layer="21">20</text>
+<hole x="-36.3" y="-25.4" drill="2.5"/>
+<hole x="-36.3" y="24.3" drill="2.5"/>
+<hole x="33.7" y="24.3" drill="2.5"/>
+<hole x="33.7" y="-25.4" drill="2.5"/>
+<circle x="-36.3" y="-25.4" radius="1.3" width="0.127" layer="21"/>
+<circle x="33.7" y="-25.4" radius="1.3" width="0.127" layer="21"/>
+<circle x="33.7" y="24.3" radius="1.3" width="0.127" layer="21"/>
+<circle x="-36.3" y="24.3" radius="1.3" width="0.127" layer="21"/>
+<text x="-28.575" y="0" size="1.27" layer="27">&gt;VALUE</text>
+<text x="-38.1" y="-29.845" size="1.27" layer="25">&gt;NAME</text>
+</package>
+<package name="128X64-GLCD-C">
+<wire x1="-38.8" y1="-27.9" x2="-38.8" y2="24.8" width="0.2032" layer="21"/>
+<wire x1="-38.8" y1="24.8" x2="36.2" y2="24.8" width="0.2032" layer="21"/>
+<wire x1="36.2" y1="24.8" x2="36.2" y2="-27.9" width="0.2032" layer="21"/>
+<wire x1="36.2" y1="-27.9" x2="-38.8" y2="-27.9" width="0.2032" layer="21"/>
+<wire x1="-31.3" y1="-17.8" x2="-31.3" y2="14.7" width="0.2032" layer="21"/>
+<wire x1="-31.3" y1="14.7" x2="28.7" y2="14.7" width="0.2032" layer="21"/>
+<wire x1="28.7" y1="14.7" x2="28.7" y2="-17.8" width="0.2032" layer="21"/>
+<wire x1="28.7" y1="-17.8" x2="-31.3" y2="-17.8" width="0.2032" layer="21"/>
+<pad name="VCC" x="5.08" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="GND" x="7.62" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CON+" x="2.54" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D0" x="-25.4" y="-25.4" drill="1.016" shape="square" rot="R90"/>
+<pad name="D1" x="-22.86" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D2" x="-20.32" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D3" x="-17.78" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D4" x="-15.24" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D5" x="-12.7" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D6" x="-10.16" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D7" x="-7.62" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CS2" x="12.7" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CS1" x="10.16" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="!RESET" x="17.78" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="R/W" x="-2.54" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D/I" x="0" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="EN" x="-5.08" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CON-" x="15.24" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="LED+" x="20.32" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="LED-" x="22.86" y="-25.4" drill="1.016" shape="octagon" rot="R90"/>
+<text x="-27.94" y="-26.67" size="1.778" layer="21">1</text>
+<text x="25.4" y="-26.67" size="1.778" layer="21">20</text>
+<hole x="-36.3" y="-25.4" drill="2.5"/>
+<hole x="-36.3" y="24.3" drill="2.5"/>
+<hole x="33.7" y="24.3" drill="2.5"/>
+<hole x="33.7" y="-25.4" drill="2.5"/>
+<circle x="-36.3" y="-25.4" radius="1.3" width="0.127" layer="21"/>
+<circle x="33.7" y="-25.4" radius="1.3" width="0.127" layer="21"/>
+<circle x="33.7" y="24.3" radius="1.3" width="0.127" layer="21"/>
+<circle x="-36.3" y="24.3" radius="1.3" width="0.127" layer="21"/>
+<text x="-28.575" y="0" size="1.27" layer="27">&gt;VALUE</text>
+<text x="-38.1" y="-29.845" size="1.27" layer="25">&gt;NAME</text>
+</package>
+<package name="128X64-GLCD-B-PINS">
+<text x="-24.13" y="-1.27" size="1.016" layer="21" ratio="15" rot="SR0" align="top-center">1</text>
+<text x="24.13" y="-1.27" size="1.016" layer="21" ratio="15" rot="SR0" align="top-center">20</text>
+<wire x1="-25.4" y1="-2.54" x2="-25.4" y2="2.54" width="0.127" layer="21"/>
+<wire x1="-25.4" y1="2.54" x2="25.4" y2="2.54" width="0.127" layer="21"/>
+<wire x1="25.4" y1="2.54" x2="25.4" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="25.4" y1="-2.54" x2="-25.4" y2="-2.54" width="0.127" layer="21"/>
+<text x="-24.13" y="3.81" size="1.27" layer="25">&gt;NAME</text>
+<text x="-24.13" y="-5.08" size="1.27" layer="27">&gt;VALUE</text>
+<pad name="GND" x="-24.13" y="0" drill="1.016" shape="square" rot="R90"/>
+<pad name="VCC" x="-21.59" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CON+" x="-19.05" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D0" x="-8.89" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D1" x="-6.35" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D2" x="-3.81" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D3" x="-1.27" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D4" x="1.27" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D5" x="3.81" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D6" x="6.35" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D7" x="8.89" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CS2" x="13.97" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CS1" x="11.43" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="!RESET" x="16.51" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="R/W" x="-13.97" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D/I" x="-16.51" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="EN" x="-11.43" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CON-" x="19.05" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="LED+" x="21.59" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="LED-" x="24.13" y="0" drill="1.016" shape="octagon" rot="R90"/>
+</package>
+<package name="128X64-GLCD-C-PINS">
+<text x="-24.13" y="-1.27" size="1.016" layer="21" ratio="15" rot="SR0" align="top-center">1</text>
+<text x="24.13" y="-1.27" size="1.016" layer="21" ratio="15" rot="SR0" align="top-center">20</text>
+<wire x1="-25.4" y1="-2.54" x2="-25.4" y2="2.54" width="0.127" layer="21"/>
+<wire x1="-25.4" y1="2.54" x2="25.4" y2="2.54" width="0.127" layer="21"/>
+<wire x1="25.4" y1="2.54" x2="25.4" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="25.4" y1="-2.54" x2="-25.4" y2="-2.54" width="0.127" layer="21"/>
+<text x="-24.13" y="3.81" size="1.27" layer="25">&gt;NAME</text>
+<text x="-24.13" y="-5.08" size="1.27" layer="27">&gt;VALUE</text>
+<pad name="VCC" x="6.35" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="GND" x="8.89" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CON+" x="3.81" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D0" x="-24.13" y="0" drill="1.016" shape="square" rot="R90"/>
+<pad name="D1" x="-21.59" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D2" x="-19.05" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D3" x="-16.51" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D4" x="-13.97" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D5" x="-11.43" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D6" x="-8.89" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D7" x="-6.35" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CS2" x="13.97" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CS1" x="11.43" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="!RESET" x="19.05" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="R/W" x="-1.27" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="D/I" x="1.27" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="EN" x="-3.81" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="CON-" x="16.51" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="LED+" x="21.59" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="LED-" x="24.13" y="0" drill="1.016" shape="octagon" rot="R90"/>
+</package>
+</packages>
+<symbols>
+<symbol name="16X2-LCD">
+<description>XIAMEN - ADM1602K - 16 x 2 LCD Module</description>
+<wire x1="22.86" y1="10.16" x2="-20.32" y2="10.16" width="0.254" layer="94"/>
+<wire x1="-20.32" y1="10.16" x2="-20.32" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-20.32" y1="-10.16" x2="22.86" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="22.86" y1="-10.16" x2="22.86" y2="10.16" width="0.254" layer="94"/>
+<text x="-20.32" y="-12.7" size="1.778" layer="95">&gt;Name</text>
+<text x="12.7" y="-12.7" size="1.778" layer="96">&gt;Value</text>
+<pin name="LED+" x="17.78" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="D0" x="-2.54" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="D1" x="0" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="D2" x="2.54" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="D3" x="5.08" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="D4" x="7.62" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="D5" x="10.16" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="D6" x="12.7" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="D7" x="15.24" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="EN" x="-5.08" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="LED-" x="20.32" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="R/W" x="-7.62" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="RS" x="-10.16" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="GND" x="-17.78" y="12.7" visible="pin" length="short" direction="pwr" rot="R270"/>
+<pin name="CON+" x="-12.7" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="VCC" x="-15.24" y="12.7" visible="pin" length="short" direction="pwr" rot="R270"/>
+</symbol>
+<symbol name="128X64-GLCD-A">
+<description>XIAMEN - GDM12864HLCM - 128 x 64 Graphical LCD Module (GLCD)</description>
+<wire x1="25.4" y1="-10.16" x2="25.4" y2="10.16" width="0.254" layer="94"/>
+<wire x1="25.4" y1="10.16" x2="-27.94" y2="10.16" width="0.254" layer="94"/>
+<pin name="VCC" x="-25.4" y="-15.24" length="middle" direction="pwr" rot="R90"/>
+<pin name="GND" x="-22.86" y="-15.24" length="middle" direction="pwr" rot="R90"/>
+<pin name="CON+" x="-20.32" y="-15.24" length="middle" rot="R90"/>
+<pin name="D0" x="-17.78" y="-15.24" length="middle" rot="R90"/>
+<pin name="D1" x="-15.24" y="-15.24" length="middle" rot="R90"/>
+<pin name="D2" x="-12.7" y="-15.24" length="middle" rot="R90"/>
+<pin name="D3" x="-10.16" y="-15.24" length="middle" rot="R90"/>
+<pin name="D4" x="-7.62" y="-15.24" length="middle" rot="R90"/>
+<pin name="D5" x="-5.08" y="-15.24" length="middle" rot="R90"/>
+<pin name="D6" x="-2.54" y="-15.24" length="middle" rot="R90"/>
+<pin name="D7" x="0" y="-15.24" length="middle" rot="R90"/>
+<pin name="CS1" x="2.54" y="-15.24" length="middle" rot="R90"/>
+<pin name="CS2" x="5.08" y="-15.24" length="middle" rot="R90"/>
+<pin name="!RESET" x="7.62" y="-15.24" length="middle" rot="R90"/>
+<pin name="R/W" x="10.16" y="-15.24" length="middle" rot="R90"/>
+<pin name="D/I" x="12.7" y="-15.24" length="middle" direction="in" rot="R90"/>
+<pin name="EN" x="15.24" y="-15.24" length="middle" rot="R90"/>
+<pin name="CON-" x="17.78" y="-15.24" length="middle" rot="R90"/>
+<pin name="LED+" x="20.32" y="-15.24" length="middle" rot="R90"/>
+<pin name="LED-" x="22.86" y="-15.24" length="middle" rot="R90"/>
+<wire x1="-27.94" y1="-10.16" x2="25.4" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-27.94" y1="10.16" x2="-27.94" y2="-10.16" width="0.254" layer="94"/>
+<text x="-27.94" y="12.7" size="1.778" layer="95">&gt;Name</text>
+<text x="15.24" y="12.7" size="1.778" layer="96">&gt;Value</text>
+</symbol>
+<symbol name="20X4-LCD-I2C">
+<description>20x4 LCD Module using the I2C Interface</description>
+<wire x1="-10.16" y1="25.4" x2="-10.16" y2="-22.86" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-22.86" x2="10.16" y2="-22.86" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-22.86" x2="10.16" y2="25.4" width="0.254" layer="94"/>
+<wire x1="10.16" y1="25.4" x2="-10.16" y2="25.4" width="0.254" layer="94"/>
+<text x="-10.16" y="-25.4" size="1.778" layer="95">&gt;Name</text>
+<pin name="SCL" x="-12.7" y="15.24" visible="pin" length="short" direction="in"/>
+<pin name="VCC" x="-12.7" y="20.32" visible="pin" length="short" direction="pwr"/>
+<pin name="SDA" x="-12.7" y="17.78" visible="pin" length="short"/>
+<pin name="GND" x="-12.7" y="22.86" visible="pin" length="short" direction="pwr"/>
+<text x="7.62" y="-20.32" size="1.27" layer="96" rot="R90">&gt;VALUE</text>
+</symbol>
+<symbol name="20X4-LCD">
+<wire x1="22.86" y1="10.16" x2="-20.32" y2="10.16" width="0.254" layer="94"/>
+<wire x1="-20.32" y1="10.16" x2="-20.32" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-20.32" y1="-10.16" x2="22.86" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="22.86" y1="-10.16" x2="22.86" y2="10.16" width="0.254" layer="94"/>
+<text x="-20.32" y="-12.7" size="1.778" layer="95">&gt;Name</text>
+<text x="12.7" y="-12.7" size="1.778" layer="96">&gt;Value</text>
+<pin name="LED+" x="17.78" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="D0" x="-2.54" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="D1" x="0" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="D2" x="2.54" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="D3" x="5.08" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="D4" x="7.62" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="D5" x="10.16" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="D6" x="12.7" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="D7" x="15.24" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="EN" x="-5.08" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="LED-" x="20.32" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="R/W" x="-7.62" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="RS" x="-10.16" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="GND" x="-17.78" y="12.7" visible="pin" length="short" direction="pwr" rot="R270"/>
+<pin name="CON+" x="-12.7" y="12.7" visible="pin" length="short" rot="R270"/>
+<pin name="VCC" x="-15.24" y="12.7" visible="pin" length="short" direction="pwr" rot="R270"/>
+</symbol>
+<symbol name="128X64-GLCD-B">
+<wire x1="25.4" y1="-10.16" x2="25.4" y2="10.16" width="0.254" layer="94"/>
+<wire x1="25.4" y1="10.16" x2="-27.94" y2="10.16" width="0.254" layer="94"/>
+<pin name="VCC" x="-22.86" y="-15.24" length="middle" direction="pwr" rot="R90"/>
+<pin name="GND" x="-25.4" y="-15.24" length="middle" direction="pwr" rot="R90"/>
+<pin name="CON+" x="-20.32" y="-15.24" length="middle" rot="R90"/>
+<pin name="D0" x="-10.16" y="-15.24" length="middle" rot="R90"/>
+<pin name="D1" x="-7.62" y="-15.24" length="middle" rot="R90"/>
+<pin name="D2" x="-5.08" y="-15.24" length="middle" rot="R90"/>
+<pin name="D3" x="-2.54" y="-15.24" length="middle" rot="R90"/>
+<pin name="D4" x="0" y="-15.24" length="middle" rot="R90"/>
+<pin name="D5" x="2.54" y="-15.24" length="middle" rot="R90"/>
+<pin name="D6" x="5.08" y="-15.24" length="middle" rot="R90"/>
+<pin name="D7" x="7.62" y="-15.24" length="middle" rot="R90"/>
+<pin name="CS1" x="10.16" y="-15.24" length="middle" rot="R90"/>
+<pin name="CS2" x="12.7" y="-15.24" length="middle" rot="R90"/>
+<pin name="!RESET" x="15.24" y="-15.24" length="middle" rot="R90"/>
+<pin name="R/W" x="-15.24" y="-15.24" length="middle" rot="R90"/>
+<pin name="D/I" x="-17.78" y="-15.24" length="middle" rot="R90"/>
+<pin name="EN" x="-12.7" y="-15.24" length="middle" rot="R90"/>
+<pin name="CON-" x="17.78" y="-15.24" length="middle" rot="R90"/>
+<pin name="LED+" x="20.32" y="-15.24" length="middle" rot="R90"/>
+<pin name="LED-" x="22.86" y="-15.24" length="middle" rot="R90"/>
+<wire x1="-27.94" y1="-10.16" x2="25.4" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-27.94" y1="10.16" x2="-27.94" y2="-10.16" width="0.254" layer="94"/>
+<text x="-25.4" y="12.7" size="1.778" layer="95">&gt;Name</text>
+<text x="15.24" y="12.7" size="1.778" layer="96">&gt;Value</text>
+</symbol>
+<symbol name="128X64-GLCD-C">
+<wire x1="25.4" y1="-10.16" x2="25.4" y2="10.16" width="0.254" layer="94"/>
+<wire x1="25.4" y1="10.16" x2="-27.94" y2="10.16" width="0.254" layer="94"/>
+<pin name="VCC" x="5.08" y="-15.24" length="middle" direction="pwr" rot="R90"/>
+<pin name="GND" x="7.62" y="-15.24" length="middle" direction="pwr" rot="R90"/>
+<pin name="CON+" x="2.54" y="-15.24" length="middle" rot="R90"/>
+<pin name="D0" x="-25.4" y="-15.24" length="middle" rot="R90"/>
+<pin name="D1" x="-22.86" y="-15.24" length="middle" rot="R90"/>
+<pin name="D2" x="-20.32" y="-15.24" length="middle" rot="R90"/>
+<pin name="D3" x="-17.78" y="-15.24" length="middle" rot="R90"/>
+<pin name="D4" x="-15.24" y="-15.24" length="middle" rot="R90"/>
+<pin name="D5" x="-12.7" y="-15.24" length="middle" rot="R90"/>
+<pin name="D6" x="-10.16" y="-15.24" length="middle" rot="R90"/>
+<pin name="D7" x="-7.62" y="-15.24" length="middle" rot="R90"/>
+<pin name="CS1" x="10.16" y="-15.24" length="middle" rot="R90"/>
+<pin name="CS2" x="12.7" y="-15.24" length="middle" rot="R90"/>
+<pin name="!RESET" x="17.78" y="-15.24" length="middle" rot="R90"/>
+<pin name="R/W" x="-2.54" y="-15.24" length="middle" rot="R90"/>
+<pin name="D/I" x="0" y="-15.24" length="middle" rot="R90"/>
+<pin name="EN" x="-5.08" y="-15.24" length="middle" rot="R90"/>
+<pin name="CON-" x="15.24" y="-15.24" length="middle" rot="R90"/>
+<pin name="LED+" x="20.32" y="-15.24" length="middle" rot="R90"/>
+<pin name="LED-" x="22.86" y="-15.24" length="middle" rot="R90"/>
+<wire x1="-27.94" y1="-10.16" x2="25.4" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-27.94" y1="10.16" x2="-27.94" y2="-10.16" width="0.254" layer="94"/>
+<text x="-27.94" y="12.7" size="1.778" layer="95">&gt;Name</text>
+<text x="15.24" y="12.7" size="1.778" layer="96">&gt;Value</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="LCD-16X2" prefix="LCD">
+<description>XIAMEN - ADM1602K - 16 x 2 LCD Module</description>
+<gates>
+<gate name="G$1" symbol="16X2-LCD" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="LCD-16X2">
+<connects>
+<connect gate="G$1" pin="CON+" pad="CON+"/>
+<connect gate="G$1" pin="D0" pad="D0"/>
+<connect gate="G$1" pin="D1" pad="D1"/>
+<connect gate="G$1" pin="D2" pad="D2"/>
+<connect gate="G$1" pin="D3" pad="D3"/>
+<connect gate="G$1" pin="D4" pad="D4"/>
+<connect gate="G$1" pin="D5" pad="D5"/>
+<connect gate="G$1" pin="D6" pad="D6"/>
+<connect gate="G$1" pin="D7" pad="D7"/>
+<connect gate="G$1" pin="EN" pad="EN"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="LED+" pad="LED+"/>
+<connect gate="G$1" pin="LED-" pad="LED-"/>
+<connect gate="G$1" pin="R/W" pad="R/W"/>
+<connect gate="G$1" pin="RS" pad="RS"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="-PINS" package="LCD-PINS">
+<connects>
+<connect gate="G$1" pin="CON+" pad="CON+"/>
+<connect gate="G$1" pin="D0" pad="D0"/>
+<connect gate="G$1" pin="D1" pad="D1"/>
+<connect gate="G$1" pin="D2" pad="D2"/>
+<connect gate="G$1" pin="D3" pad="D3"/>
+<connect gate="G$1" pin="D4" pad="D4"/>
+<connect gate="G$1" pin="D5" pad="D5"/>
+<connect gate="G$1" pin="D6" pad="D6"/>
+<connect gate="G$1" pin="D7" pad="D7"/>
+<connect gate="G$1" pin="EN" pad="EN"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="LED+" pad="LED+"/>
+<connect gate="G$1" pin="LED-" pad="LED-"/>
+<connect gate="G$1" pin="R/W" pad="R/W"/>
+<connect gate="G$1" pin="RS" pad="RS"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="128X64-GLCD-A" prefix="LCD">
+<description>XIAMEN - GDM12864HLCM - 128 x 64 Graphical LCD Module (GLCD)</description>
+<gates>
+<gate name="G$1" symbol="128X64-GLCD-A" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="128X64-GLCD-A">
+<connects>
+<connect gate="G$1" pin="!RESET" pad="!RESET"/>
+<connect gate="G$1" pin="CON+" pad="CON+"/>
+<connect gate="G$1" pin="CON-" pad="CON-"/>
+<connect gate="G$1" pin="CS1" pad="CS1"/>
+<connect gate="G$1" pin="CS2" pad="CS2"/>
+<connect gate="G$1" pin="D/I" pad="D/I"/>
+<connect gate="G$1" pin="D0" pad="D0"/>
+<connect gate="G$1" pin="D1" pad="D1"/>
+<connect gate="G$1" pin="D2" pad="D2"/>
+<connect gate="G$1" pin="D3" pad="D3"/>
+<connect gate="G$1" pin="D4" pad="D4"/>
+<connect gate="G$1" pin="D5" pad="D5"/>
+<connect gate="G$1" pin="D6" pad="D6"/>
+<connect gate="G$1" pin="D7" pad="D7"/>
+<connect gate="G$1" pin="EN" pad="EN"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="LED+" pad="LED+"/>
+<connect gate="G$1" pin="LED-" pad="LED-"/>
+<connect gate="G$1" pin="R/W" pad="R/W"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="-PINS" package="128X64-GLCD-A-PINS">
+<connects>
+<connect gate="G$1" pin="!RESET" pad="!RESET"/>
+<connect gate="G$1" pin="CON+" pad="CON+"/>
+<connect gate="G$1" pin="CON-" pad="CON-"/>
+<connect gate="G$1" pin="CS1" pad="CS1"/>
+<connect gate="G$1" pin="CS2" pad="CS2"/>
+<connect gate="G$1" pin="D/I" pad="D/I"/>
+<connect gate="G$1" pin="D0" pad="D0"/>
+<connect gate="G$1" pin="D1" pad="D1"/>
+<connect gate="G$1" pin="D2" pad="D2"/>
+<connect gate="G$1" pin="D3" pad="D3"/>
+<connect gate="G$1" pin="D4" pad="D4"/>
+<connect gate="G$1" pin="D5" pad="D5"/>
+<connect gate="G$1" pin="D6" pad="D6"/>
+<connect gate="G$1" pin="D7" pad="D7"/>
+<connect gate="G$1" pin="EN" pad="EN"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="LED+" pad="LED+"/>
+<connect gate="G$1" pin="LED-" pad="LED-"/>
+<connect gate="G$1" pin="R/W" pad="R/W"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LCD-20X4_I2C" prefix="LCD">
+<gates>
+<gate name="G$1" symbol="20X4-LCD-I2C" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="LCD-20X4-I2C">
+<connects>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="SCL" pad="SCL"/>
+<connect gate="G$1" pin="SDA" pad="SDA"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="-PINS" package="LCD-I2C_PINS">
+<connects>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="SCL" pad="SCL"/>
+<connect gate="G$1" pin="SDA" pad="SDA"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LCD-20X4" prefix="LCD">
+<gates>
+<gate name="G$1" symbol="20X4-LCD" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="LCD-20X4">
+<connects>
+<connect gate="G$1" pin="CON+" pad="CON+"/>
+<connect gate="G$1" pin="D0" pad="D0"/>
+<connect gate="G$1" pin="D1" pad="D1"/>
+<connect gate="G$1" pin="D2" pad="D2"/>
+<connect gate="G$1" pin="D3" pad="D3"/>
+<connect gate="G$1" pin="D4" pad="D4"/>
+<connect gate="G$1" pin="D5" pad="D5"/>
+<connect gate="G$1" pin="D6" pad="D6"/>
+<connect gate="G$1" pin="D7" pad="D7"/>
+<connect gate="G$1" pin="EN" pad="EN"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="LED+" pad="LED+"/>
+<connect gate="G$1" pin="LED-" pad="LED-"/>
+<connect gate="G$1" pin="R/W" pad="R/W"/>
+<connect gate="G$1" pin="RS" pad="RS"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="-PINS" package="LCD-PINS">
+<connects>
+<connect gate="G$1" pin="CON+" pad="CON+"/>
+<connect gate="G$1" pin="D0" pad="D0"/>
+<connect gate="G$1" pin="D1" pad="D1"/>
+<connect gate="G$1" pin="D2" pad="D2"/>
+<connect gate="G$1" pin="D3" pad="D3"/>
+<connect gate="G$1" pin="D4" pad="D4"/>
+<connect gate="G$1" pin="D5" pad="D5"/>
+<connect gate="G$1" pin="D6" pad="D6"/>
+<connect gate="G$1" pin="D7" pad="D7"/>
+<connect gate="G$1" pin="EN" pad="EN"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="LED+" pad="LED+"/>
+<connect gate="G$1" pin="LED-" pad="LED-"/>
+<connect gate="G$1" pin="R/W" pad="R/W"/>
+<connect gate="G$1" pin="RS" pad="RS"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="128X64-GLCD-B" prefix="LCD">
+<gates>
+<gate name="G$1" symbol="128X64-GLCD-B" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="128X64-GLCD-B">
+<connects>
+<connect gate="G$1" pin="!RESET" pad="!RESET"/>
+<connect gate="G$1" pin="CON+" pad="CON+"/>
+<connect gate="G$1" pin="CON-" pad="CON-"/>
+<connect gate="G$1" pin="CS1" pad="CS1"/>
+<connect gate="G$1" pin="CS2" pad="CS2"/>
+<connect gate="G$1" pin="D/I" pad="D/I"/>
+<connect gate="G$1" pin="D0" pad="D0"/>
+<connect gate="G$1" pin="D1" pad="D1"/>
+<connect gate="G$1" pin="D2" pad="D2"/>
+<connect gate="G$1" pin="D3" pad="D3"/>
+<connect gate="G$1" pin="D4" pad="D4"/>
+<connect gate="G$1" pin="D5" pad="D5"/>
+<connect gate="G$1" pin="D6" pad="D6"/>
+<connect gate="G$1" pin="D7" pad="D7"/>
+<connect gate="G$1" pin="EN" pad="EN"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="LED+" pad="LED+"/>
+<connect gate="G$1" pin="LED-" pad="LED-"/>
+<connect gate="G$1" pin="R/W" pad="R/W"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="-PINS" package="128X64-GLCD-B-PINS">
+<connects>
+<connect gate="G$1" pin="!RESET" pad="!RESET"/>
+<connect gate="G$1" pin="CON+" pad="CON+"/>
+<connect gate="G$1" pin="CON-" pad="CON-"/>
+<connect gate="G$1" pin="CS1" pad="CS1"/>
+<connect gate="G$1" pin="CS2" pad="CS2"/>
+<connect gate="G$1" pin="D/I" pad="D/I"/>
+<connect gate="G$1" pin="D0" pad="D0"/>
+<connect gate="G$1" pin="D1" pad="D1"/>
+<connect gate="G$1" pin="D2" pad="D2"/>
+<connect gate="G$1" pin="D3" pad="D3"/>
+<connect gate="G$1" pin="D4" pad="D4"/>
+<connect gate="G$1" pin="D5" pad="D5"/>
+<connect gate="G$1" pin="D6" pad="D6"/>
+<connect gate="G$1" pin="D7" pad="D7"/>
+<connect gate="G$1" pin="EN" pad="EN"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="LED+" pad="LED+"/>
+<connect gate="G$1" pin="LED-" pad="LED-"/>
+<connect gate="G$1" pin="R/W" pad="R/W"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="128X64-GLCD-C" prefix="LCD">
+<gates>
+<gate name="G$1" symbol="128X64-GLCD-C" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="128X64-GLCD-C">
+<connects>
+<connect gate="G$1" pin="!RESET" pad="!RESET"/>
+<connect gate="G$1" pin="CON+" pad="CON+"/>
+<connect gate="G$1" pin="CON-" pad="CON-"/>
+<connect gate="G$1" pin="CS1" pad="CS1"/>
+<connect gate="G$1" pin="CS2" pad="CS2"/>
+<connect gate="G$1" pin="D/I" pad="D/I"/>
+<connect gate="G$1" pin="D0" pad="D0"/>
+<connect gate="G$1" pin="D1" pad="D1"/>
+<connect gate="G$1" pin="D2" pad="D2"/>
+<connect gate="G$1" pin="D3" pad="D3"/>
+<connect gate="G$1" pin="D4" pad="D4"/>
+<connect gate="G$1" pin="D5" pad="D5"/>
+<connect gate="G$1" pin="D6" pad="D6"/>
+<connect gate="G$1" pin="D7" pad="D7"/>
+<connect gate="G$1" pin="EN" pad="EN"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="LED+" pad="LED+"/>
+<connect gate="G$1" pin="LED-" pad="LED-"/>
+<connect gate="G$1" pin="R/W" pad="R/W"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="-PINS" package="128X64-GLCD-C-PINS">
+<connects>
+<connect gate="G$1" pin="!RESET" pad="!RESET"/>
+<connect gate="G$1" pin="CON+" pad="CON+"/>
+<connect gate="G$1" pin="CON-" pad="CON-"/>
+<connect gate="G$1" pin="CS1" pad="CS1"/>
+<connect gate="G$1" pin="CS2" pad="CS2"/>
+<connect gate="G$1" pin="D/I" pad="D/I"/>
+<connect gate="G$1" pin="D0" pad="D0"/>
+<connect gate="G$1" pin="D1" pad="D1"/>
+<connect gate="G$1" pin="D2" pad="D2"/>
+<connect gate="G$1" pin="D3" pad="D3"/>
+<connect gate="G$1" pin="D4" pad="D4"/>
+<connect gate="G$1" pin="D5" pad="D5"/>
+<connect gate="G$1" pin="D6" pad="D6"/>
+<connect gate="G$1" pin="D7" pad="D7"/>
+<connect gate="G$1" pin="EN" pad="EN"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="LED+" pad="LED+"/>
+<connect gate="G$1" pin="LED-" pad="LED-"/>
+<connect gate="G$1" pin="R/W" pad="R/W"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+</drawing>
+</eagle>
