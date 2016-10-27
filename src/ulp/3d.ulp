@@ -713,21 +713,8 @@ string pov_system[] =
 };
 int pov_system_selected;
 
-// Path to the POVRay executable
-string pov_path[] =
-{
-  "pvengine.exe",
-  "povray"
-};
-int pov_path_selected;
-
-// Path to system font files
-string pov_font_path[] =
-{
-  "c:/windows/fonts",
-  "/usr/share/fonts" 
-};
-int pov_font_path_selected;
+string pov_path = "pvengine.exe";                                                   //Path to the Windows POVRay executable
+string pov_font_path = "c:/windows/fonts";                                          //Path to system font files
 
 // Resolution selection
 string pov_res[] =
@@ -874,10 +861,10 @@ if(pack_con[8]!=""){config[8] = pack_con[8]; packgen_layers = pack_con[8];}
  else {config[8] = packgen_layers;}
 
 // POVRay options
-if(pack_con[9]!=""){config[9] = pack_con[9]; pov_path_selected = strtol(pack_con[9]);}
-  else {config[9] = "0";}
-if(pack_con[10]!=""){config[10] = pack_con[10]; pov_font_path_selected = strtol(pack_con[10]);}
-  else {config[10] = "0";}
+if(pack_con[9]!=""){config[9] = pack_con[9]; pov_path = pack_con[9];}
+  else {config[9] = pov_path;}
+if(pack_con[10]!=""){config[10] = pack_con[10]; pov_font_path = pack_con[10];}
+  else {config[10] = pov_font_path;}
 if(pack_con[11]!=""){config[11] = pack_con[11]; pov_system_selected = strtol(pack_con[11]);}
   else {config[11] = "0";}
 if(pack_con[12]!=""){config[12] = pack_con[12]; pov_res_selected = strtol(pack_con[12]);}
@@ -1485,6 +1472,7 @@ do{
                   lang_file = main_path + "/3dlang_pt.dat";
                 }
 
+/*
                 //=========================================
                 // ??? what is this section doing here ???
                 config[1] = color_file;
@@ -1495,8 +1483,8 @@ do{
                 config[6] = slk_layers[3];
                 sprintf(config[7],"%d",eagle3d_layer);
                 config[8] = packgen_layers;
-                sprintf(config[9], "%d",pov_path_selected);
-                sprintf(config[10],"%d",pov_font_path_selected);
+                config[9] = pov_path;
+                config[10] = pov_font_path;
                 sprintf(config[11],"%d",pov_system_selected);
                 sprintf(config[12],"%d",pov_res_selected);
                 sprintf(config[13],"%d",pov_use_aa);
@@ -1504,7 +1492,7 @@ do{
 #41             sprintf(config[15],"%d",opt_pcb_flip_dir);
 #40             sprintf(config[15],"%d",opt_pcb_flip_dir); // For Testing
                 //=========================================
-
+*/
                 //Einlesen der Sprachdatei
                 // Reading the language file
                 fileread(lang, lang_file);
@@ -1745,9 +1733,9 @@ do{
             dlgCell(0,0) dlgLabel("OS");
             dlgCell(0,1) dlgComboBox(pov_system, pov_system_selected);
             dlgCell(1,0) dlgLabel(lang[162]);
-            dlgCell(1,1) dlgComboBox(pov_path, pov_path_selected);
+            dlgCell(1,1) dlgStringEdit(pov_path);
             dlgCell(2,0) dlgLabel(lang[163]);
-            dlgCell(2,1) dlgComboBox(pov_font_path, pov_font_path_selected);
+            dlgCell(2,1) dlgStringEdit(pov_font_path);
             dlgCell(3,0) dlgLabel(lang[164]);
             dlgCell(3,1) dlgComboBox(pov_res, pov_res_selected);
             dlgCell(4,0) dlgCheckBox(lang[165], pov_use_aa);
@@ -1888,8 +1876,8 @@ do{
           config[6] = slk_layers[3]; 
           sprintf(config[7],"%d",eagle3d_layer); 
           config[8] = packgen_layers;
-          sprintf(config[9],"%d",pov_path_selected);
-          sprintf(config[10],"%d",pov_font_path_selected);
+          config[9] = pov_path;
+          config[10] = pov_font_path;
           sprintf(config[11],"%d",pov_system_selected);
           sprintf(config[12],"%d",pov_res_selected);
           sprintf(config[13],"%d",pov_use_aa);
@@ -1926,8 +1914,8 @@ do{
           config[6] = slk_layers[3]; 
           sprintf(config[7],"%d",eagle3d_layer); 
           config[8] = packgen_layers;
-          sprintf(config[9],"%d",pov_path_selected);
-          sprintf(config[10],"%d",pov_font_path_selected);
+          config[9] = pov_path;
+          config[10] = pov_font_path;
           sprintf(config[11],"%d",pov_system_selected);
           sprintf(config[12],"%d",pov_res_selected);
           sprintf(config[13],"%d",pov_use_aa);
@@ -4441,7 +4429,7 @@ do{
     output(filesetext(out_file,".bat"))
     {
       printf("@echo off\n\n");
-      printf("\"pvengine.exe\" ");
+      printf("\"%s\" ", pov_path);
 #41   if(anim_nframes>2) printf(filesetext(out_file,".ini"));
 #40   if(anim_nframes>2) printf(filesetext(out_file,".ini")); // For Testing
       if(1 == pov_pause) printf(" +P ");
@@ -4456,7 +4444,7 @@ do{
         printf("+A0.3 ");            
       }
       printf("+FN ");
-      printf("+L\"C:/windows/fonts\" ");
+      printf("+L\"%s\" ", pov_font_path);
       printf("+L\"%s../povray\" ", main_path);
       printf("+O\"%s\" ", filesetext(out_file,".png"));
       printf("/RENDER \"%s\" ", out_file);
@@ -4475,7 +4463,7 @@ do{
     output(filesetext(out_file,".sh"))
     {
       printf("#!/bin/sh\n\n");
-      printf("\"povray\" ");
+      printf("\"%s\" ", pov_path);
 #41   if(anim_nframes>2) printf(filesetext(out_file,".ini"));
 #40   if(anim_nframes>2) printf(filesetext(out_file,".ini")); // For Testing
       if(1 == pov_pause) printf(" +P ");
@@ -4490,7 +4478,7 @@ do{
         printf("+A0.3 ");            
       }
       printf("+FN ");
-      printf("+L\"/usr/share/fonts\" ");
+      printf("+L\"%s\" ", pov_font_path);
       printf("+L\"%s../povray\" ", main_path);
       printf("+O\"%s\" ", filesetext(out_file,".png"));        
       printf("%s ", out_file);
